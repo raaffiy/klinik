@@ -73,7 +73,8 @@ $espressoProducts = Coffee::where('category', 'Espresso')->get();
             <li class="nav-item">
               <a href="/blog" class="nav-link">Blog</a>
             </li>
-            <li class="nav-item cart">
+	          <li class="nav-item "><a href="/gallery" class="nav-link">Gallery</a></li>
+            {{-- <li class="nav-item cart">
               <a href="/cart" class="nav-link"
                 ><span class="icon icon-shopping_cart"></span
                 ><span
@@ -81,7 +82,7 @@ $espressoProducts = Coffee::where('category', 'Espresso')->get();
                   ><small>1</small></span
                 ></a
               >
-            </li>
+            </li> --}}
           </ul>
         </div>
       </div>

@@ -48,7 +48,8 @@ $cappuccinoProducts = Coffee::where('category', 'Cappuccino')->get();
 	          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="/menu" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-	          <li class="nav-item cart"><a href="#" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
+	          <li class="nav-item "><a href="/gallery" class="nav-link">Gallery</a></li>
+	          {{-- <li class="nav-item cart"><a href="#" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li> --}}
 	        </ul>
 	      </div>
 		  </div>
