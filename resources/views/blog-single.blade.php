@@ -161,7 +161,7 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
               <div class="block-21 mb-4 d-flex">
                 <a href="/blog-single/{{ $productId }}" class="blog-img mr-4" style="background-image: url('{{ $image_product_path }}');"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="/product-single/{{ $productId }}">{{ $name }}</a></h3>
+                  <h3 class="heading"><a href="/blog-single/{{ $productId }}">{{ $name }}</a></h3>
                 </div>
               </div>
               @endforeach
