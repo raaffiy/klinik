@@ -71,16 +71,14 @@ $americanoProducts = Coffee::where('category', 'Americano')->get();
       <div class="container">
         <div class="row">
           <div class="col-xl-8 ftco-animate">
-			<form action="#" class="billing-form ftco-bg-dark p-3 p-md-5">
-				<h3 class="mb-4 billing-heading">Billing Details</h3>
-	          	<div class="row align-items-end">
-	          		<div class="col-md-12">
-	                <div class="form-group">
-	                	<label for="firstname">Name *</label>
-	                  <input type="text" class="form-control" placeholder="" required>
+				      <h3 class="mb-4 billing-heading">Billing Details</h3>
+	          	  <div class="row align-items-end">
+	          		  <div class="col-md-12">
+	                  <div class="form-group">
+	                	  <label for="firstname">Name *</label>
+	                    <input type="text" class="form-control" placeholder="" required>
+	                  </div>
 	                </div>
-	              </div>
-		            <div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="towncity">Table *</label>
@@ -94,75 +92,97 @@ $americanoProducts = Coffee::where('category', 'Americano')->get();
 	                </div>
 		            </div>
 	            </div>
-	          </form><!-- END -->
 
 	          <div class="row mt-5 pt-3 d-flex">
 	          	<div class="col-md-6 d-flex">
-				    <div class="cart-detail cart-total ftco-bg-dark p-3 p-md-4">
-				        <h3 class="billing-heading mb-4">Cart Total</h3>
-				        <p class="d-flex">
+				        <div class="cart-detail cart-total ftco-bg-dark p-3 p-md-4">
+				          <h3 class="billing-heading mb-4">Cart Total</h3>
+				          <p class="d-flex">
 				            <span>Subtotal</span>
 				            <span>{{ "Rp " . $buy->price }}</span>
-				        </p>
-				        <p class="d-flex">
-				            <span>Discount</span>
-				            <span>Rp 3000</span>
-				        </p>
-				        <hr>
-				        <p class="d-flex total-price">
-				            <span>Total</span>
-				            <span>{{ "Rp " . ($buy->price - 3000) }}</span>
-				        </p>
-				    </div>
-				</div>
+				          </p>
+				          <p class="d-flex">
+				              <span>Discount</span>
+				              <span>Rp 3000</span>
+				          </p>
+				          <hr>
+				          <p class="d-flex total-price">
+				              <span>Total</span>
+				              <span>{{ "Rp " . ($buy->price - 3000) }}</span>
+				          </p>
+				        </div>
+				      </div>
 	          	<div class="col-md-6">
 	          		<div class="cart-detail ftco-bg-dark p-3 p-md-4">
 	          			<h3 class="billing-heading mb-4">Payment Method</h3>
-						<div class="form-group">
-							<div class="col-md-12">
-								<div class="radio">
-								   <label><input type="radio" name="optradio" class="mr-2">Bank Tranfer</label>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-md-12">
-								<div class="radio">
-								   <label><input type="radio" name="optradio" class="mr-2">Cash</label>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-md-12">
-								<div class="radio">
-								   <label><input type="radio" name="optradio" class="mr-2">Paypal</label>
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-md-12">
-								<div class="checkbox">
-								   <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
-								</div>
-							</div>
-						</div>
-						<p><a href="#"class="btn btn-primary py-3 px-4">Buying</a></p>
-					</div>
+						        <div class="form-group">
+						        	<div class="col-md-12">
+						        		<div class="radio">
+						        		   <label><input type="radio" name="optradio" class="mr-2">Bank Tranfer</label>
+						        		</div>
+						        	</div>
+						        </div>
+						        <div class="form-group">
+						        	<div class="col-md-12">
+						        		<div class="radio">
+						        		   <label><input type="radio" name="optradio" class="mr-2">Cash</label>
+						        		</div>
+						        	</div>
+						        </div>
+						        <div class="form-group">
+						        	<div class="col-md-12">
+						        		<div class="radio">
+						        		   <label><input type="radio" name="optradio" class="mr-2">Paypal</label>
+						        		</div>
+						        	</div>
+						        </div>
+						        <div class="form-group">
+						        	<div class="col-md-12">
+						        		<div class="checkbox">
+						        		   <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
+						        		</div>
+						        	</div>
+						        </div>
+						      <button type="button" class="btn btn-primary py-3 px-4" id="btn">Buying</button>
+                  <script src="/dist/sweetalert2.all.min.js"></script>
+                  <script>
+                    const btn = document.getElementById('btn');
+                    btn.addEventListener('click', function(){
+                      Swal.fire({
+                        title: "Are you sure?",
+                        text: "buy this coffee?",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Yes, buy it!"
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                          Swal.fire({
+                            title: "Successful Purchase!",
+                            text: "Coffee Late",
+                            icon: "success"
+                          });
+                        }
+                      });
+                    })
+                  </script>
+					      </div>
 	          	</div>
 	          </div>
-          </div> <!-- .col-md-8 -->
+        </div> <!-- .col-md-8 -->
 
-          <div class="col-xl-4 sidebar ftco-animate">
-            <div class="sidebar-box ftco-animate">
-              <div class="categories">
-                <h3>Menu</h3>
-                <li><a href="/menu">Espresso</a></li>
-                <li><a href="/menu">Americano</a></li>
-                <li><a href="/menu">Cappuccino</a></li>
-                <li><a href="/menu">Mocha Latte</a></li>
-                <li><a href="/menu">Caffé Latte</a></li>
-              </div>
+        <div class="col-xl-4 sidebar ftco-animate">
+          <div class="sidebar-box ftco-animate">
+            <div class="categories">
+              <h3>Menu</h3>
+              <li><a href="/menu">Espresso</a></li>
+              <li><a href="/menu">Americano</a></li>
+              <li><a href="/menu">Cappuccino</a></li>
+              <li><a href="/menu">Mocha Latte</a></li>
+              <li><a href="/menu">Caffé Latte</a></li>
             </div>
+          </div>
 
             <div class="sidebar-box ftco-animate">
               <h3>Recent Blog</h3>
