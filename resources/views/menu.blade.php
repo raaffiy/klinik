@@ -34,7 +34,6 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
 
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
-
     
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
@@ -53,10 +52,15 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
 	          <li class="nav-item active"><a href="#" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
 	          <li class="nav-item "><a href="/gallery" class="nav-link">Gallery</a></li>
-	          {{-- <li class="nav-item cart"><a href="/cart" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li> --}}
+	         <li class="nav-item cart"><a href="/cart" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>{{ count(session('cart', [])) }}</small></span></a></li>
 	        </ul>
 	      </div>
 		  </div>
+		  	@if(session('success'))
+    			<div class="alert alert-success">
+    			    {{ session('success') }}
+    			</div>
+			@endif
 	  </nav>
     <!-- END nav -->
 
@@ -76,7 +80,6 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
         </div>
       </div>
     </section>
-
 
     <section class="ftco-menu mb-5 pb-5">
     	<div class="container">
@@ -120,7 +123,7 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
 						                        <h3><a href="/product-single/{{ $productId }}">{{ $name }}</a></h3>
 						                        <p>{{ $short_description }}</p>
 						                        <p class="price"><span>{{ "Rp " . $price }}</span></p>
-						                        <p><a href="/checkout/{{ $productId }}" class="btn btn-primary btn-outline-primary">Buy Coffee</a></p>
+						                        <p><a href="/cart/{{ $productId }}" class="btn btn-primary btn-outline-primary">Add To Cart</a></p>
 						                    </div>
 						                </div>
 						            </div>
@@ -148,7 +151,7 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
 						                        <h3><a href="/product-single/{{ $productId }}">{{ $name }}</a></h3>
 						                        <p>{{ $short_description }}</p>
 						                        <p class="price"><span>{{ "Rp " . $price }}</span></p>
-						                        <p><a href="/checkout/{{ $productId }}" class="btn btn-primary btn-outline-primary">Buy Coffee</a></p>
+						                        <p><a href="/cart/{{ $productId }}" class="btn btn-primary btn-outline-primary">Add To Cart</a></p>
 						                    </div>
 						                </div>
 						            </div>
@@ -176,7 +179,7 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
 						                        <h3><a href="/product-single/{{ $productId }}">{{ $name }}</a></h3>
 						                        <p>{{ $short_description }}</p>
 						                        <p class="price"><span>{{ "Rp " . $price }}</span></p>
-						                        <p><a href="/checkout/{{ $productId }}" class="btn btn-primary btn-outline-primary">Buy Coffee</a></p>
+						                        <p><a href="/cart/{{ $productId }}" class="btn btn-primary btn-outline-primary">Add To Cart</a></p>
 						                    </div>
 						                </div>
 						            </div>
@@ -204,7 +207,7 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
 						                        <h3><a href="/product-single/{{ $productId }}">{{ $name }}</a></h3>
 						                        <p>{{ $short_description }}</p>
 						                        <p class="price"><span>{{ "Rp " . $price }}</span></p>
-						                        <p><a href="/checkout/{{ $productId }}" class="btn btn-primary btn-outline-primary">Buy Coffee</a></p>
+						                        <p><a href="/cart/{{ $productId }}" class="btn btn-primary btn-outline-primary">Add To Cart</a></p>
 						                    </div>
 						                </div>
 						            </div>
@@ -232,7 +235,7 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
 						                        <h3><a href="/product-single/{{ $productId }}">{{ $name }}</a></h3>
 						                        <p>{{ $short_description }}</p>
 						                        <p class="price"><span>{{ "Rp " . $price }}</span></p>
-						                        <p><a href="/checkout/{{ $productId }}" class="btn btn-primary btn-outline-primary">Buy Coffee</a></p>
+						                        <p><a href="/cart/{{ $productId }}" class="btn btn-primary btn-outline-primary">Add To Cart</a></p>
 						                    </div>
 						                </div>
 						            </div>

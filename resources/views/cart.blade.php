@@ -49,11 +49,16 @@ $cappuccinoProducts = Coffee::where('category', 'Cappuccino')->get();
 	          <li class="nav-item"><a href="/menu" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
 	          <li class="nav-item "><a href="/gallery" class="nav-link">Gallery</a></li>
-	          {{-- <li class="nav-item cart"><a href="#" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li> --}}
+	          <li class="nav-item cart"><a href="/cart" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>{{ count(session('cart', [])) }}</small></span></a></li>
 	        </ul>
 	      </div>
-		  </div>
-	  </nav>
+		  </div>	  
+      @if(session('success'))
+    			<div class="alert alert-success">
+    			    {{ session('success') }}
+    			</div>
+			@endif
+    </nav>
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
@@ -73,96 +78,209 @@ $cappuccinoProducts = Coffee::where('category', 'Cappuccino')->get();
       </div>
     </section>
 		
-		<section class="ftco-section ftco-cart">
-			<div class="container">
-				<div class="row">
-    			<div class="col-md-12 ftco-animate">
-    				<div class="cart-list">
-	    				<table class="table">
-						    <thead class="thead-primary">
-						      <tr class="text-center">
-						        <th>&nbsp;</th>
-						        <th>&nbsp;</th>
-						        <th>Product</th>
-						        <th>Price</th>
-						        <th>Quantity</th>
-						        <th>Total</th>
-						      </tr>
-						    </thead>
-						    <tbody>
-						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="icon-close"></span></a></td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/menu-2.jpg);"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>Creamy Latte Coffee</h3>
-						        	<p>Far far away, behind the word mountains, far from the countries</p>
-						        </td>
-						        
-						        <td class="price">$4.90</td>
-						        
-						        <td class="quantity">
-						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-					          	</div>
-					          </td>
-						        
-						        <td class="total">$4.90</td>
-						      </tr><!-- END TR-->
+    <section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 ftco-animate">
+                <div class="billing-details">
+                    <h3 class="mb-4 billing-heading">Billing Details</h3>
+                    <div class="row align-items-end">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="firstname">Name *</label>
+                                <input type="text" class="form-control" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="towncity">Table *</label>
+                                <input type="text" class="form-control" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="postcodezip">Notepad</label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- .col-md-8 -->
 
-						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="icon-close"></span></a></td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/dish-2.jpg);"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>Grilled Ribs Beef</h3>
-						        	<p>Far far away, behind the word mountains, far from the countries</p>
-						        </td>
-						        
-						        <td class="price">$15.70</td>
-						        
-						        <td class="quantity">
-						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-					          	</div>
-					          </td>
-						        
-						        <td class="total">$15.70</td>
-						      </tr><!-- END TR-->
-						    </tbody>
-						  </table>
-					  </div>
-    			</div>
-    		</div>
-    		<div class="row justify-content-end">
-    			<div class="col col-lg-3 col-md-6 mt-5 cart-wrap ftco-animate">
-    				<div class="cart-total mb-3">
-    					<h3>Cart Totals</h3>
-    					<p class="d-flex">
-    						<span>Subtotal</span>
-    						<span>$20.60</span>
-    					</p>
-    					<p class="d-flex">
-    						<span>Delivery</span>
-    						<span>$0.00</span>
-    					</p>
-    					<p class="d-flex">
-    						<span>Discount</span>
-    						<span>$3.00</span>
-    					</p>
-    					<hr>
-    					<p class="d-flex total-price">
-    						<span>Total</span>
-    						<span>$17.60</span>
-    					</p>
-    				</div>
-    				<p class="text-center"><a href="/checkout" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
-    			</div>
-    		</div>
-			</div>
-		</section>
+            <div class="col-md-4">
+                <div class="payment-method ftco-bg-dark p-3 p-md-4">
+                    <h3 class="billing-heading mb-4">Payment Method</h3>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="radio">
+                                <label><input type="radio" name="optradio" class="mr-2">Bank Transfer</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="radio">
+                                <label><input type="radio" name="optradio" class="mr-2">Cash</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="radio">
+                                <label><input type="radio" name="optradio" class="mr-2">Paypal</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> <!-- .section -->
+
+<section class="ftco-section ftco-cart">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ftco-animate">
+                <div class="cart-list">
+                    <table class="table">
+                        <thead class="thead-primary">
+                            <tr class="text-center">
+                                <th>&nbsp;</th>
+                                <th>&nbsp;</th>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @php $total = 0 @endphp
+                            @if(session('cart'))
+                                @foreach (session('cart') as $id => $details)
+                                    @php $total += $details['price'] * $details['quantity'] @endphp
+
+                                    <tr class="text-center" data-id="{{ $id }}">
+                                        <td class="actions">
+                                          <button type="button" class="btn btn-outline-danger cart_remove" name="cart_remove">&nbsp; &nbsp; Delete &nbsp; &nbsp;</button>
+                                        </td>
+
+                                        <td class="image-prod"><img style="width: 140px" src="{{ Storage::disk('public')->url($details['image_product']) }}" alt="{{ $details['name'] }}" class="img-fluid"></td>
+
+                                        <td class="product-name">
+                                            <h3>{{ $details['name'] }}</h3>
+                                            <p>{{ $details['short_description'] }}</p>
+                                        </td>
+
+                                        <td class="price" data-th="Price">{{ "Rp " . $details['price'] }}</td>
+
+                                        <td class="quantity" data-th="Quantity" data-th="Subtotal">
+                                            <div class="input-group mb-3">
+                                                <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity cart_update" data-id="{{ $id }}" min="1" max="10"/>
+                                            </div>
+                                        </td>
+                                      
+                                        <td class="total">{{ "Rp " . $details['price'] * $details['quantity'] }}</td>
+                                    </tr><!-- END TR-->
+                                  
+                                @endforeach
+                            @endif
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col col-lg-3 col-md-6 mt-5 cart-wrap ftco-animate">
+                <div class="cart-total mb-3">
+                    <p class="d-flex">
+                        <span>Total</span>
+                        <span>{{ "Rp " . $total }}</span>
+                    </p>
+                </div>
+                <button type="button" class="btn btn-primary py-3 px-4" id="btn"><p style="color: white">Buying</p></button>
+                <script src="/dist/sweetalert2.all.min.js"></script>
+                <script>
+                    const btn = document.getElementById('btn');
+                    btn.addEventListener('click', function(){
+                        Swal.fire({
+                            title: "Are you sure?",
+                            text: "buy this coffee?",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Yes, buy it!"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire({
+                                    title: "Successful Purchase!",
+                                    text: "Coffee Late",
+                                    icon: "success"
+                                });
+                            }
+                        });
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Your custom script -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".cart_update").change(function (e) {
+            e.preventDefault();
+
+            var ele = $(this);
+
+            $.ajax({
+                url: '{{ route('update_cart') }}',
+                method: "patch",
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: ele.data("id"), // Use data-id attribute
+                    quantity: ele.val()
+                },
+                success: function (response) {
+                    window.location.reload();
+                }
+            });
+        });
+
+        $(".cart_remove").click(function (e) {
+            e.preventDefault();
+
+            var ele = $(this);
+
+            if (confirm("Do you really want to remove?")) {
+                $.ajax({
+                    url: '{{ route('remove_from_cart') }}',
+                    method: "DELETE",
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: ele.parents("tr").attr("data-id")
+                    },
+                    success: function (response) {
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+    });
+</script>
 
     <footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>
@@ -256,6 +374,5 @@ $cappuccinoProducts = Coffee::where('category', 'Cappuccino')->get();
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
 
-    
   </body>
 </html>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BuyController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,3 +52,6 @@ Route::get('/gallery', function () {
 Route::get('/product-single/{id}', [ProductController::class, 'showProduct']);
 Route::get('/blog-single/{id}', [BlogController::class,'showBlog']);
 Route::get('/checkout/{id}', [BuyController::class,'showBuy']);
+Route::get('/cart/{id}', [CartController::class,'addToCart']);
+Route::patch('update-cart', [CartController::class,'update'])->name('update_cart');
+Route::delete('remove-form-cart', [CartController::class, 'remove'])->name('remove_from_cart');

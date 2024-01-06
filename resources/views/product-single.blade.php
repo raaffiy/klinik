@@ -44,10 +44,15 @@ $productId = $product->id;
 	          <li class="nav-item"><a href="/menu" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
 	          <li class="nav-item "><a href="/gallery" class="nav-link">Gallery</a></li>
-	          {{-- <li class="nav-item cart"><a href="/cart" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li> --}}
+	          <li class="nav-item cart"><a href="/cart" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>{{ count(session('cart', [])) }}</small></span></a></li>
 	        </ul>
 	      </div>
 		  </div>
+      @if(session('success'))
+    			<div class="alert alert-success">
+    			    {{ session('success') }}
+    			</div>
+			@endif
 	  </nav>
     <!-- END nav -->
 
@@ -92,7 +97,7 @@ $productId = $product->id;
                         </div>
                     </div>
                 </div>
-                <p><a href="/checkout/{{ $productId }}" class="btn btn-primary py-3 px-5">Buy Coffee</a></p>
+                <p><a href="/cart/{{ $productId }}" class="btn btn-primary py-3 px-5">Add To Cart</a></p>
             </div>
         </div>
     </div>

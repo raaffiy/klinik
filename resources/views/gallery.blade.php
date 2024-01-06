@@ -53,7 +53,7 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
 	          <li class="nav-item"><a href="/menu" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
 	          <li class="nav-item active"><a href="#" class="nav-link">Gallery</a></li>
-	          {{-- <li class="nav-item cart"><a href="/cart" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li> --}}
+	          <li class="nav-item cart"><a href="/cart" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>{{ count(session('cart', [])) }}</small></span></a></li>
 	        </ul>
 	      </div>
 		  </div>
@@ -87,7 +87,7 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
             ?>
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry align-self-stretch">
-                  <a href="/checkout/{{ $productId }}"> <!-- Pass product ID as a parameter in the URL -->
+                  <a href="/product-single/{{ $productId }}"> <!-- Pass product ID as a parameter in the URL -->
 				                <img src="{{ $image_product_path }}" class="img-fluid">
 				            </a>
                 </div>
@@ -101,7 +101,7 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
             ?>
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry align-self-stretch">
-                  <a href="/checkout/{{ $productId }}"> <!-- Pass product ID as a parameter in the URL -->
+                  <a href="/product-single/{{ $productId }}"> <!-- Pass product ID as a parameter in the URL -->
 				                <img src="{{ $image_product_path }}" class="img-fluid">
 				            </a>
                 </div>
@@ -115,7 +115,7 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
             ?>
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry align-self-stretch">
-                  <a href="/checkout/{{ $productId }}"> <!-- Pass product ID as a parameter in the URL -->
+                  <a href="/product-single/{{ $productId }}"> <!-- Pass product ID as a parameter in the URL -->
 				                <img src="{{ $image_product_path }}" class="img-fluid">
 				            </a>
                 </div>
@@ -129,7 +129,7 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
             ?>
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry align-self-stretch">
-                  <a href="/checkout/{{ $productId }}"> <!-- Pass product ID as a parameter in the URL -->
+                  <a href="/product-single/{{ $productId }}"> <!-- Pass product ID as a parameter in the URL -->
 				                <img src="{{ $image_product_path }}" class="img-fluid">
 				            </a>
                 </div>
@@ -143,7 +143,7 @@ $mochaProducts = Coffee::where('category', 'Mocha Latte')->get();
             ?>
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry align-self-stretch">
-                  <a href="/checkout/{{ $productId }}"> <!-- Pass product ID as a parameter in the URL -->
+                  <a href="/product-single/{{ $productId }}"> <!-- Pass product ID as a parameter in the URL -->
 				                <img src="{{ $image_product_path }}" class="img-fluid">
 				            </a>
                 </div>

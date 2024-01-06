@@ -74,18 +74,15 @@ $espressoProducts = Coffee::where('category', 'Espresso')->get();
               <a href="/blog" class="nav-link">Blog</a>
             </li>
 	          <li class="nav-item "><a href="/gallery" class="nav-link">Gallery</a></li>
-            {{-- <li class="nav-item cart">
-              <a href="/cart" class="nav-link"
-                ><span class="icon icon-shopping_cart"></span
-                ><span
-                  class="bag d-flex justify-content-center align-items-center"
-                  ><small>1</small></span
-                ></a
-              >
-            </li> --}}
+            <li class="nav-item cart"><a href="/cart" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>{{ count(session('cart', [])) }}</small></span></a></li>
           </ul>
         </div>
       </div>
+      @if(session('success'))
+    			<div class="alert alert-success">
+    			    {{ session('success') }}
+    			</div>
+			@endif
     </nav>
     <!-- END nav -->
 
@@ -492,7 +489,7 @@ $espressoProducts = Coffee::where('category', 'Espresso')->get();
 				                    <h3><a href="/product-single/{{ $productId }}">{{ $name }}</a></h3>
 				                    <p>{{ $short_description }}</p>
 				                    <p class="price"><span>{{ "Rp " . $price }}</span></p>
-                            <p><a href="/checkout/{{ $productId }}" class="btn btn-primary btn-outline-primary">Buy Coffee</a></p>
+                            <p><a href="/cart/{{ $productId }}" class="btn btn-primary btn-outline-primary">Add To Cart</a></p>
 				                </div>
 				            </div>
 				        </div>
