@@ -14,8 +14,8 @@ class News extends Model
         'gambar_berita',
         'kategori_berita',
         'tags_berita',
-        'isi_berita',
         'penulis_berita',
+        'isi_berita',
     ];
 
     protected $casts = [

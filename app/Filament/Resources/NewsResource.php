@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Storage;
+use Filament\Forms\Components\RichEditor;
 
 class NewsResource extends Resource
 {
@@ -67,7 +68,15 @@ class NewsResource extends Resource
                         TextInput::make('penulis_berita')->required()->columnSpanFull(),
 
                         // Column isi_berita
-                        Textarea::make('isi_berita')->required()->columnSpanFull(),
+                        RichEditor::make('isi_berita')
+                            ->required()
+                            ->toolbarButtons([
+                                'bold',
+                                'italic',
+                                'strike',
+                                'link',
+                                'blockquote',
+                            ])->columnSpanFull(),
                         
                     ])
                     ->columns(2),
