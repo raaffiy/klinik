@@ -18,40 +18,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
-
-Route::get('/menu', function () {
-    return view('/menu');
+Route::get('news', function () {
+    return view('news');
 });
-
-Route::get('/cart', function () {
-    return view('/cart');
+Route::get('/news-details', function () {
+    return view('news-details');
 });
-
-Route::get('/blog', function () {
-    return view('/blog');
+Route::get('/product', function () {
+    return view('product');
 });
-
-Route::get('/blog-single', function () {
-    return view('/blog-single');
+Route::get('/product-details', function () {
+    return view('product-details');
 });
-
-Route::get('/checkout', function () {
-    return view('/checkout');
+Route::get('/chat', function () {
+    return view('chat');
 });
-
-Route::get('/product-single', function () {
-    return view('/product-single');
-});
-
-Route::get('/gallery', function () {
-    return view('/gallery');
-});
-
-Route::get('/product-single/{id}', [ProductController::class, 'showProduct']);
-Route::get('/blog-single/{id}', [BlogController::class,'showBlog']);
-Route::get('/checkout/{id}', [BuyController::class,'showBuy']);
-Route::get('/cart/{id}', [CartController::class,'addToCart']);
-Route::patch('update-cart', [CartController::class,'update'])->name('update_cart');
-Route::delete('remove-form-cart', [CartController::class, 'remove'])->name('remove_from_cart');

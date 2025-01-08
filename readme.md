@@ -1,5 +1,4 @@
-## Protorype Website
+===== UPDATE FITURE =====
 
-[![Video](https://img.youtube.com/vi/exLYxIy8dG8/0.jpg)](https://www.youtube.com/watch?v=exLYxIy8dG8)
-
-<p>Link : https://youtu.be/exLYxIy8dG8</p>
+1. pengecekan stress/depresi
+2. menghitung berat badan & tinggi yang ideal
