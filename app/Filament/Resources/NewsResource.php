@@ -3,13 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\NewsResource\Pages;
-use App\Filament\Resources\NewsResource\RelationManagers;
 use App\Models\News;
 use Filament\Forms;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -17,11 +16,8 @@ use Filament\Resources\Table;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Storage;
-use Filament\Forms\Components\RichEditor;
 
 class NewsResource extends Resource
 {
@@ -57,7 +53,6 @@ class NewsResource extends Resource
                                 'Kesehatan Lansia' => 'Kesehatan Lansia'
                             ])->required()->columnSpan(1),
 
-                        // Column tags_berita
                         Select::make('tags_berita')
                             ->options([
                                 'Tips Kesehatan' => 'Tips Kesehatan',
@@ -80,7 +75,7 @@ class NewsResource extends Resource
                                 'link',
                                 'blockquote',
                             ])->columnSpanFull(),
-                        
+
                     ])
                     ->columns(2),
             ]);
@@ -90,18 +85,14 @@ class NewsResource extends Resource
     {
         return $table
             ->columns([
-
-                // structure database news (berita)
                 TextColumn::make('nama_berita')->sortable()->searchable(),
                 ImageColumn::make('gambar_berita'),
                 TextColumn::make('kategori_berita')->sortable()->searchable(),
                 TextColumn::make('tags_berita')->sortable()->searchable(),
                 TextColumn::make('penulis_berita')->sortable()->searchable(),
-                TextColumn::make('isi_berita')->sortable()->searchable()->label('isi_berita'),
-
             ])
             ->filters([
-                //
+                // 
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -110,29 +101,33 @@ class NewsResource extends Resource
                         if ($record->gambar_berita) {
                             Storage::disk('public')->delete($record->gambar_berita);
                         }
+                        if ($record->gambar_berita_2) {
+                            Storage::disk('public')->delete($record->gambar_berita_2);
+                        }
                     }
-                )
+                ),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make()->after(
                     function (Collection $records) {
-                        foreach ($records as $key => $value) {
-                            if ($value->gambar_berita) {
-                                Storage::disk('public')->delete($value->gambar_berita);
+                        foreach ($records as $record) {
+                            if ($record->gambar_berita) {
+                                Storage::disk('public')->delete($record->gambar_berita);
+                            }
+                            if ($record->gambar_berita_2) {
+                                Storage::disk('public')->delete($record->gambar_berita_2);
                             }
                         }
                     }
                 ),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -140,5 +135,5 @@ class NewsResource extends Resource
             'create' => Pages\CreateNews::route('/create'),
             'edit' => Pages\EditNews::route('/{record}/edit'),
         ];
-    }    
+    }
 }

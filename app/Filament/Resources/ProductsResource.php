@@ -186,13 +186,6 @@ class ProductsResource extends Resource
                 ImageColumn::make('gambar_obat'),
                 TextColumn::make('kategori_obat')->sortable()->searchable(),
                 TextColumn::make('keterangan_obat')->sortable()->searchable(),
-                TextColumn::make('deskripsi_obat')->sortable()->searchable()->label('deskripsi_obat'),
-                TextColumn::make('indikasi_obat')->sortable()->searchable()->label('indikasi_obat'),
-                TextColumn::make('komposisi_obat')->sortable()->searchable()->label('komposisi_obat'),
-                TextColumn::make('dosis_obat')->sortable()->searchable()->label('dosis_obat'),
-                TextColumn::make('penggunaan_obat')->sortable()->searchable()->label('penggunaan_obat'),
-                TextColumn::make('efek_samping')->sortable()->searchable()->label('efek_samping'),
-                TextColumn::make('kontraindikasi')->sortable()->searchable()->label('kontraindikasi'),
 
             ])
             ->filters([
@@ -200,36 +193,36 @@ class ProductsResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make()->after(
-                    function (Collection $records) {
-                        foreach ($records as $key => $value) {
-                            if ($value->gambar_obat) {
-                                Storage::disk('public')->delete($value->gambar_obat);
+                Tables\Actions\DeleteAction::make()->after(function (Collection $records) {
+                    foreach ($records as $record) {
+                        $fields = ['gambar_obat', 'gambar_obat_2', 'gambar_obat_3', 'gambar_obat_4'];
+                        foreach ($fields as $field) {
+                            if ($record->$field) {
+                                Storage::disk('public')->delete($record->$field);
                             }
                         }
                     }
-                ),
+                }),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make()->after(
-                    function (Collection $records) {
-                        foreach ($records as $key => $value) {
-                            if ($value->gambar_obat) {
-                                Storage::disk('public')->delete($value->gambar_obat);
+                Tables\Actions\DeleteBulkAction::make()->after(function (Collection $records) {
+                    foreach ($records as $record) {
+                        $fields = ['gambar_obat', 'gambar_obat_2', 'gambar_obat_3', 'gambar_obat_4'];
+                        foreach ($fields as $field) {
+                            if ($record->$field) {
+                                Storage::disk('public')->delete($record->$field);
                             }
                         }
                     }
-                ),
+                }),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -237,5 +230,5 @@ class ProductsResource extends Resource
             'create' => Pages\CreateProducts::route('/create'),
             'edit' => Pages\EditProducts::route('/{record}/edit'),
         ];
-    }    
+    }
 }

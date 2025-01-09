@@ -9,65 +9,77 @@ use Illuminate\Support\Facades\Storage;
 class Products extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-
-        // informasi umum 
-        'nama_obat',                // nama obat & jenis obat & bentuk obat
-        'gambar_obat',              // gambar obat
-        'gambar_obat_2',            // gambar obat 2
-        'gambar_obat_3',            // gambar obat 3
-        'gambar_obat_4',            // gambar obat 4
-        'kategori_obat',            // penyakit yang dikategorikan oleh obat tersebut
-        'keterangan_obat',          // keterangan_obat
-        'deskripsi_obat',           // deskripsi obat
-
-        // spesifikasi obat
-        'indikasi_obat',            // Deskripsi tentang kondisi atau penyakit yang dapat diobati dengan obat ini
-        'komposisi_obat',           // Kandungan bahan aktif dan takaran setiap bahan
-        'dosis_obat',               // Jumlah atau takaran tertentu dari obat yang harus diberikan, biasanya berdasarkan usia atau berat badan
-        'penggunaan_obat',          // Petunjuk penggunaan obat, seperti sebelum/sesudah makan, atau berapa kali sehari
-        'efek_samping',             // Potensi efek samping yang mungkin terjadi pada pasien dan menjelaskan tentang larangan makan-makanan yang tidak diperbolehkan
-        'kontraindikasi',           // Situasi atau kondisi yang membuat obat tidak boleh digunakan, misalnya pada wanita hamil atau pasien dengan penyakit tertentu
-
+        'nama_obat',
+        'gambar_obat',
+        'gambar_obat_2',
+        'gambar_obat_3',
+        'gambar_obat_4',
+        'kategori_obat',
+        'keterangan_obat',
+        'deskripsi_obat',
+        'indikasi_obat',
+        'komposisi_obat',
+        'dosis_obat',
+        'penggunaan_obat',
+        'efek_samping',
+        'kontraindikasi',
     ];
 
-
-    // menganti gambar dengan yang baru
     protected static function boot()
     {
         parent::boot();
+
         static::updating(function ($model) {
-            if ($model->isDirty('gambar_obat') && ($model->getOriginal('gambar_obat') !== null)) {
-                Storage::disk('public')->delete($model->getOriginal('gambar_obat'));
+            $fields = ['gambar_obat', 'gambar_obat_2', 'gambar_obat_3', 'gambar_obat_4'];
+            foreach ($fields as $field) {
+                if ($model->isDirty($field) && ($model->getOriginal($field) !== null)) {
+                    Storage::disk('public')->delete($model->getOriginal($field));
+                }
+            }
+        });
+
+        static::deleting(function ($model) {
+            $fields = ['gambar_obat', 'gambar_obat_2', 'gambar_obat_3', 'gambar_obat_4'];
+            foreach ($fields as $field) {
+                if ($model->$field) {
+                    Storage::disk('public')->delete($model->$field);
+                }
             }
         });
     }
 
-    // Accessor untuk memfilter tag HTML 
     public function getDeskripsiObatAttribute($value)
     {
         return strip_tags($value);
     }
+
     public function getIndikasiObatAttribute($value)
     {
         return strip_tags($value);
     }
+
     public function getKomposisiObatAttribute($value)
     {
         return strip_tags($value);
     }
+
     public function getDosisObatAttribute($value)
     {
         return strip_tags($value);
     }
+
     public function getPenggunaanObatAttribute($value)
     {
         return strip_tags($value);
     }
+
     public function getEfekSampingAttribute($value)
     {
         return strip_tags($value);
     }
+
     public function getKontraindikasiAttribute($value)
     {
         return strip_tags($value);
