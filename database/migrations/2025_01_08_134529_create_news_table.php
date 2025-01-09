@@ -20,6 +20,9 @@ return new class extends Migration
             // Column gambar_berita
             $table->string('gambar_berita')->nullable();
 
+            // Column gambar_berita_2
+            $table->string('gambar_berita_2')->nullable();
+
             // Column kategori_berita & tags_berita
             $table->enum('kategori_berita', [
                 'Kesehatan Umum', 

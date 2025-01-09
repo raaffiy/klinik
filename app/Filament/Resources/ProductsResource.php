@@ -40,7 +40,16 @@ class ProductsResource extends Resource
                         TextInput::make('nama_obat')->required()->columnSpanFull(),
                         
                         // Column gambar_obat
-                        FileUpload::make('gambar_obat')->required()->image()->disk('public')->columnSpanFull(),
+                        FileUpload::make('gambar_obat')->required()->image()->disk('public')->columnSpan(1),
+
+                        // Column gambar_obat_2
+                        FileUpload::make('gambar_obat_2')->image()->disk('public')->columnSpan(1),
+                        
+                        // Column gambar_obat_3
+                        FileUpload::make('gambar_obat_3')->image()->disk('public')->columnSpan(1),
+                        
+                        // Column gambar_obat_4
+                        FileUpload::make('gambar_obat_4')->image()->disk('public')->columnSpan(1),
                         
                         // Column kategori_obat
                         Select::make('kategori_obat')

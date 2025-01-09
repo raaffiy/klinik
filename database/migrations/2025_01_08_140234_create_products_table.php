@@ -20,6 +20,15 @@ return new class extends Migration
             // Column gambar_obat
             $table->string('gambar_obat')->nullable();
 
+            // Column gambar_obat_2
+            $table->string('gambar_obat_2')->nullable();
+
+            // Column gambar_obat_3
+            $table->string('gambar_obat_3')->nullable();
+
+            // Column gambar_obat_4
+            $table->string('gambar_obat_4')->nullable();
+
             // Column kategori_obat
             $table->enum('kategori_obat', [
                 'Infeksi',

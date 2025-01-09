@@ -37,10 +37,13 @@ class NewsResource extends Resource
                     ->schema([
 
                         // Column nama_berita
-                        TextInput::make('nama_berita')->required()->columnSpan(1),
+                        TextInput::make('nama_berita')->required()->columnSpanFull(),
 
                         // Column gambar_berita
                         FileUpload::make('gambar_berita')->required()->image()->disk('public')->columnSpan(1),
+
+                        // Column gambar_berita_2
+                        FileUpload::make('gambar_berita_2')->image()->disk('public')->columnSpan(1),
 
                         // Column kategori_berita & tags_berita
                         Select::make('kategori_berita')
