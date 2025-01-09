@@ -12,6 +12,7 @@ class News extends Model
     protected $fillable = [
         'nama_berita',
         'gambar_berita',
+        'gambar_berita_2',
         'kategori_berita',
         'tags_berita',
         'penulis_berita',

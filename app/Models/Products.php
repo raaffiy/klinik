@@ -14,6 +14,9 @@ class Products extends Model
         // informasi umum 
         'nama_obat',                // nama obat & jenis obat & bentuk obat
         'gambar_obat',              // gambar obat
+        'gambar_obat_2',            // gambar obat 2
+        'gambar_obat_3',            // gambar obat 3
+        'gambar_obat_4',            // gambar obat 4
         'kategori_obat',            // penyakit yang dikategorikan oleh obat tersebut
         'keterangan_obat',          // keterangan_obat
         'deskripsi_obat',           // deskripsi obat
