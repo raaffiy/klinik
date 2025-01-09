@@ -87,7 +87,7 @@
             <br> <br> 
               <div class="card" style="color: #6995ab; background-color: #f0f0f0; border-color: #f0f0f0; border-radius: 10px; padding: 5px; margin: 5px; text-align: center; font-size: 18px; font-weight: bold;">
                   <div class="card-body">
-                    Menangani penyempitan saluran pernapasan, seperti asma dan PPOK (penyakit paru obstruktif kronis).
+                    Penyakit yang disebabkan oleh mikroorganisme seperti bakteri, virus, jamur, atau parasit. Contoh: Flu, TBC, DBD, Pneumonia, HIV/AIDS.
                 </div>
               </div>
           </ul><!-- End Portfolio Filters -->
