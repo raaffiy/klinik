@@ -18,7 +18,10 @@ class EditNews extends EditRecord
             Actions\DeleteAction::make()->after(
                 function (News $record) {
                     if ($record->gambar_berita) {
-                        Storage::disk('public')->delete($record->gambar_berita);
+                            Storage::disk('public')->delete($record->gambar_berita);
+                    }
+                    if ($record->gambar_berita_2) {
+                        Storage::disk('public')->delete($record->gambar_berita_2);
                     }
                 }
             )

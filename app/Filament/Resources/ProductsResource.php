@@ -43,24 +43,15 @@ class ProductsResource extends Resource
                         FileUpload::make('gambar_obat')->required()->image()->disk('public')->columnSpan(1),
 
                         // Column gambar_obat_2
-                        FileUpload::make('gambar_obat_2')->image()->disk('public')->columnSpan(1),
-                        
-                        // Column gambar_obat_3
-                        FileUpload::make('gambar_obat_3')->image()->disk('public')->columnSpan(1),
-                        
-                        // Column gambar_obat_4
-                        FileUpload::make('gambar_obat_4')->image()->disk('public')->columnSpan(1),
+                        FileUpload::make('gambar_obat_2')->required()->image()->disk('public')->columnSpan(1),
                         
                         // Column kategori_obat
                         Select::make('kategori_obat')
                             ->options([
                                 'Infeksi' => 'Infeksi',
                                 'Saluran Pernapasan' => 'Saluran Pernapasan',
-                                'Kardiovaskular' => 'Kardiovaskular',
                                 'Pencernaan' => 'Pencernaan',
                                 'Metabolik' => 'Metabolik',
-                                'Sistem Saraf' => 'Sistem Saraf',
-                                'Autoimun' => 'Autoimun',
                                 'Kulit' => 'Kulit',
                                 'Mental atau Psikologis' => 'Mental atau Psikologis',
                                 'Kanker' => 'Kanker',
@@ -72,11 +63,8 @@ class ProductsResource extends Resource
                                 $descriptions = [
                                     'Infeksi' => 'Penyakit yang disebabkan oleh mikroorganisme seperti bakteri, virus, jamur, atau parasit. (Flu, TBC, DBD, Pneumonia, HIV/AIDS)',
                                     'Saluran Pernapasan' => 'Penyakit yang memengaruhi sistem pernapasan. (Asma, Bronkitis, Sinusitis, Emfisema)',
-                                    'Kardiovaskular' => 'Penyakit yang terkait dengan jantung dan pembuluh darah. (Hipertensi, Penyakit Jantung Koroner, Stroke)',
                                     'Pencernaan' => 'Penyakit yang memengaruhi sistem pencernaan, seperti masalah lambung. (Radang Lambung, Diare, Sembelit , Maag Kronis)',
                                     'Metabolik' => 'Penyakit yang terkait dengan metabolisme tubuh. (Kolesterol Tinggi, Obesitas, Asam Urat)',
-                                    'Sistem Saraf' => 'Penyakit yang memengaruhi otak, saraf, atau sistem saraf pusat. (Migrain, Stroke, Parkinson, Epilepsi)',
-                                    'Autoimun' => 'Penyakit yang terjadi ketika sistem imun menyerang jaringan tubuh sendiri. (Lupus, Multiple Sclerosis, Radang Sendi Kronis)',
                                     'Kulit' => 'Penyakit yang memengaruhi kulit atau jaringan lunak. (Psoriasis, Jerawat, Infeksi Jamur)',
                                     'Mental atau Psikologis' => 'Gangguan yang memengaruhi kesehatan mental dan emosional. (Depresi, Gangguan Cemas, Skizofrenia, Bipolar)',
                                     'Kanker' => 'Penyakit akibat pertumbuhan sel abnormal yang tidak terkendali. (Kanker Payudara, Kanker Paru-paru, Kanker Usus Besar, Leukemia)',
@@ -195,7 +183,7 @@ class ProductsResource extends Resource
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()->after(function (Collection $records) {
                     foreach ($records as $record) {
-                        $fields = ['gambar_obat', 'gambar_obat_2', 'gambar_obat_3', 'gambar_obat_4'];
+                        $fields = ['gambar_obat', 'gambar_obat_2'];
                         foreach ($fields as $field) {
                             if ($record->$field) {
                                 Storage::disk('public')->delete($record->$field);
@@ -207,7 +195,7 @@ class ProductsResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make()->after(function (Collection $records) {
                     foreach ($records as $record) {
-                        $fields = ['gambar_obat', 'gambar_obat_2', 'gambar_obat_3', 'gambar_obat_4'];
+                        $fields = ['gambar_obat', 'gambar_obat_2'];
                         foreach ($fields as $field) {
                             if ($record->$field) {
                                 Storage::disk('public')->delete($record->$field);

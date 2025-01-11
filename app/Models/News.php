@@ -17,16 +17,12 @@ class News extends Model
         'tags_berita',
         'penulis_berita',
         'isi_berita',
+        'isi_berita_2',
     ];
 
     protected $casts = [
         'tags_berita' => 'array',
     ];
-
-    public function getIsiBeritaAttribute($value)
-    {
-        return strip_tags($value);
-    }
 
     protected static function boot()
     {

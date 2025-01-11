@@ -3,7 +3,8 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,15 +24,13 @@ Route::get('/', function () {
 Route::get('news', function () {
     return view('news');
 });
-Route::get('/news-details', function () {
-    return view('news-details');
-});
 Route::get('/product', function () {
     return view('product');
-});
-Route::get('/product-details', function () {
-    return view('product-details');
 });
 Route::get('/chat', function () {
     return view('chat');
 });
+
+
+Route::get('/news-details/{id}', [NewsController::class,'showNews']);
+Route::get('/product-details/{id}', [ProductsController::class,'showProducts']);

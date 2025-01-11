@@ -1,3 +1,20 @@
+<?php
+// Assuming you have a Product model
+use App\Models\Products;
+
+// kategori
+$kategori_1 = Products::where('kategori_obat', 'Infeksi')->get();
+$kategori_2 = Products::where('kategori_obat', 'Saluran Pernapasan')->get();
+$kategori_3 = Products::where('kategori_obat', 'Kardiovaskular')->get();
+$kategori_4 = Products::where('kategori_obat', 'Pencernaan')->get();
+$kategori_5 = Products::where('kategori_obat', 'Metabolik')->get();
+$kategori_6 = Products::where('kategori_obat', 'Sistem Saraf')->get();
+$kategori_7 = Products::where('kategori_obat', 'Autoimun')->get();
+$kategori_8 = Products::where('kategori_obat', 'Kulit')->get();
+$kategori_9 = Products::where('kategori_obat', 'Mental atau Psikologis')->get();
+$kategori_10 = Products::where('kategori_obat', 'Kanker')->get();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,140 +95,98 @@
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Product</li>
-            <li data-filter=".filter-branding">Branding</li>
-            <li data-filter=".filter-books">Books</li>
-            <br> <br> 
-              <div class="card" style="color: #6995ab; background-color: #f0f0f0; border-color: #f0f0f0; border-radius: 10px; padding: 5px; margin: 5px; text-align: center; font-size: 18px; font-weight: bold;">
-                  <div class="card-body">
-                    Penyakit yang disebabkan oleh mikroorganisme seperti bakteri, virus, jamur, atau parasit. Contoh: Flu, TBC, DBD, Pneumonia, HIV/AIDS.
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100" id="categorySelect">
+            <li data-filter="*" class="filter-active" onclick="updateDescription(this)">All</li>
+            <li data-filter=".filter-infeksi" value="infeksi" onclick="updateDescription(this)">Infeksi</li>
+            <li data-filter=".filter-saluran-pernapasan" value="saluranPernapasan" onclick="updateDescription(this)">Saluran Pernapasan</li>
+            <li data-filter=".filter-pencernaan" value="pencernaan" onclick="updateDescription(this)">Pencernaan</li>
+            <li data-filter=".filter-metabolik" value="metabolik" onclick="updateDescription(this)">Metabolik</li>
+            <li data-filter=".filter-kulit" value="kulit" onclick="updateDescription(this)">Kulit</li>
+            <li data-filter=".filter-mental" value="mental" onclick="updateDescription(this)">Mental atau Psikologis</li>
+            <li data-filter=".filter-kanker" value="kanker" onclick="updateDescription(this)">Kanker</li>
+            <br><br>
+            <div class="card" style="color: #6995ab; background-color: #f0f0f0; border-color: #f0f0f0; border-radius: 10px; padding: 5px; margin: 5px; text-align: center; font-size: 18px; font-weight: bold;">
+                <div class="card-body" id="description">
+                    Pilih kategori penyakit untuk melihat deskripsinya.
                 </div>
-              </div>
-          </ul><!-- End Portfolio Filters -->
-
-          <br>
+            </div>
+          </ul>
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-infeksi">
               <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-all" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
+            @foreach ($kategori_2 as $products)  <!-- You can change $kategori_1 to any of your collections -->
+            <?php
+                $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+                $nama_obat = $products->nama_obat;
+                $productsId = $products->id;
+            ?>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-saluran-pernapasan">
+              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>{{ $nama_obat }}</h4>
+                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
+            @endforeach
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
+            @foreach ($kategori_4 as $products)  <!-- You can change $kategori_1 to any of your collections -->
+            <?php
+                $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+                $nama_obat = $products->nama_obat;
+                $productsId = $products->id;
+            ?>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pencernaan">
+              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>{{ $nama_obat }}</h4>
+                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
+            @endforeach
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-metabolik">
               <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Books 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
                 <a href="assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kulit">
               <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
                 <a href="assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mental">
               <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
                 <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kanker">
               <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
                 <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
@@ -226,77 +201,8 @@
   </main>
 
   <footer id="footer" class="footer">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="/" class="logo d-flex align-items-center">
-            <span class="sitename">iLanding</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
-          <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-
     <div class="container copyright text-center mt-4">
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
@@ -314,6 +220,26 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  {{-- Script kategori penyakit --}}
+  <script>
+      function updateDescription(element) {
+          const descriptions = {
+              infeksi: "Penyakit yang disebabkan oleh mikroorganisme seperti bakteri, virus, jamur, atau parasit. (Flu, TBC, DBD, Pneumonia, HIV/AIDS)",
+              saluranPernapasan: "Penyakit yang memengaruhi sistem pernapasan. (Asma, Bronkitis, Sinusitis, Emfisema)",
+              pencernaan: "Penyakit yang memengaruhi sistem pencernaan, seperti masalah lambung. (Radang Lambung, Diare, Sembelit , Maag Kronis)",
+              metabolik: "Penyakit yang terkait dengan metabolisme tubuh. (Kolesterol Tinggi, Obesitas, Asam Urat)",
+              kulit: "Penyakit yang memengaruhi kulit atau jaringan lunak. (Psoriasis, Jerawat, Infeksi Jamur)",
+              mental: "Gangguan yang memengaruhi kesehatan mental dan emosional. (Depresi, Gangguan Cemas, Skizofrenia, Bipolar)",
+              kanker: "Penyakit akibat pertumbuhan sel abnormal yang tidak terkendali. (Kanker Payudara, Kanker Paru-paru, Kanker Usus Besar, Leukemia)"
+          };
+
+          const value = element.getAttribute('value');
+          const descriptionDiv = document.getElementById('description');
+
+          descriptionDiv.textContent = descriptions[value] || "Pilih kategori penyakit untuk melihat deskripsinya.";
+      }
+  </script>
 
 </body>
 

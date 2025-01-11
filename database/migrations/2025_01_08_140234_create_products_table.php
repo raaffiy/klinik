@@ -23,12 +23,6 @@ return new class extends Migration
             // Column gambar_obat_2
             $table->string('gambar_obat_2')->nullable();
 
-            // Column gambar_obat_3
-            $table->string('gambar_obat_3')->nullable();
-
-            // Column gambar_obat_4
-            $table->string('gambar_obat_4')->nullable();
-
             // Column kategori_obat
             $table->enum('kategori_obat', [
                 'Infeksi',
@@ -44,28 +38,28 @@ return new class extends Migration
             ])->nullable();
 
             // Column keterangan_obat
-            $table->text('keterangan_obat')->nullable();
+            $table->longText('keterangan_obat')->nullable();
 
             // Column deskripsi_obat
-            $table->text('deskripsi_obat')->nullable();
+            $table->longText('deskripsi_obat')->nullable();
 
             // Column indikasi_obat
-            $table->string('indikasi_obat')->nullable();
+            $table->longText('indikasi_obat')->nullable();
 
             // Column komposisi_obat
-            $table->string('komposisi_obat')->nullable();
+            $table->longText('komposisi_obat')->nullable();
 
             // Column dosis_obat
-            $table->string('dosis_obat')->nullable();
+            $table->longText('dosis_obat')->nullable();
 
             // Column penggunaan_obat
-            $table->text('penggunaan_obat')->nullable();
+            $table->longText('penggunaan_obat')->nullable();
 
             // Column efek_samping
-            $table->string('efek_samping')->nullable();
+            $table->longText('efek_samping')->nullable();
 
             // Column kontraindikasi
-            $table->string('kontraindikasi')->nullable();
+            $table->longText('kontraindikasi')->nullable();
             $table->timestamps();
         });
     }

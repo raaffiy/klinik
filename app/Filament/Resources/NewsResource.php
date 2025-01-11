@@ -76,6 +76,17 @@ class NewsResource extends Resource
                                 'blockquote',
                             ])->columnSpanFull(),
 
+                        // Column isi_berita_2
+                        RichEditor::make('isi_berita_2')
+                            ->required()
+                            ->toolbarButtons([
+                                'bold',
+                                'italic',
+                                'strike',
+                                'link',
+                                'blockquote',
+                            ])->columnSpanFull(),
+
                     ])
                     ->columns(2),
             ]);
@@ -88,7 +99,6 @@ class NewsResource extends Resource
                 TextColumn::make('nama_berita')->sortable()->searchable(),
                 ImageColumn::make('gambar_berita'),
                 TextColumn::make('kategori_berita')->sortable()->searchable(),
-                TextColumn::make('tags_berita')->sortable()->searchable(),
                 TextColumn::make('penulis_berita')->sortable()->searchable(),
             ])
             ->filters([

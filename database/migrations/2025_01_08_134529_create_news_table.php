@@ -42,6 +42,9 @@ return new class extends Migration
 
             // Column isi_berita
             $table->longText('isi_berita')->nullable();
+            
+            // Column isi_berita_2
+            $table->longText('isi_berita_2')->nullable();
 
             // timestamps
             $table->timestamps();

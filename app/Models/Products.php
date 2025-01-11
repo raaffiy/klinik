@@ -14,8 +14,6 @@ class Products extends Model
         'nama_obat',
         'gambar_obat',
         'gambar_obat_2',
-        'gambar_obat_3',
-        'gambar_obat_4',
         'kategori_obat',
         'keterangan_obat',
         'deskripsi_obat',
@@ -32,7 +30,7 @@ class Products extends Model
         parent::boot();
 
         static::updating(function ($model) {
-            $fields = ['gambar_obat', 'gambar_obat_2', 'gambar_obat_3', 'gambar_obat_4'];
+            $fields = ['gambar_obat', 'gambar_obat_2'];
             foreach ($fields as $field) {
                 if ($model->isDirty($field) && ($model->getOriginal($field) !== null)) {
                     Storage::disk('public')->delete($model->getOriginal($field));
@@ -41,47 +39,12 @@ class Products extends Model
         });
 
         static::deleting(function ($model) {
-            $fields = ['gambar_obat', 'gambar_obat_2', 'gambar_obat_3', 'gambar_obat_4'];
+            $fields = ['gambar_obat', 'gambar_obat_2'];
             foreach ($fields as $field) {
                 if ($model->$field) {
                     Storage::disk('public')->delete($model->$field);
                 }
             }
         });
-    }
-
-    public function getDeskripsiObatAttribute($value)
-    {
-        return strip_tags($value);
-    }
-
-    public function getIndikasiObatAttribute($value)
-    {
-        return strip_tags($value);
-    }
-
-    public function getKomposisiObatAttribute($value)
-    {
-        return strip_tags($value);
-    }
-
-    public function getDosisObatAttribute($value)
-    {
-        return strip_tags($value);
-    }
-
-    public function getPenggunaanObatAttribute($value)
-    {
-        return strip_tags($value);
-    }
-
-    public function getEfekSampingAttribute($value)
-    {
-        return strip_tags($value);
-    }
-
-    public function getKontraindikasiAttribute($value)
-    {
-        return strip_tags($value);
     }
 }

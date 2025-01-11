@@ -16,9 +16,14 @@ class EditProducts extends EditRecord
     {
         return [
             Actions\DeleteAction::make()->after(
-                function (Products $record) {
-                    if ($record->gambar_obat) {
-                        Storage::disk('public')->delete($record->gambar_obat);
+                function (Products $recordS) {
+                    foreach ($recordS as $record) {
+                        $fields = ['gambar_obat', 'gambar_obat_2'];
+                        foreach ($fields as $field) {
+                            if ($record->$field) {
+                                Storage::disk('public')->delete($record->$field);
+                            }
+                        }
                     }
                 }
             )
