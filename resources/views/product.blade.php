@@ -5,14 +5,11 @@ use App\Models\Products;
 // kategori
 $kategori_1 = Products::where('kategori_obat', 'Infeksi')->get();
 $kategori_2 = Products::where('kategori_obat', 'Saluran Pernapasan')->get();
-$kategori_3 = Products::where('kategori_obat', 'Kardiovaskular')->get();
-$kategori_4 = Products::where('kategori_obat', 'Pencernaan')->get();
-$kategori_5 = Products::where('kategori_obat', 'Metabolik')->get();
-$kategori_6 = Products::where('kategori_obat', 'Sistem Saraf')->get();
-$kategori_7 = Products::where('kategori_obat', 'Autoimun')->get();
-$kategori_8 = Products::where('kategori_obat', 'Kulit')->get();
-$kategori_9 = Products::where('kategori_obat', 'Mental atau Psikologis')->get();
-$kategori_10 = Products::where('kategori_obat', 'Kanker')->get();
+$kategori_3 = Products::where('kategori_obat', 'Pencernaan')->get();
+$kategori_4 = Products::where('kategori_obat', 'Metabolik')->get();
+$kategori_5 = Products::where('kategori_obat', 'Kulit')->get();
+$kategori_6 = Products::where('kategori_obat', 'Mental atau Psikologis')->get();
+$kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
 ?>
 
 <!DOCTYPE html>
@@ -114,16 +111,23 @@ $kategori_10 = Products::where('kategori_obat', 'Kanker')->get();
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
+            @foreach ($kategori_1 as $products)
+            <?php
+                $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+                $nama_obat = $products->nama_obat;
+                $productsId = $products->id;
+            ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-infeksi">
-              <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
+              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-all" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>{{ $nama_obat }}</h4>
+                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
+            @endforeach
 
-            @foreach ($kategori_2 as $products)  <!-- You can change $kategori_1 to any of your collections -->
+            @foreach ($kategori_2 as $products) 
             <?php
                 $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
                 $nama_obat = $products->nama_obat;
@@ -139,7 +143,7 @@ $kategori_10 = Products::where('kategori_obat', 'Kanker')->get();
             </div><!-- End Portfolio Item -->
             @endforeach
 
-            @foreach ($kategori_4 as $products)  <!-- You can change $kategori_1 to any of your collections -->
+            @foreach ($kategori_3 as $products) 
             <?php
                 $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
                 $nama_obat = $products->nama_obat;
@@ -155,41 +159,69 @@ $kategori_10 = Products::where('kategori_obat', 'Kanker')->get();
             </div><!-- End Portfolio Item -->
             @endforeach
 
+            @foreach ($kategori_4 as $products)  
+            <?php
+                $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+                $nama_obat = $products->nama_obat;
+                $productsId = $products->id;
+            ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-metabolik">
-              <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
+              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Books 1</h4>
-                <a href="assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>{{ $nama_obat }}</h4>
+                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
+            @endforeach
 
+            @foreach ($kategori_5 as $products)  
+            <?php
+                $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+                $nama_obat = $products->nama_obat;
+                $productsId = $products->id;
+            ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kulit">
-              <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
+              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 2</h4>
-                <a href="assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>{{ $nama_obat }}</h4>
+                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
+            @endforeach
 
+            @foreach ($kategori_6 as $products)  
+            <?php
+                $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+                $nama_obat = $products->nama_obat;
+                $productsId = $products->id;
+            ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mental">
-              <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
+              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>{{ $nama_obat }}</h4>
+                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
+            @endforeach
 
+            @foreach ($kategori_7 as $products)  
+            <?php
+                $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+                $nama_obat = $products->nama_obat;
+                $productsId = $products->id;
+            ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kanker">
-              <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
+              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <h4>{{ $nama_obat }}</h4>
+                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
+            @endforeach
 
           </div><!-- End Portfolio Container -->
 
