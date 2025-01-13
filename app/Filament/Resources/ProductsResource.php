@@ -86,22 +86,38 @@ class ProductsResource extends Resource
                         RichEditor::make('deskripsi_obat')
                             ->required()
                             ->toolbarButtons([
-                                'bold',
-                                'italic',
-                                'strike',
-                                'link',
                                 'blockquote',
+                                'bold',
+                                'bulletList',
+                                'codeBlock',
+                                'h2',
+                                'h3',
+                                'italic',
+                                'link',
+                                'orderedList',
+                                'redo',
+                                'strike',
+                                'underline',
+                                'undo',
                             ])->columnSpanFull(),
 
                         // Column indikasi_obat
                         RichEditor::make('indikasi_obat')
                             ->required()
                             ->toolbarButtons([
-                                'bold',
-                                'italic',
-                                'strike',
-                                'link',
                                 'blockquote',
+                                'bold',
+                                'bulletList',
+                                'codeBlock',
+                                'h2',
+                                'h3',
+                                'italic',
+                                'link',
+                                'orderedList',
+                                'redo',
+                                'strike',
+                                'underline',
+                                'undo',
                             ])->columnSpanFull(),
 
                         // Column komposisi_obat

@@ -69,22 +69,38 @@ class NewsResource extends Resource
                         RichEditor::make('isi_berita')
                             ->required()
                             ->toolbarButtons([
-                                'bold',
-                                'italic',
-                                'strike',
-                                'link',
                                 'blockquote',
+                                'bold',
+                                'bulletList',
+                                'codeBlock',
+                                'h2',
+                                'h3',
+                                'italic',
+                                'link',
+                                'orderedList',
+                                'redo',
+                                'strike',
+                                'underline',
+                                'undo',
                             ])->columnSpanFull(),
 
                         // Column isi_berita_2
                         RichEditor::make('isi_berita_2')
                             ->required()
                             ->toolbarButtons([
-                                'bold',
-                                'italic',
-                                'strike',
-                                'link',
                                 'blockquote',
+                                'bold',
+                                'bulletList',
+                                'codeBlock',
+                                'h2',
+                                'h3',
+                                'italic',
+                                'link',
+                                'orderedList',
+                                'redo',
+                                'strike',
+                                'underline',
+                                'undo',
                             ])->columnSpanFull(),
 
                     ])
