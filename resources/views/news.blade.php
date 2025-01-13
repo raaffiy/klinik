@@ -10,7 +10,7 @@ $kategori_4 = News::where('kategori_berita', 'Kesehatan Mental')->get();
 $kategori_5 = News::where('kategori_berita', 'Olahraga dan Kebugaran')->get();
 $kategori_6 = News::where('kategori_berita', 'Kesehatan Anak')->get();
 $kategori_7 = News::where('kategori_berita', 'Kesehatan Lansia')->get();
-$all_news = News::all();
+$all_news = News::paginate(4); 
 
 // Tags
 $tag_1 = News::where('tags_berita', 'Tips Kesehatan')->get();
@@ -104,7 +104,7 @@ $all_tags = News::all();
             <div class="container">
               <div class="row gy-4">
 
-                @foreach ($all_news as $news)  <!-- You can change $kategori_1 to any of your collections -->
+                @foreach ($all_news as $news)
                   <?php
                       $gambar_berita = Storage::disk('public')->url($news->gambar_berita);
                       $nama_berita = $news->nama_berita;
@@ -113,17 +113,15 @@ $all_tags = News::all();
                   ?>
                   <div class="col-lg-6">
                       <article>
-                      
                           <div class="post-img">
-                            <img src="{{ $gambar_berita }}" alt="" class="img-fluid">
+                              <img src="{{ $gambar_berita }}" alt="" class="img-fluid">
                           </div>
-                        
+                          
                           <p class="post-category">{{ $kategori_berita }}</p>
-                        
+                          
                           <h2 class="title">
                               <a href="/news-details/{{ $newsId }}">{{ $nama_berita }}</a>
                           </h2>
-                        
                       </article>
                   </div><!-- End post list item -->
               @endforeach
@@ -136,19 +134,10 @@ $all_tags = News::all();
           <!-- Blog Pagination Section -->
           <section id="blog-pagination" class="blog-pagination section">
 
-            <div class="container">
-              <div class="d-flex justify-content-center">
-                <ul>
-                  <li><a href="#"><i class="bi bi-chevron-left"></i></a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#" class="active">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li>...</li>
-                  <li><a href="#">10</a></li>
-                  <li><a href="#"><i class="bi bi-chevron-right"></i></a></li>
-                </ul>
-              </div>
+            <div class="blog-pagination section">
+                <div class="d-flex justify-content-center">
+                    {{ $all_news->links('pagination::bootstrap-4') }}
+                </div>
             </div>
 
           </section><!-- /Blog Pagination Section -->
