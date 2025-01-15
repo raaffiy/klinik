@@ -6,6 +6,8 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
+use App\Models\News;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,16 +23,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('news', function () {
-    return view('news');
-});
+
+Route::get('/news-details/{id}', [NewsController::class,'showNews']);
+Route::get('/news', [NewsController::class, 'search'])->name('news.search');
+
 Route::get('/product', function () {
     return view('product');
 });
+Route::get('/product-details/{id}', [ProductsController::class,'showProducts']);
+
 Route::get('/chat', function () {
     return view('chat');
 });
-
-
-Route::get('/news-details/{id}', [NewsController::class,'showNews']);
-Route::get('/product-details/{id}', [ProductsController::class,'showProducts']);

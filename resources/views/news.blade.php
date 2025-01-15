@@ -1,26 +1,3 @@
-<?php
-// Assuming you have a Product model
-use App\Models\News;
-
-// kategori
-$kategori_1 = News::where('kategori_berita', 'Kesehatan Umum')->get();
-$kategori_2 = News::where('kategori_berita', 'Gizi dan Nutrisi')->get();
-$kategori_3 = News::where('kategori_berita', 'Penyakit dan Pencegahan')->get();
-$kategori_4 = News::where('kategori_berita', 'Kesehatan Mental')->get();
-$kategori_5 = News::where('kategori_berita', 'Olahraga dan Kebugaran')->get();
-$kategori_6 = News::where('kategori_berita', 'Kesehatan Anak')->get();
-$kategori_7 = News::where('kategori_berita', 'Kesehatan Lansia')->get();
-$all_news = News::paginate(4); 
-
-// Tags
-$tag_1 = News::where('tags_berita', 'Tips Kesehatan')->get();
-$tag_2 = News::where('tags_berita', 'Edukasi Kesehatan')->get();
-$tag_4 = News::where('tags_berita', 'Trending Kesehatan')->get();
-$tag_5 = News::where('tags_berita', 'Panduan Hidup Sehat')->get();
-$tag_6 = News::where('tags_berita', 'Rekomendasi Diet')->get();
-$all_tags = News::all();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,14 +14,14 @@ $all_tags = News::all();
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
 </head>
 
 <body class="service-details-page">
@@ -104,27 +81,33 @@ $all_tags = News::all();
             <div class="container">
               <div class="row gy-4">
 
-                @foreach ($all_news as $news)
-                  <?php
-                      $gambar_berita = Storage::disk('public')->url($news->gambar_berita);
-                      $nama_berita = $news->nama_berita;
-                      $kategori_berita = $news->kategori_berita;
-                      $newsId = $news->id;
-                  ?>
-                  <div class="col-lg-6">
-                      <article>
-                          <div class="post-img">
-                              <img src="{{ $gambar_berita }}" alt="" class="img-fluid">
-                          </div>
-                          
-                          <p class="post-category">{{ $kategori_berita }}</p>
-                          
-                          <h2 class="title">
-                              <a href="/news-details/{{ $newsId }}">{{ $nama_berita }}</a>
-                          </h2>
-                      </article>
-                  </div><!-- End post list item -->
-              @endforeach
+                <div class="container">
+                    <div class="row gy-4">
+                        @if ($all_news->count() > 0)
+                            @foreach ($all_news as $news)
+                                <?php
+                                    $gambar_berita = Storage::disk('public')->url($news->gambar_berita);
+                                    $nama_berita = $news->nama_berita;
+                                    $kategori_berita = $news->kategori_berita;
+                                    $newsId = $news->id;
+                                ?>
+                                <div class="col-lg-6">
+                                    <article>
+                                        <div class="post-img">
+                                            <img src="{{ $gambar_berita }}" alt="" class="img-fluid">
+                                        </div>
+                                        <p class="post-category">{{ $kategori_berita }}</p>
+                                        <h2 class="title">
+                                            <a href="/news-details/{{ $newsId }}">{{ $nama_berita }}</a>
+                                        </h2>
+                                    </article>
+                                </div>
+                            @endforeach
+                        @else
+                            <p class="text-center">Tidak ditemukan berita yang sesuai dengan pencarian Anda.</p>
+                        @endif
+                    </div>
+                </div>
                 
               </div>
             </div>
@@ -136,7 +119,7 @@ $all_tags = News::all();
 
             <div class="blog-pagination section">
                 <div class="d-flex justify-content-center">
-                    {{ $all_news->links('pagination::bootstrap-4') }}
+                    {{ $all_news->appends(['query' => request('query')])->links('pagination::bootstrap-4') }}
                 </div>
             </div>
 
@@ -148,16 +131,14 @@ $all_tags = News::all();
 
           <div class="widgets-container">
 
-            <!-- Search Widget -->
+            {{-- Search --}}
             <div class="search-widget widget-item">
-
-              <h3 class="widget-title">Search</h3>
-              <form action="">
-                <input type="text">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-              </form>
-
-            </div><!--/Search Widget -->
+                <h3 class="widget-title">Search</h3>
+                <form action="{{ route('news.search') }}" method="GET">
+                    <input type="text" name="query" placeholder="Search by News Name" value="{{ request('query') }}">
+                    <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
 
             <!-- Categories Widget -->
             <div class="categories-widget widget-item">
@@ -276,16 +257,15 @@ $all_tags = News::all();
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{ asset('assets/js/main.js') }}"></script>
 
 </body>
-
 </html>
