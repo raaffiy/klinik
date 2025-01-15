@@ -153,14 +153,12 @@ $all_tags = News::all();
 
             <!-- Search Widget -->
             <div class="search-widget widget-item">
-
               <h3 class="widget-title">Search</h3>
-              <form action="">
-                <input type="text">
+              <form action="{{ route('news.search') }}" method="GET">
+                <input type="text" name="query" placeholder="Search by News Name" value="{{ request('query') }}">
                 <button type="submit" title="Search"><i class="bi bi-search"></i></button>
               </form>
-
-            </div><!--/Search Widget -->
+            </div>
 
             <!-- Categories Widget -->
             <div class="categories-widget widget-item">
