@@ -65,7 +65,7 @@ $all_tags = News::all();
           <li class="dropdown"><a href="/#features"><span>Features</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="/news">News</a></li>
-              <li><a href="/product">Medicine</a></li>
+              <li><a href="/medicine">Medicine</a></li>
               <li><a href="/chat">AI (GIGIKU)</a></li>
             </ul>
           </li>

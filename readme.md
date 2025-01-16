@@ -14,9 +14,6 @@ yang tidak membutuhkan portal:
 3. pengecekan stress/depresi (optional)
 4. menghitung berat badan & tinggi yang ideal (optional)
 
-revisi:
-1. ubah "product" menjadi "Medicine"
-
 ================================================
 =========== HALAMAN YANG DITAMPILKAN ===========
 ================================================

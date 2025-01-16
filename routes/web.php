@@ -27,10 +27,10 @@ Route::get('/', function () {
 Route::get('/news-details/{id}', [NewsController::class,'showNews']);
 Route::get('/news', [NewsController::class, 'search'])->name('news.search');
 
-Route::get('/product', function () {
+Route::get('/medicine', function () {
     return view('product');
 });
-Route::get('/product-details/{id}', [ProductsController::class,'showProducts']);
+Route::get('/medicine/{id}', [ProductsController::class,'showProducts']);
 
 Route::get('/chat', function () {
     return view('chat');
