@@ -42,7 +42,7 @@
           <li class="dropdown"><a href="/#features"><span>Features</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="/news">News</a></li>
-              <li><a href="/product">Products</a></li>
+              <li><a href="/product">Medicine</a></li>
               <li><a href="/chat">AI (GIGIKU)</a></li>
             </ul>
           </li>
@@ -86,10 +86,10 @@
                         @if ($all_news->count() > 0)
                             @foreach ($all_news as $news)
                                 <?php
-                                    $gambar_berita = Storage::disk('public')->url($news->gambar_berita);
-                                    $nama_berita = $news->nama_berita;
-                                    $kategori_berita = $news->kategori_berita;
-                                    $newsId = $news->id;
+    $gambar_berita = Storage::disk('public')->url($news->gambar_berita);
+    $nama_berita = $news->nama_berita;
+    $kategori_berita = $news->kategori_berita;
+    $newsId = $news->id;
                                 ?>
                                 <div class="col-lg-6">
                                     <article>

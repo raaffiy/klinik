@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Product Details - gigiKu. Ahli Gigi</title>
+  <title>Medicine Details - gigiKu. Ahli Gigi</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -41,7 +41,7 @@
           <li class="dropdown"><a href="/#features"><span>Features</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="/news">News</a></li>
-              <li><a href="/product">Products</a></li>
+              <li><a href="/product">Medicine</a></li>
               <li><a href="/chat">AI (GIGIKU)</a></li>
             </ul>
           </li>
@@ -58,12 +58,12 @@
     <!-- Page Title -->
     <div class="page-title light-background">
       <div class="container">
-        <h1>Product Details</h1>
+        <h1>Medicine Details</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Home</a></li>
-            <li><a href="/product">Product Page</a></li>
-            <li class="current">Product Details</li>
+            <li><a href="/product">Medicine Page</a></li>
+            <li class="current">Medicine Details</li>
           </ol>
         </nav>
       </div>

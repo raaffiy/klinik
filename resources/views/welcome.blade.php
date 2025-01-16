@@ -41,7 +41,7 @@
           <li class="dropdown"><a href="/#features"><span>Features</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="/news">News</a></li>
-              <li><a href="/product">Products</a></li>
+              <li><a href="/product">Medicine</a></li>
               <li><a href="/chat">AI (GIGIKU)</a></li>
             </ul>
           </li>
@@ -296,7 +296,7 @@
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
             <div class="features-item">
               <i class="bi bi-prescription2" style="color: #5578ff;"></i>
-              <h3><a href="/product" class="stretched-link">Products</a></h3>
+              <h3><a href="/product" class="stretched-link">Medicine</a></h3>
             </div>
           </div><!-- End Feature Item -->
 
