@@ -122,7 +122,7 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
               <div class="portfolio-info">
                 <h4>{{ $nama_obat }}</h4>
                 <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
             @endforeach
@@ -138,7 +138,7 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
               <div class="portfolio-info">
                 <h4>{{ $nama_obat }}</h4>
                 <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
             @endforeach
@@ -154,7 +154,7 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
               <div class="portfolio-info">
                 <h4>{{ $nama_obat }}</h4>
                 <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
             @endforeach
@@ -170,7 +170,7 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
               <div class="portfolio-info">
                 <h4>{{ $nama_obat }}</h4>
                 <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
             @endforeach
@@ -186,7 +186,7 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
               <div class="portfolio-info">
                 <h4>{{ $nama_obat }}</h4>
                 <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
             @endforeach
@@ -202,7 +202,7 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
               <div class="portfolio-info">
                 <h4>{{ $nama_obat }}</h4>
                 <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
             @endforeach
@@ -218,7 +218,7 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
               <div class="portfolio-info">
                 <h4>{{ $nama_obat }}</h4>
                 <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/product-details/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
             @endforeach
