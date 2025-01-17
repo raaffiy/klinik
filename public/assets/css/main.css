@@ -3091,3 +3091,27 @@ section,
 .blog-details .meta-bottom .share i {
   padding-left: 5px;
 }
+
+/* Style untuk tag default */
+.tag-item {
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover state */
+.tag-item:hover {
+  color: white;
+  background-color:  rgb(49, 174, 215);
+}
+
+/* Selected state */
+.tag-item.selected {
+  color: white;
+  background-color:  rgb(49, 174, 215);
+}

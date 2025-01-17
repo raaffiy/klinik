@@ -1,3 +1,12 @@
+<?php
+// Assuming you have a Product model
+use App\Models\News;
+
+$categories = News::select('kategori_berita')->distinct()->get();
+$tags = News::select('tags_berita')->distinct()->get();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,28 +93,24 @@
                 <div class="container">
                     <div class="row gy-4">
                         @if ($all_news->count() > 0)
-                            @foreach ($all_news as $news)
-                                <?php
-    $gambar_berita = Storage::disk('public')->url($news->gambar_berita);
-    $nama_berita = $news->nama_berita;
-    $kategori_berita = $news->kategori_berita;
-    $newsId = $news->id;
-                                ?>
-                                <div class="col-lg-6">
-                                    <article>
-                                        <div class="post-img">
-                                            <img src="{{ $gambar_berita }}" alt="" class="img-fluid">
-                                        </div>
-                                        <p class="post-category">{{ $kategori_berita }}</p>
-                                        <h2 class="title">
-                                            <a href="/news-details/{{ $newsId }}">{{ $nama_berita }}</a>
-                                        </h2>
-                                    </article>
-                                </div>
-                            @endforeach
-                        @else
-                            <p class="text-center">Tidak ditemukan berita yang sesuai dengan pencarian Anda.</p>
-                        @endif
+                          @foreach ($all_news as $news)
+                            <div class="col-lg-6">
+                            <article>
+                            <div class="post-img">
+                              <img src="{{ Storage::disk('public')->url($news->gambar_berita) }}" alt="" class="img-fluid">
+                            </div>
+                            <p class="post-category">{{ $news->kategori_berita }}</p>
+                            <h2 class="title">
+                              <a href="{{ route('news.details', $news->id) }}">{{ $news->nama_berita }}</a>
+                            </h2>
+                            </article>
+                            </div>
+                          @endforeach
+                          @else
+                          <div class="alert alert-info text-center">
+                            Tidak ada berita yang ditemukan. Silakan coba kata kunci atau filter yang berbeda.
+                          </div>
+                      @endif
                     </div>
                 </div>
                 
@@ -140,35 +145,43 @@
                 </form>
             </div>
 
-            <!-- Categories Widget -->
-            <div class="categories-widget widget-item">
+              <!-- Categories Widget -->
+              <div class="categories-widget widget-item">
+                <h3 class="widget-title">Categories</h3>
+                <ul class="mt-3">
+                  <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Umum']) }}">Kesehatan Umum</a></li>
+                  <li><a href="{{ route('news.filter', ['category' => 'Gizi dan Nutrisi']) }}">Gizi dan Nutrisi</a></li>
+                  <li><a href="{{ route('news.filter', ['category' => 'Penyakit dan Pencegahan']) }}">Penyakit dan Pencegahan</a></li>
+                  <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Mental']) }}">Kesehatan Mental</a></li>
+                  <li><a href="{{ route('news.filter', ['category' => 'Olahraga dan Kebugaran']) }}">Olahraga dan Kebugaran</a></li>
+                  <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Anak']) }}">Kesehatan Anak</a></li>
+                  <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Lansia']) }}">Kesehatan Lansia</a></li>
+                </ul>
+              </div>
+              <!-- /Categories Widget -->
 
-              <h3 class="widget-title">Categories</h3>
-              <ul class="mt-3">
-                <li><a href="#">Kesehatan Umum<span></span></a></li>
-                <li><a href="#">Gizi dan Nutrisi<span></span></a></li>
-                <li><a href="#">Penyakit dan Pencegahan<span></span></a></li>
-                <li><a href="#">Kesehatan Mental<span></span></a></li>
-                <li><a href="#">Olahraga dan Kebugaran<span></span></a></li>
-                <li><a href="#">Kesehatan Anak<span></span></a></li>
-                <li><a href="#">Kesehatan Lansia<span></span></a></li>
-              </ul>
-
-            </div><!--/Categories Widget -->
-
-            <!-- Tags Widget -->
-            <div class="tags-widget widget-item">
-
-              <h3 class="widget-title">Tags</h3>
-              <ul>
-                <li><a href="#">Tips Kesehatan</a></li>
-                <li><a href="#">Edukasi Kesehatan</a></li>
-                <li><a href="#">Trending Kesehatan</a></li>
-                <li><a href="#">Panduan Hidup Sehat</a></li>
-                <li><a href="#">Rekomendasi Diet</a></li>
-              </ul>
-
-            </div><!--/Tags Widget -->
+              <!-- Tags Widget -->
+              <div class="tags-widget widget-item">
+                <h3 class="widget-title">Tags</h3>
+                <ul>
+                  <li><a href="#" class="tag-item">Tips Kesehatan</a></li>
+                  <li><a href="#" class="tag-item">Edukasi Kesehatan</a></li>
+                  <li><a href="#" class="tag-item">Trending Kesehatan</a></li>
+                  <li><a href="#" class="tag-item">Panduan Hidup Sehat</a></li>
+                  <li><a href="#" class="tag-item">Rekomendasi Diet</a></li>
+                </ul>
+              </div>
+              <!-- /Tags Widget -->
+              
+              <script>
+                // Tambahkan event listener ke semua tag
+                document.querySelectorAll('.tag-item').forEach(function (item) {
+                  item.addEventListener('click', function (event) {
+                    event.preventDefault(); // Mencegah navigasi default
+                    this.classList.toggle('selected'); // Tambahkan atau hapus class "selected"
+                  });
+                });
+              </script>
 
           </div>
 

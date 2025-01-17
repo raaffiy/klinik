@@ -1,26 +1,3 @@
-<?php
-// Assuming you have a Product model
-use App\Models\News;
-
-// kategori
-$kategori_1 = News::where('kategori_berita', 'Kesehatan Umum')->get();
-$kategori_2 = News::where('kategori_berita', 'Gizi dan Nutrisi')->get();
-$kategori_3 = News::where('kategori_berita', 'Penyakit dan Pencegahan')->get();
-$kategori_4 = News::where('kategori_berita', 'Kesehatan Mental')->get();
-$kategori_5 = News::where('kategori_berita', 'Olahraga dan Kebugaran')->get();
-$kategori_6 = News::where('kategori_berita', 'Kesehatan Anak')->get();
-$kategori_7 = News::where('kategori_berita', 'Kesehatan Lansia')->get();
-$all_news = News::all();
-
-// Tags
-$tag_1 = News::where('tags_berita', 'Tips Kesehatan')->get();
-$tag_2 = News::where('tags_berita', 'Edukasi Kesehatan')->get();
-$tag_4 = News::where('tags_berita', 'Trending Kesehatan')->get();
-$tag_5 = News::where('tags_berita', 'Panduan Hidup Sehat')->get();
-$tag_6 = News::where('tags_berita', 'Rekomendasi Diet')->get();
-$all_tags = News::all();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -162,19 +139,18 @@ $all_tags = News::all();
 
             <!-- Categories Widget -->
             <div class="categories-widget widget-item">
-
               <h3 class="widget-title">Categories</h3>
               <ul class="mt-3">
-                <li><a href="#">Kesehatan Umum<span></span></a></li>
-                <li><a href="#">Gizi dan Nutrisi<span></span></a></li>
-                <li><a href="#">Penyakit dan Pencegahan<span></span></a></li>
-                <li><a href="#">Kesehatan Mental<span></span></a></li>
-                <li><a href="#">Olahraga dan Kebugaran<span></span></a></li>
-                <li><a href="#">Kesehatan Anak<span></span></a></li>
-                <li><a href="#">Kesehatan Lansia<span></span></a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Umum']) }}">Kesehatan Umum</a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Gizi dan Nutrisi']) }}">Gizi dan Nutrisi</a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Penyakit dan Pencegahan']) }}">Penyakit dan Pencegahan</a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Mental']) }}">Kesehatan Mental</a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Olahraga dan Kebugaran']) }}">Olahraga dan Kebugaran</a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Anak']) }}">Kesehatan Anak</a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Lansia']) }}">Kesehatan Lansia</a></li>
               </ul>
-
-            </div><!--/Categories Widget -->
+            </div>
+            <!-- /Categories Widget -->
 
             <!-- Tags Widget -->
             <div class="tags-widget widget-item">

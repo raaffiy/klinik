@@ -24,8 +24,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/news-details/{id}', [NewsController::class,'showNews']);
-Route::get('/news', [NewsController::class, 'search'])->name('news.search');
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+Route::get('/news/search', [NewsController::class, 'search'])->name('news.search');
+Route::get('/news/filter', [NewsController::class, 'filter'])->name('news.filter');
+Route::get('/news-details/{id}', [NewsController::class, 'showNews'])->name('news.details');
 
 Route::get('/medicine', function () {
     return view('product');

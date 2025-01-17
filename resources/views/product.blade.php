@@ -113,9 +113,9 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
 
             @foreach ($kategori_1 as $products)
             <?php
-  $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
-  $nama_obat = $products->nama_obat;
-  $productsId = $products->id;
+            $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+            $nama_obat = $products->nama_obat;
+            $productsId = $products->id;
             ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-infeksi">
               <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
@@ -129,9 +129,9 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
 
             @foreach ($kategori_2 as $products) 
             <?php
-  $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
-  $nama_obat = $products->nama_obat;
-  $productsId = $products->id;
+            $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+            $nama_obat = $products->nama_obat;
+            $productsId = $products->id;
             ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-saluran-pernapasan">
               <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
@@ -145,9 +145,9 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
 
             @foreach ($kategori_3 as $products) 
             <?php
-  $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
-  $nama_obat = $products->nama_obat;
-  $productsId = $products->id;
+            $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+            $nama_obat = $products->nama_obat;
+            $productsId = $products->id;
             ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pencernaan">
               <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
@@ -161,9 +161,9 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
 
             @foreach ($kategori_4 as $products)  
             <?php
-  $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
-  $nama_obat = $products->nama_obat;
-  $productsId = $products->id;
+            $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+            $nama_obat = $products->nama_obat;
+            $productsId = $products->id;
             ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-metabolik">
               <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
@@ -177,9 +177,9 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
 
             @foreach ($kategori_5 as $products)  
             <?php
-  $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
-  $nama_obat = $products->nama_obat;
-  $productsId = $products->id;
+            $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+            $nama_obat = $products->nama_obat;
+            $productsId = $products->id;
             ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kulit">
               <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
@@ -193,9 +193,9 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
 
             @foreach ($kategori_6 as $products)  
             <?php
-  $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
-  $nama_obat = $products->nama_obat;
-  $productsId = $products->id;
+            $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+            $nama_obat = $products->nama_obat;
+            $productsId = $products->id;
             ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mental">
               <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
@@ -209,9 +209,9 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
 
             @foreach ($kategori_7 as $products)  
             <?php
-  $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
-  $nama_obat = $products->nama_obat;
-  $productsId = $products->id;
+            $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
+            $nama_obat = $products->nama_obat;
+            $productsId = $products->id;
             ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kanker">
               <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
