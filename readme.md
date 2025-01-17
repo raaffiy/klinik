@@ -9,10 +9,11 @@ yang membutuhkan portal (admin):
 3. kegiatan devisi (tandu darurat, perawatan keluarga, pertolongan pertama) & anggotanya (optional)
 
 yang tidak membutuhkan portal:
-1. sejarah
-2. structure pmr (ketua, wakil ketua, dll) (optional)
-3. pengecekan stress/depresi (optional)
-4. menghitung berat badan & tinggi yang ideal (optional)
+1. AI
+2. sejarah
+3. structure pmr (ketua, wakil ketua, dll) (optional)
+4. pengecekan stress/depresi (optional)
+5. menghitung berat badan & tinggi yang ideal (optional)
 
 ================================================
 =========== HALAMAN YANG DITAMPILKAN ===========
