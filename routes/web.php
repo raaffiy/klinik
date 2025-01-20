@@ -29,11 +29,13 @@ Route::get('/news/search', [NewsController::class, 'search'])->name('news.search
 Route::get('/news/filter', [NewsController::class, 'filter'])->name('news.filter');
 Route::get('/news-details/{id}', [NewsController::class, 'showNews'])->name('news.details');
 
+Route::get('/medicine/{id}', [ProductsController::class,'showProducts']);
 Route::get('/medicine', function () {
     return view('product');
 });
-Route::get('/medicine/{id}', [ProductsController::class,'showProducts']);
-
 Route::get('/chat', function () {
     return view('chat');
+});
+Route::get('/prestasi', function(){
+    return view('prestasi');
 });
