@@ -145,44 +145,34 @@ $tags = News::select('tags_berita')->distinct()->get();
                 </form>
             </div>
 
-              <!-- Categories Widget -->
-              <div class="categories-widget widget-item">
-                <h3 class="widget-title">Categories</h3>
-                <ul class="mt-3">
-                  <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Umum']) }}">Kesehatan Umum</a></li>
-                  <li><a href="{{ route('news.filter', ['category' => 'Gizi dan Nutrisi']) }}">Gizi dan Nutrisi</a></li>
-                  <li><a href="{{ route('news.filter', ['category' => 'Penyakit dan Pencegahan']) }}">Penyakit dan Pencegahan</a></li>
-                  <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Mental']) }}">Kesehatan Mental</a></li>
-                  <li><a href="{{ route('news.filter', ['category' => 'Olahraga dan Kebugaran']) }}">Olahraga dan Kebugaran</a></li>
-                  <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Anak']) }}">Kesehatan Anak</a></li>
-                  <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Lansia']) }}">Kesehatan Lansia</a></li>
-                </ul>
-              </div>
-              <!-- /Categories Widget -->
+            <!-- Categories Widget -->
+            <div class="categories-widget widget-item">
+              <h3 class="widget-title">Categories</h3>
+              <ul class="mt-3">
+                <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Umum']) }}">Kesehatan Umum</a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Gizi dan Nutrisi']) }}">Gizi dan Nutrisi</a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Penyakit dan Pencegahan']) }}">Penyakit dan Pencegahan</a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Mental']) }}">Kesehatan Mental</a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Olahraga dan Kebugaran']) }}">Olahraga dan Kebugaran</a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Anak']) }}">Kesehatan Anak</a></li>
+                <li><a href="{{ route('news.filter', ['category' => 'Kesehatan Lansia']) }}">Kesehatan Lansia</a></li>
+              </ul>
+            </div>
+            <!-- /Categories Widget -->
 
-              <!-- Tags Widget -->
-              <div class="tags-widget widget-item">
-                <h3 class="widget-title">Tags</h3>
-                <ul>
-                  <li><a href="#" class="tag-item">Tips Kesehatan</a></li>
-                  <li><a href="#" class="tag-item">Edukasi Kesehatan</a></li>
-                  <li><a href="#" class="tag-item">Trending Kesehatan</a></li>
-                  <li><a href="#" class="tag-item">Panduan Hidup Sehat</a></li>
-                  <li><a href="#" class="tag-item">Rekomendasi Diet</a></li>
-                </ul>
+          <!-- Random Topics -->
+          <div class="recent-posts-widget widget-item">
+            <h3 class="widget-title">Random Topics</h3>
+          
+            @foreach ($random_news as $news)
+              <div class="post-item">
+              <img src="{{ Storage::disk('public')->url($news->gambar_berita) }}" alt="" class="flex-shrink-0">
+              <div>
+                <h4><a href="{{ route('news.details', $news->id) }}">{{ $news->nama_berita }}</a></h4>
+                <time datetime="2020-01-01">{{ implode(', ', $news->tags_berita) }}</time>
               </div>
-              <!-- /Tags Widget -->
-              
-              <script>
-                // Tambahkan event listener ke semua tag
-                document.querySelectorAll('.tag-item').forEach(function (item) {
-                  item.addEventListener('click', function (event) {
-                    event.preventDefault(); // Mencegah navigasi default
-                    this.classList.toggle('selected'); // Tambahkan atau hapus class "selected"
-                  });
-                });
-              </script>
-
+              </div><!-- End recent post item-->
+            @endforeach
           </div>
 
         </div>

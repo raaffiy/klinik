@@ -28,8 +28,12 @@ class NewsController extends Controller
         $results = News::where('nama_berita', 'like', '%' . $query . '%')->paginate(4);
         $categories = News::select('kategori_berita')->distinct()->get();
         $tags = News::select('tags_berita')->distinct()->get();
-    
-        return view('news', compact('results', 'categories', 'tags'))->with('all_news', $results);
+
+        // Mendapatkan berita secara random
+        $random_news = $this->getRandomNews();
+
+        return view('news', compact('results', 'categories', 'tags', 'random_news'))
+            ->with('all_news', $results);
     }
 
     public function filter(Request $request)
@@ -44,6 +48,12 @@ class NewsController extends Controller
 
     public function index(Request $request){
         return $this->search($request);
+    }
+
+    public function getRandomNews($limit = 4)
+    {
+        // Mengambil sejumlah berita secara acak
+        return News::inRandomOrder()->limit($limit)->get();
     }
 
 }
