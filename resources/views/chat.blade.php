@@ -177,19 +177,28 @@
       </div>
     `;
 
-    document.getElementById('userMessage').value = ''; 
+    document.getElementById('userMessage').value = '';
 
     const response = await fetch('/chat/send', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        'X-CSRF-TOKEN': document.querySelector('meta[name="scrf-token"]').getAttribute('content'),
       },
       body: JSON.stringify({ message: userMessage }),
     });
 
     const data = await response.json();
-    const aiMessage = data.choices[0]?.message?.content || 'Tidak ada respons dari AI.';
+    let aiMessage = data.choices[0]?.message?.content || 'Tidak ada respons dari AI.';
+
+    // Menambahkan logika untuk mengganti angka dengan <br> sebelum angka
+    aiMessage = aiMessage.replace(/(\d+)\./g, '<br>$1.');
+
+    // Menambahkan logika untuk mengganti (:) dengan <br><br>
+    aiMessage = aiMessage.replace(/\:/g, '<br>');
+
+    // Mengubah teks dalam tanda kurung (*) menjadi teks bold
+    aiMessage = aiMessage.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
 
     chatContainer.innerHTML += `
       <div class="col-start-1 col-end-8 p-3 rounded-lg">
