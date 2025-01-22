@@ -3,11 +3,13 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ChatBotController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,22 @@ Route::get('/medicine', function () {
 });
 Route::get('/chat', function () {
     return view('chat');
+});
+Route::post('/chat/send', function (Request $request) {
+    $message = $request->input('message');
+    $response = Http::withHeaders([
+        'Authorization' => 'Bearer ' . env('GROQ_API_KEY'),
+    ])->post('https://api.groq.com/openai/v1/chat/completions', [
+        'messages' => [
+            [
+                'role' => 'user',
+                'content' => $message,
+            ],
+        ],
+        'model' => 'llama-3.3-70b-versatile',
+    ]);
+
+    return response()->json($response->json());
 });
 Route::get('/prestasi', function(){
     return view('prestasi');

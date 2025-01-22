@@ -10,7 +10,7 @@ yang membutuhkan portal (admin):
 
 yang tidak membutuhkan portal:
 1. AI
-2. sejarah
+2. sejarah pmi -> pmr
 3. structure pmr (ketua, wakil ketua, dll) (optional)
 4. pengecekan stress/depresi (optional)
 5. menghitung berat badan & tinggi yang ideal (optional)
