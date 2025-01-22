@@ -14,9 +14,9 @@ yang tidak membutuhkan portal:
 3. pengecekan stress/depresi (optional)
 4. menghitung berat badan & tinggi yang ideal (optional)
 
-=====================================
+====================================
 ===== HALAMAN YANG DITAMPILKAN =====
-=====================================
+====================================
 
 HOME (UTAMA):
 1. deskripsi tentang eskul pmr
