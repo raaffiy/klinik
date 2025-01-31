@@ -142,30 +142,28 @@ class AchievementResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make()->after(
-                    function (Achievement $record) {
-                        if ($record->gambar_lomba) {
-                            Storage::disk('public')->delete($record->gambar_lomba);
-                        }
-                        if ($record->gambar_lomba_2) {
-                            Storage::disk('public')->delete($record->gambar_lomba_2);
+                Tables\Actions\DeleteAction::make()->after(function (Collection $records) {
+                    foreach ($records as $record) {
+                        $fields = ['gambar_lomba', 'gambar_lomba_2', 'gambar_lomba_3'];
+                        foreach ($fields as $field) {
+                            if ($record->$field) {
+                                Storage::disk('public')->delete($record->$field);
+                            }
                         }
                     }
-                ),
+                }),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make()->after(
-                    function (Collection $records) {
-                        foreach ($records as $record) {
-                            if ($record->gambar_lomba) {
-                                Storage::disk('public')->delete($record->gambar_lomba);
-                            }
-                            if ($record->gambar_lomba_2) {
-                                Storage::disk('public')->delete($record->gambar_lomba_2);
+                Tables\Actions\DeleteBulkAction::make()->after(function (Collection $records) {
+                    foreach ($records as $record) {
+                        $fields = ['gambar_lomba', 'gambar_lomba_2', 'gambar_lomba_3'];
+                        foreach ($fields as $field) {
+                            if ($record->$field) {
+                                Storage::disk('public')->delete($record->$field);
                             }
                         }
                     }
-                ),
+                }),
             ]);
     }
     
