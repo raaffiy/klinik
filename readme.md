@@ -19,8 +19,10 @@ yang tidak membutuhkan portal:
 ====================================
 
 HOME (UTAMA):
-1. deskripsi tentang eskul pmr
-2. sejarah didirikannya eskul pmr
-3. event kegiatan yang akan dilakukan
-4. kegiatan devisi (optional)
-5. structure pmr (ketua, wakil ketua, dll) (optional)
+1. pembuka
+2. about -> sejarah didirikannya eskul pmr
+3. event pmr
+4. kegiatan devisi
+5. prestasi pmr
+6. q&a (optional)
+7. structure pmr

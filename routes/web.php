@@ -54,6 +54,12 @@ Route::post('/chat/send', function (Request $request) {
 
     return response()->json($response->json());
 });
-Route::get('/prestasi', function(){
-    return view('prestasi');
+Route::get('/about', function(){
+    return view('about');
+});
+Route::get('/achievement', function(){
+    return view('achievement-details');
+});
+Route::get('/event', function(){
+    return view('event-details');
 });

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>gigiKu. Ahli Gigi</title>
+  <title>PMR - SMK NEGERI 2 KOTA BEKASI</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -27,28 +27,27 @@
 <body class="/">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
+    <div
+      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+  
       <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
-        <h1 class="sitename">iLanding</h1>
+        <img src="assets/img/SMKN 2.png" alt="SMK NEGERI 2 KOTA BEKASI" class="img-fluid">
+        &nbsp;&nbsp;<img src="assets/img/PMI.png" alt="PMR" class="img-fluid">
       </a>
-
+  
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/#about">About</a></li>  
-          <li><a href="/#team ">Teams</a></li>
-          <li class="dropdown"><a href="/#features"><span>Features</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="/news">News</a></li>
-              <li><a href="/medicine">Medicine</a></li>
-              <li><a href="/chat">AI (GIGIKU)</a></li>
-            </ul>
-          </li>
-          &nbsp;&nbsp;
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#devisi">Devisi</a></li>
+          <li><a href="#achievement">Achievement</a></li>
+          <li><a href="#event">Event</a></li>
+          <li><a href="#team">Teams</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
+
+      <button class="btn-getstarted btn" href="#" id="btn" style="bor">Get Started</button>
 
     </div>
   </header>
@@ -64,23 +63,23 @@
           <div class="col-lg-6">
             <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
               <div class="company-badge mb-4">
-                <i class="bi bi-gear-fill me-2"></i>
-                Working for your success
+                <i class="bi bi-snow2 me-2"></i>
+                PMR SMK NEGERI 2 KOTA BEKASI
               </div>
 
               <h1 class="mb-4">
-                Maecenas Vitae <br>
-                Consectetur Led <br>
-                <span class="accent-text">Vestibulum Ante</span>
+                Hargai tubuhmu <br>
+                Dengan melaksanakan <br>
+                <span class="accent-text">Pola hidup sehat</span>
               </h1>
 
               <p class="mb-4 mb-md-5">
-                Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-                Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
+                Kesehatan mencakup fisik, mental, dan emosional, yang saling terkait. Pola hidup sehat seperti makan bergizi, olahraga,
+                istirahat cukup, dan mengelola stres adalah investasi penting untuk hidup berkualitas.
               </p>
 
               <div class="hero-buttons">
-                <a href="#about" class="btn btn-primary me-0 me-sm-2 mx-1">Get Started</a>
+                <button href="#" class="btn btn-primary me-0 me-sm-2 mx-1" id="btn2">Get Started</button>
                 <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="btn btn-link mt-2 mt-sm-0 glightbox">
                   <i class="bi bi-play-circle me-1"></i>
                   Play Video
@@ -167,7 +166,7 @@
         <div class="row gy-4 align-items-center justify-content-between">
 
           <div class="col-xl-5" data-aos="fade-up" data-aos-delay="200">
-            <span class="about-meta">MORE ABOUT US</span>
+            <a href="/about" class="about-meta">MORE ABOUT US</a>
             <h2 class="about-title">Voluptas enim suscipit temporibus</h2>
             <p class="about-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 
@@ -230,12 +229,12 @@
 
     </section><!-- /About Section -->
 
-        <!-- Features Section -->
-    <section id="features" class="features section">
+    <!-- Features Section -->
+    <section id="devisi" class="features section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Features</h2>
+        <h2>Devisi</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
@@ -336,175 +335,207 @@
 
     </section><!-- /Features Section -->
 
-    <!-- Features Cards Section -->
-    <section id="features-cards" class="features-cards section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="feature-box orange">
-              <i class="bi bi-award"></i>
-              <h4>Corporis voluptates</h4>
-              <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-            </div>
-          </div><!-- End Feature Borx-->
-
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="feature-box blue">
-              <i class="bi bi-patch-check"></i>
-              <h4>Explicabo consectetur</h4>
-              <p>Est autem dicta beatae suscipit. Sint veritatis et sit quasi ab aut inventore</p>
-            </div>
-          </div><!-- End Feature Borx-->
-
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="feature-box green">
-              <i class="bi bi-sunrise"></i>
-              <h4>Ullamco laboris</h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-            </div>
-          </div><!-- End Feature Borx-->
-
-          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="feature-box red">
-              <i class="bi bi-shield-check"></i>
-              <h4>Labore consequatur</h4>
-              <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-            </div>
-          </div><!-- End Feature Borx-->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Features Cards Section -->
-
-    <!-- Faq Section -->
-    <section class="faq-9 faq section light-background" id="faq">
-    
-      <div class="container">
-        <div class="row">
-    
-          <div class="col-lg-5" data-aos="fade-up">
-            <h2 class="faq-title">Have a question? Check out the FAQ</h2>
-            <p class="faq-description">Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet
-              adipiscing sem neque sed ipsum.</p>
-            <div class="faq-arrow d-none d-lg-block" data-aos="fade-up" data-aos-delay="200">
-              <svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z"
-                  fill="currentColor"></path>
-              </svg>
-            </div>
-          </div>
-    
-          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300">
-            <div class="faq-container">
-    
-              <div class="faq-item faq-active">
-                <h3>Non consectetur a erat nam at lectus urna duis?</h3>
-                <div class="faq-content">
-                  <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
-                    gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-    
-              <div class="faq-item">
-                <h3>Feugiat scelerisque varius morbi enim nunc faucibus?</h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
-                    donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit
-                    ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-    
-              <div class="faq-item">
-                <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
-                <div class="faq-content">
-                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum
-                    integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt.
-                    Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                  </p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-    
-              <div class="faq-item">
-                <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
-                    donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit
-                    ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-    
-              <div class="faq-item">
-                <h3>Tempus quam pellentesque nec nam aliquam sem et tortor?</h3>
-                <div class="faq-content">
-                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc
-                    vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus
-                    gravida quis blandit turpis cursus in</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-    
-              <div class="faq-item">
-                <h3>Perspiciatis quod quo quos nulla quo illum ullam?</h3>
-                <div class="faq-content">
-                  <p>Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi.
-                    Distinctio ipsam dolore et.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-    
-            </div>
-          </div>
-    
-        </div>
-      </div>
-    </section><!-- /Faq Section -->
-
     <!-- Features Section -->
-    <section id="features" class="features section">
-
+    <section id="achievement" class="features section">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Features</h2>
+        <h2>Achievement</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        <br> <br> <br>
-
-        <div class="row gy-4 justify-content-center">
-
-          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="features-item">
-              <i class="bi bi-newspaper" style="color: #ffbb2c;"></i>
-              <h3><a href="/news" class="stretched-link">News</a></h3>
-            </div>
-          </div><!-- End Feature Item -->
-
-          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="features-item">
-              <i class="bi bi-prescription2" style="color: #5578ff;"></i>
-              <h3><a href="/product" class="stretched-link">Medicine</a></h3>
-            </div>
-          </div><!-- End Feature Item -->
-
-          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="features-item">
-              <i class="bi bi-robot" style="color: #e80368;"></i>
-              <h3><a href="/chat" class="stretched-link">AI (GIGIKU)</a></h3>
-            </div>
-          </div><!-- End Feature Item -->
-
-        </div>
       </div><!-- End Section Title -->
+    
+      <div class="container">
+        <div class="features-slider position-relative">
+          <div class="row px-4 flex-nowrap g-4 overflow-x-auto scroll-behavior-smooth" id="achievement-cards"
+            style="scrollbar-width: none; -ms-overflow-style: none;">
+            <div class="col-12 col-md-4">
+              <a href="/achievement">
+                <div class="card h-100">
+                  <img src="assets/img/contoh1.jpeg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                      content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Lomba Tandu (SMA & SMK)</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a href="/achievement">
+                <div class="card h-100">
+                  <img src="assets/img/contoh2.jpeg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Lomba Nasional</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a href="/achievement">
+                <div class="card h-100">
+                  <img src="assets/img/contoh1.jpeg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                      content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Lomba Jawa Barat</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-12 col-md-4">
+              <a href="/achievement">
+                <div class="card h-100">
+                  <img src="assets/img/contoh2.jpeg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Lomba Nasional</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <button class="carousel-control-prev" style="background-color: rgb(113, 159, 166)" type="button">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" style="background-color: rgb(113, 159, 166)" type="button">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section><!-- /Features Section -->
+    
+    <style>
+      .features-slider {
+        position: relative;
+        padding: 0 2.5rem;
+      }
+    
+      #achievement-cards::-webkit-scrollbar {
+        display: none;
+      }
+    
+      .carousel-control-prev,
+      .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+      }
+    
+      .carousel-control-prev:hover,
+      .carousel-control-next:hover {
+        opacity: 1;
+      }
+    
+      .carousel-control-prev {
+        left: 1%;
+      }
+    
+      .carousel-control-next {
+        right: 1%;
+      }
+    
+      @media (max-width: 768px) {
+        .features-slider {
+          padding: 0 1.5rem;
+        }
+      }
+    </style>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const cardsContainer = document.getElementById('achievement-cards');
+        const prevBtn = document.querySelector('.carousel-control-prev');
+        const nextBtn = document.querySelector('.carousel-control-next');
 
+        if (cardsContainer && prevBtn && nextBtn) {
+          nextBtn.addEventListener('click', function () {
+            cardsContainer.scrollBy({
+              left: cardsContainer.clientWidth,
+              behavior: 'smooth'
+            });
+          });
+
+          prevBtn.addEventListener('click', function () {
+            cardsContainer.scrollBy({
+              left: -cardsContainer.clientWidth,
+              behavior: 'smooth'
+            });
+          });
+        }
+      });
+    </script>
+
+    <!-- Features Section -->
+    <section id="event" class="features section">
+    
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Event</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+    
+      <div class="container">
+    
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <a href="/event">
+              <div class="card h-100">
+                <img src="assets/img/lomba.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="/event">
+              <div class="card h-100">
+                <img src="assets/img/lomba2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a short card.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="/event">
+              <div class="card h-100">
+                <img src="assets/img/lomba.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                    content.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+    
+      </div>
+    
     </section><!-- /Features Section -->
 
     <!-- team Section -->
@@ -682,6 +713,7 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
@@ -689,3 +721,56 @@
 </body>
 
 </html>
+
+<template id="my-template">
+  <swal-button type="confirm" color="#008080" id="news-button">
+    News
+  </swal-button>
+  <swal-button type="cancel" color="#BDB76B" id="medicine-button">
+    Medicine
+  </swal-button>
+  <swal-button type="deny" color="#228B22" id="chat-button">
+    AI (Chat Bot)
+  </swal-button>
+  <swal-param name="allowEscapeKey" value="false" />
+  <swal-param name="customClass" value='{ "popup": "my-popup" }' />
+  <swal-function-param name="didOpen" value="popup => console.log(popup)" />
+</template>
+<script>
+  const btn = document.getElementById('btn');
+  btn.addEventListener('click', function () {
+    Swal.fire({
+      template: "#my-template"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirect to News page
+        window.location.href = "/news";
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // Redirect to Medicine page
+        window.location.href = "/medicine";
+      } else if (result.dismiss === Swal.DismissReason.deny) {
+        // Redirect to Chat Bot page
+        window.location.href = "/chat";
+      }
+    });
+  });
+</script>
+<script>
+  const btn2 = document.getElementById('btn2');
+  btn2.addEventListener('click', function () {
+    Swal.fire({
+      template: "#my-template"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirect to News page
+        window.location.href = "/news";
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // Redirect to Medicine page
+        window.location.href = "/medicine";
+      } else if (result.dismiss === Swal.DismissReason.deny) {
+        // Redirect to Chat Bot page
+        window.location.href = "/chat";
+      }
+    });
+  });
+</script>

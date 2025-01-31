@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Medicine Details - gigiKu. Ahli Gigi</title>
+  <title>Medicine Details - PMR</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -26,32 +26,31 @@
 
 <body class="service-details-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div
+    class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
-        <h1 class="sitename">iLanding</h1>
-      </a>
+    <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+      <img src="{{ asset('assets/img/SMKN 2.png') }}" alt="SMK NEGERI 2 KOTA BEKASI" class="img-fluid">
+      &nbsp;&nbsp;<img src="{{ asset('assets/img/PMI.png') }}" alt="PMR" class="img-fluid">
+    </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/#about">About</a></li>  
-          <li><a href="/#team ">Teams</a></li>
-          <li class="dropdown"><a href="/#features"><span>Features</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="/news">News</a></li>
-              <li><a href="/medicine">Medicine</a></li>
-              <li><a href="/chat">AI (GIGIKU)</a></li>
-            </ul>
-          </li>
-          &nbsp;&nbsp;
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#devisi">Devisi</a></li>
+        <li><a href="/#achievement">Achievement</a></li>
+        <li><a href="/#event">Event</a></li>
+        <li><a href="/#team">Teams</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
 
-    </div>
-  </header>
+    <button class="btn-getstarted btn" href="#" id="btn" style="bor">Get Started</button>
+
+  </div>
+</header>
 
   <main class="main">
 
@@ -62,7 +61,7 @@
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Home</a></li>
-            <li><a href="/product">Medicine Page</a></li>
+            <li><a href="/medicine">Medicine Page</a></li>
             <li class="current">Medicine Details</li>
           </ol>
         </nav>
@@ -169,6 +168,7 @@
   <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
@@ -176,3 +176,37 @@
 </body>
 
 </html>
+
+<template id="my-template">
+  <swal-button type="confirm" color="#008080" id="news-button">
+    News
+  </swal-button>
+  <swal-button type="cancel" color="#BDB76B" id="medicine-button">
+    Medicine
+  </swal-button>
+  <swal-button type="deny" color="#228B22" id="chat-button">
+    AI (Chat Bot)
+  </swal-button>
+  <swal-param name="allowEscapeKey" value="false" />
+  <swal-param name="customClass" value='{ "popup": "my-popup" }' />
+  <swal-function-param name="didOpen" value="popup => console.log(popup)" />
+</template>
+<script>
+  const btn = document.getElementById('btn');
+  btn.addEventListener('click', function () {
+    Swal.fire({
+      template: "#my-template"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirect to News page
+        window.location.href = "/news";
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // Redirect to Medicine page
+        window.location.href = "/medicine";
+      } else if (result.dismiss === Swal.DismissReason.deny) {
+        // Redirect to Chat Bot page
+        window.location.href = "/chat";
+      }
+    });
+  });
+</script>
