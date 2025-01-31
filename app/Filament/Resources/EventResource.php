@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AchievementResource\Pages;
-use App\Filament\Resources\AchievementResource\RelationManagers;
-use App\Models\Achievement;
+use App\Filament\Resources\EventResource\Pages;
+use App\Filament\Resources\EventResource\RelationManagers;
+use App\Models\Event;
 use Filament\Forms;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\FileUpload;
@@ -22,9 +22,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Storage;
 
-class AchievementResource extends Resource
+class EventResource extends Resource
 {
-    protected static ?string $model = Achievement::class;
+    protected static ?string $model = Event::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -35,35 +35,20 @@ class AchievementResource extends Resource
                 Card::make()
                     ->schema([
 
-                        // Column nama_lomba
-                        TextInput::make('nama_lomba')->required()->columnSpanFull(),
+                        // Column nama_event
+                        TextInput::make('nama_event')->required()->columnSpanFull(),
 
-                        // Column tanggal_lomba
-                        TextInput::make('tanggal_lomba')->required()->columnSpanFull(),
+                        // Column penyelenggara
+                        TextInput::make('penyelenggara')->required()->columnSpanFull(),
 
-                        // Column gambar_lomba
-                        FileUpload::make('gambar_lomba')->required()->image()->disk('public')->columnSpanFull(),
+                        // Column tanggal_event
+                        TextInput::make('tanggal_event')->required()->columnSpanFull(),
 
-                        // Column gambar_lomba_2
-                        FileUpload::make('gambar_lomba_2')->required()->image()->disk('public')->columnSpan(1),
-
-                        // Column gambar_lomba_3
-                        FileUpload::make('gambar_lomba_3')->required()->image()->disk('public')->columnSpan(1),
-
-                        // Column tingkat_lomba
-                        Select::make('tingkat_lomba')
-                            ->options([
-                                'Internasional',
-                                'Nasional',
-                                'Provinsi',
-                                'Kabupaten/Kota',
-                            ])->required()->columnSpanFull(),
-
-                        // Column lokasi_lomba
-                        TextInput::make('lokasi_lomba')->required()->columnSpanFull(),
-
-                        // Column deskripsi_lomba
-                        RichEditor::make('deskripsi_lomba')
+                        // Column lokasi_event
+                        TextInput::make('lokasi_event')->required()->columnSpanFull(),
+                        
+                        // Column deskripsi_event
+                        RichEditor::make('deskripsi_event')
                             ->required()
                             ->toolbarButtons([
                                 'blockquote',
@@ -81,8 +66,8 @@ class AchievementResource extends Resource
                                 'undo',
                             ])->columnSpanFull(),
 
-                        // Column nama_peserta_lomba
-                        RichEditor::make('nama_peserta_lomba')
+                        // Column susunan_acara
+                        RichEditor::make('susunan_acara')
                             ->required()
                             ->toolbarButtons([
                                 'blockquote',
@@ -100,24 +85,14 @@ class AchievementResource extends Resource
                                 'undo',
                             ])->columnSpanFull(),
 
-                        // Column kutipan_pesan
-                        RichEditor::make('kutipan_pesan')
-                            ->required()
-                            ->toolbarButtons([
-                                'blockquote',
-                                'bold',
-                                'bulletList',
-                                'codeBlock',
-                                'h2',
-                                'h3',
-                                'italic',
-                                'link',
-                                'orderedList',
-                                'redo',
-                                'strike',
-                                'underline',
-                                'undo',
-                            ])->columnSpanFull(),
+                        // Column gambar_event
+                        FileUpload::make('gambar_event')->required()->image()->disk('public')->columnSpanFull(),
+
+                        // Column gambar_event_2
+                        FileUpload::make('gambar_event_2')->required()->image()->disk('public')->columnSpan(1),
+
+                        // Column gambar_event_3
+                        FileUpload::make('gambar_event_3')->required()->image()->disk('public')->columnSpan(1),
 
                     ])
                     ->columns(2),
@@ -129,11 +104,11 @@ class AchievementResource extends Resource
         return $table
             ->columns([
                 
-                TextColumn::make('nama_lomba')->sortable()->searchable(),
-                ImageColumn::make('gambar_lomba'),
-                TextColumn::make('tanggal_lomba')->sortable()->searchable(),
-                TextColumn::make('tingkat_lomba')->sortable()->searchable(),
-                TextColumn::make('lokasi_lomba')->sortable()->searchable(),
+                TextColumn::make('nama_event')->sortable()->searchable(),
+                ImageColumn::make('gambar_event'),
+                TextColumn::make('penyelenggara')->sortable()->searchable(),
+                TextColumn::make('tanggal_event')->sortable()->searchable(),
+                TextColumn::make('lokasi_event')->sortable()->searchable(),
 
             ])
             ->filters([
@@ -143,7 +118,7 @@ class AchievementResource extends Resource
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()->after(function (Collection $records) {
                     foreach ($records as $record) {
-                        $fields = ['gambar_lomba', 'gambar_lomba_2', 'gambar_lomba_3'];
+                        $fields = ['gambar_event', 'gambar_event_2', 'gambar_event_3'];
                         foreach ($fields as $field) {
                             if ($record->$field) {
                                 Storage::disk('public')->delete($record->$field);
@@ -155,7 +130,7 @@ class AchievementResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make()->after(function (Collection $records) {
                     foreach ($records as $record) {
-                        $fields = ['gambar_lomba', 'gambar_lomba_2', 'gambar_lomba_3'];
+                        $fields = ['gambar_event', 'gambar_event_2', 'gambar_event_3'];
                         foreach ($fields as $field) {
                             if ($record->$field) {
                                 Storage::disk('public')->delete($record->$field);
@@ -176,9 +151,9 @@ class AchievementResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAchievements::route('/'),
-            'create' => Pages\CreateAchievement::route('/create'),
-            'edit' => Pages\EditAchievement::route('/{record}/edit'),
+            'index' => Pages\ListEvents::route('/'),
+            'create' => Pages\CreateEvent::route('/create'),
+            'edit' => Pages\EditEvent::route('/{record}/edit'),
         ];
     }    
 }
