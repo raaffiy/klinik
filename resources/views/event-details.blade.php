@@ -98,15 +98,15 @@
                             <div class="swiper-wrapper align-items-center">
 
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets/img/contoh1.jpeg') }}" alt="">
+                                    <img src="{{ Storage::disk('public')->url($event->gambar_event) }}" alt="">
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets/img/contoh2.jpeg') }}" alt="">
+                                    <img src="{{ Storage::disk('public')->url($event->gambar_event_2) }}" alt="">
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets/img/contoh2.jpeg') }}" alt="">
+                                    <img src="{{ Storage::disk('public')->url($event->gambar_event_3) }}" alt="">
                                 </div>
 
                             </div>
@@ -118,16 +118,16 @@
                         <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
                             <h3>Information</h3>
                             <ul>
-                                <li><strong>Nama Event</strong>: ???????????????????</li>
-                                <li><strong>Penyelenggara</strong>: ???????????????????</li>
-                                <li><strong>Tanggal Event</strong>: ???????????????????</li>
-                                <li><strong>Lokasi Event</strong>: ???????????????????</li>
+                                <li><strong>Nama Event</strong>: {{ $event->nama_event }}</li>
+                                <li><strong>Penyelenggara</strong>: {{ $event->penyelenggara }}</li>
+                                <li><strong>Tanggal Event</strong>: {{ $event->tanggal_event }}</li>
+                                <li><strong>Lokasi Event</strong>: {{ $event->lokasi_event }}</li>
                             </ul>
                         </div>
                         <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
                             <h2>Deskripsi Event</h2>
                             <p>
-                                ???????????????????
+                                {!! $event->deskripsi_event !!}
                             </p>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                     <div class="col-lg-12">
                         <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
                             <ul>
-                                <li><strong>Susunan Acara</strong>: ???????????????????</li>
+                                <li><strong>Susunan Acara</strong>: {!! $event->susunan_acara !!}</li>
                             </ul>
                         </div>
                     </div>

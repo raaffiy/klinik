@@ -1,3 +1,12 @@
+<?php
+// Assuming you have a Product model
+use App\Models\Event;
+use App\Models\Achievement;
+
+$all_event = Event::all();
+$all_achievement = Achievement::all();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -348,62 +357,29 @@
           <div class="row px-4 flex-nowrap g-4 overflow-x-auto scroll-behavior-smooth" id="achievement-cards"
             style="scrollbar-width: none; -ms-overflow-style: none;">
             <div class="col-12 col-md-4">
-              <a href="/achievement">
-                <div class="card h-100">
-                  <img src="assets/img/contoh1.jpeg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                      content.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Lomba Tandu (SMA & SMK)</small>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-12 col-md-4">
-              <a href="/achievement">
-                <div class="card h-100">
-                  <img src="assets/img/contoh2.jpeg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Lomba Nasional</small>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-12 col-md-4">
-              <a href="/achievement">
-                <div class="card h-100">
-                  <img src="assets/img/contoh1.jpeg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                      content.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Lomba Jawa Barat</small>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-12 col-md-4">
-              <a href="/achievement">
-                <div class="card h-100">
-                  <img src="assets/img/contoh2.jpeg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Lomba Nasional</small>
-                  </div>
-                </div>
-              </a>
+              @foreach ($all_achievement as $achievement)
+          <?php
+          $gambar_lomba = Storage::disk('public')->url($achievement->gambar_lomba);
+          $nama_lomba = $achievement->nama_lomba;
+          $deskripsi_lomba = $achievement->deskripsi_lomba;
+          $tingkat_lomba = $achievement->tingkat_lomba;
+          $achievementId = $achievement->id;
+          ?>
+
+          <a href="/achievement/{{ $achievementId }}">
+          <div class="card h-100">
+          <img src="{{ $gambar_lomba }}" class="card-img-top" alt="...">
+          <div class="card-body">
+          <h5 class="card-title">{{ $nama_lomba }}</h5>
+          <p class="card-text">{!! $deskripsi_lomba !!}</p>
+          </div>
+          <div class="card-footer">
+          <small class="text-muted">{{ $tingkat_lomba }}</small>
+          </div>
+          </div>
+          </a>
+
+      @endforeach
             </div>
           </div>
           <button class="carousel-control-prev" style="background-color: rgb(113, 159, 166)" type="button">
@@ -497,41 +473,27 @@
       <div class="container">
     
         <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <a href="/event">
+          @foreach ($all_event as $event)
+            <?php
+  $gambar_event = Storage::disk('public')->url($event->gambar_event);
+  $nama_event = $event->nama_event;
+  $deskripsi_event = $event->deskripsi_event;
+  $eventId = $event->id;
+            ?>
+
+            <div class="col">
+            <a href="/event/{{ $eventId }}">
               <div class="card h-100">
-                <img src="assets/img/lomba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                </div>
+              <img src="{{ $gambar_event }}" class="card-img-top" alt="...">
+              <div class="card-body">
+              <h5 class="card-title">{{ $nama_event }}</h5>
+              <p class="card-text">{!! $deskripsi_event !!}</p>
+              </div>
               </div>
             </a>
-          </div>
-          <div class="col">
-            <a href="/event">
-              <div class="card h-100">
-                <img src="assets/img/lomba2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a short card.</p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col">
-            <a href="/event">
-              <div class="card h-100">
-                <img src="assets/img/lomba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                    content.</p>
-                </div>
-              </div>
-            </a>
-          </div>
+            </div>
+
+      @endforeach
         </div>
     
       </div>

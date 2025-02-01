@@ -76,7 +76,7 @@
 
                 <div class="row gy-4">
 
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <div class="portfolio-details-slider swiper init-swiper">
 
                             <script type="application/json" class="swiper-config">
@@ -110,39 +110,10 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4">
-                        <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                            <h3>Information</h3>
-                            <ul>
-                                <li><strong>Nama Obat</strong>: ???????????????????</li>
-                                <li><strong>Kategori obat</strong>: ???????????????????</li>
-                                <li>: ???????????????????</li>
-                            </ul>
-                        </div>
-                        <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-                            <h2>Deskripsi obat</h2>
-                            <p>
-                                ???????????????????
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
                             <ul>
-                                <li><strong>Indikasi Obat</strong>: ???????????????????</li>
-                                <li><strong>Komposisi Obat</strong>: ???????????????????</li>
-                                <li><strong>Dosis Obat</strong>: ???????????????????</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                            <ul>
-                                <li><strong>Penggunaan Obat</strong>: ???????????????????</li>
-                                <li><strong>Efek Samping</strong>: ???????????????????</li>
-                                <li><strong>Kontraindikasi</strong>: ???????????????????</li>
+                                <li><strong>History PMR - SMKN 2 KOTA BEKASI</strong>: ???????????????????</li>
                             </ul>
                         </div>
                     </div>
@@ -174,7 +145,7 @@
                                 <p>Lorem ipsum, dolor sit</p>
                                 <a href="assets/img/contoh2.jpeg" title="Product 1" data-gallery="portfolio-gallery-product"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                <a href="##" title="More Details" class="details-link"><i
                                         class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
@@ -186,7 +157,7 @@
                                 <p>Lorem ipsum, dolor sit</p>
                                 <a href="assets/img/contoh1.jpeg" title="Branding 1" data-gallery="portfolio-gallery-branding"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                <a href="##" title="More Details" class="details-link"><i
                                         class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
@@ -198,7 +169,7 @@
                                 <p>Lorem ipsum, dolor sit</p>
                                 <a href="assets/img/contoh2.jpeg" title="App 2" data-gallery="portfolio-gallery-app"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                <a href="##" title="More Details" class="details-link"><i
                                         class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
@@ -210,7 +181,7 @@
                                 <p>Lorem ipsum, dolor sit</p>
                                 <a href="assets/img/lomba.jpg" title="Product 2" data-gallery="portfolio-gallery-product"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                <a href="##" title="More Details" class="details-link"><i
                                         class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
@@ -222,7 +193,7 @@
                                 <p>Lorem ipsum, dolor sit</p>
                                 <a href="assets/img/lomba2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                <a href="##" title="More Details" class="details-link"><i
                                         class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
@@ -234,7 +205,7 @@
                                 <p>Lorem ipsum, dolor sit</p>
                                 <a href="assets/img/lomba.jpg" title="App 3" data-gallery="portfolio-gallery-app"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                <a href="##" title="More Details" class="details-link"><i
                                         class="bi bi-link-45deg"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->

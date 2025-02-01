@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\AchievementController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChatBotController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
@@ -60,6 +62,5 @@ Route::get('/about', function(){
 Route::get('/achievement', function(){
     return view('achievement-details');
 });
-Route::get('/event', function(){
-    return view('event-details');
-});
+Route::get('/event/{id}', [EventController::class,'showEvent']);
+Route::get('/achievement/{id}', [AchievementController::class,'showAchievement']);

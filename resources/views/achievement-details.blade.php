@@ -98,15 +98,15 @@
                             <div class="swiper-wrapper align-items-center">
 
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets/img/contoh1.jpeg') }}" alt="">
+                                    <img src="{{ Storage::disk('public')->url($achievement->gambar_lomba) }}" alt="">
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets/img/contoh2.jpeg') }}" alt="">
+                                    <img src="{{ Storage::disk('public')->url($achievement->gambar_lomba_2) }}" alt="">
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('assets/img/contoh1.jpeg') }}" alt="">
+                                    <img src="{{ Storage::disk('public')->url($achievement->gambar_lomba_3) }}" alt="">
                                 </div>
 
                             </div>
@@ -118,22 +118,16 @@
                         <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
                             <h3>Information</h3>
                             <ul>
-                                <li><strong>Nama Lomba</strong>: Tim PMR Juara dalam Lomba PMR Tingkat Provinsi! 🎉</li>
-                                <li><strong>Tanggal Lomba</strong>: 28 Januari 2025</li>
-                                <li><strong>Tingkat Lomba</strong>: Provinsi</li>
-                                <li><strong>Lokasi Lomba</strong>: Balai Pelatihan PMI Jawa Barat</li>
+                                <li><strong>Nama Lomba</strong>: {{ $achievement->nama_lomba }}</li>
+                                <li><strong>Tanggal Lomba</strong>: {{ $achievement->tanggal_lomba }}</li>
+                                <li><strong>Tingkat Lomba</strong>: {{ $achievement->tingkat_lomba }}</li>
+                                <li><strong>Lokasi Lomba</strong>:{{ $achievement->lokasi_lomba }}</li>
                             </ul>
                         </div>
                         <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
                             <h2>Deskripsi Lomba</h2>
                             <p>
-                                Tim Palang Merah Remaja (PMR) dari SMKN 2 Kota Bekasi berhasil meraih Juara 1 dalam Lomba Keterampilan PMR Tingkat
-                                Provinsi Jawa Barat yang diselenggarakan oleh Palang Merah Indonesia (PMI) Jawa Barat. Kompetisi ini diikuti oleh
-                                puluhan sekolah dari berbagai daerah di Jawa Barat.
-                                <br> <br>
-                                Lomba ini menguji berbagai keterampilan penting dalam kepalangmerahan, seperti Pertolongan Pertama, Evakuasi Korban, dan
-                                Edukasi Kesehatan Remaja. Tim PMR SMKN 2 Kota Bekasi berhasil menunjukkan keterampilan luar biasa, kerja sama yang
-                                solid, serta ketanggapan dalam menangani situasi darurat.
+                                {!! $achievement->deskripsi_lomba !!}
                             </p>
                         </div>
                     </div>
@@ -141,8 +135,9 @@
                     <div class="col-lg-6">
                         <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
                             <ul>
-                                <li><strong>Peserta yang memenangkan lomba</strong>: <br>
-                                    Aditya Putra <br> Siti Aisyah <br> Rina Lestari <br> Muhammad Fahmi<li>
+                                <li>
+                                    {!! $achievement->nama_peserta_lomba !!}
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -151,12 +146,7 @@
                         <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
                             <ul>
                                 <li>
-                                    Salah satu anggota tim, Siti Aisyah, mengungkapkan rasa bangganya:<br> <br>
-                                    🗣️ "Kami sangat bersyukur bisa membawa pulang kemenangan ini. Semua ini berkat kerja keras dan latihan intensif bersama
-                                    tim serta bimbingan dari para pembina PMR."
-                                    <br> <br>
-                                    Keberhasilan ini diharapkan dapat menjadi motivasi bagi tim PMR SMKN 2 Kota Bekasi untuk terus berkembang dan meraih
-                                    prestasi lebih tinggi di masa depan.
+                                    {!! $achievement->kutipan_pesan !!}
                                 </li>
                             </ul>
                         </div>
