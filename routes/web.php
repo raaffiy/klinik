@@ -28,15 +28,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// news 
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/search', [NewsController::class, 'search'])->name('news.search');
 Route::get('/news/filter', [NewsController::class, 'filter'])->name('news.filter');
 Route::get('/news-details/{id}', [NewsController::class, 'showNews'])->name('news.details');
 
+// medicine (obat-obatan)
 Route::get('/medicine/{id}', [ProductsController::class,'showProducts']);
 Route::get('/medicine', function () {
     return view('product');
 });
+
+// chat bot (ai)
 Route::get('/chat', function () {
     return view('chat');
 });
@@ -56,11 +60,14 @@ Route::post('/chat/send', function (Request $request) {
 
     return response()->json($response->json());
 });
+
+// about (history pmr smkn 2 kota bekasi)
 Route::get('/about', function(){
     return view('about');
 });
-Route::get('/achievement', function(){
-    return view('achievement-details');
-});
+
+// event (details)
 Route::get('/event/{id}', [EventController::class,'showEvent']);
+
+// achievements (details)
 Route::get('/achievement/{id}', [AchievementController::class,'showAchievement']);
