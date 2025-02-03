@@ -38,9 +38,6 @@ class AchievementResource extends Resource
                         // Column nama_lomba
                         TextInput::make('nama_lomba')->required()->columnSpanFull(),
 
-                        // Column tanggal_lomba
-                        TextInput::make('tanggal_lomba')->required()->columnSpanFull(),
-
                         // Column gambar_lomba
                         FileUpload::make('gambar_lomba')->required()->image()->disk('public')->columnSpanFull(),
 
@@ -49,6 +46,9 @@ class AchievementResource extends Resource
 
                         // Column gambar_lomba_3
                         FileUpload::make('gambar_lomba_3')->required()->image()->disk('public')->columnSpan(1),
+
+                        // Column tanggal_lomba
+                        TextInput::make('tanggal_lomba')->required()->columnSpanFull(),
 
                         // Column tingkat_lomba
                         Select::make('tingkat_lomba')

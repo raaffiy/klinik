@@ -38,6 +38,16 @@ class EventResource extends Resource
                         // Column nama_event
                         TextInput::make('nama_event')->required()->columnSpanFull(),
 
+                        
+                        // Column gambar_event
+                        FileUpload::make('gambar_event')->required()->image()->disk('public')->columnSpanFull(),
+
+                        // Column gambar_event_2
+                        FileUpload::make('gambar_event_2')->required()->image()->disk('public')->columnSpan(1),
+
+                        // Column gambar_event_3
+                        FileUpload::make('gambar_event_3')->required()->image()->disk('public')->columnSpan(1),
+
                         // Column penyelenggara
                         TextInput::make('penyelenggara')->required()->columnSpanFull(),
 
@@ -84,15 +94,6 @@ class EventResource extends Resource
                                 'underline',
                                 'undo',
                             ])->columnSpanFull(),
-
-                        // Column gambar_event
-                        FileUpload::make('gambar_event')->required()->image()->disk('public')->columnSpanFull(),
-
-                        // Column gambar_event_2
-                        FileUpload::make('gambar_event_2')->required()->image()->disk('public')->columnSpan(1),
-
-                        // Column gambar_event_3
-                        FileUpload::make('gambar_event_3')->required()->image()->disk('public')->columnSpan(1),
 
                     ])
                     ->columns(2),
