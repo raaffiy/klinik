@@ -102,15 +102,7 @@ $all_achievement = Achievement::all();
               <img src="assets/img/illustration-1.webp" alt="Hero Image" class="img-fluid">
 
               <div class="customers-badge">
-                <div class="customer-avatars">
-                  <img src="assets/img/avatar-1.webp" alt="Customer 1" class="avatar">
-                  <img src="assets/img/avatar-2.webp" alt="Customer 2" class="avatar">
-                  <img src="assets/img/avatar-3.webp" alt="Customer 3" class="avatar">
-                  <img src="assets/img/avatar-4.webp" alt="Customer 4" class="avatar">
-                  <img src="assets/img/avatar-5.webp" alt="Customer 5" class="avatar">
-                  <span class="avatar more">12+</span>
-                </div>
-                <p class="mb-0 mt-2">12,000+ lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+                <p class="mb-0 mt-2">we strong because we're family</p>
               </div>
             </div>
           </div>
@@ -182,16 +174,14 @@ $all_achievement = Achievement::all();
             <div class="row feature-list-wrapper">
               <div class="col-md-6">
                 <ul class="feature-list">
-                  <li><i class="bi bi-check-circle-fill"></i> Lorem ipsum dolor sit amet</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Consectetur adipiscing elit</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Sed do eiusmod tempor</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Pengecekan Kesehatan</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Lomba PMR SE-Kota Bekasi</li>
                 </ul>
               </div>
               <div class="col-md-6">
                 <ul class="feature-list">
-                  <li><i class="bi bi-check-circle-fill"></i> Incididunt ut labore et</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Dolore magna aliqua</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Ut enim ad minim veniam</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Donor Darah</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Latihan Gabungan PMR</li>
                 </ul>
               </div>
             </div>
@@ -227,8 +217,8 @@ $all_achievement = Achievement::all();
                 <img src="assets/img/about-2.webp" alt="Team Discussion" class="img-fluid small-image rounded-4">
               </div>
               <div class="experience-badge floating">
-                <h3>15+ <span>Years</span></h3>
-                <p>Of experience in business service</p>
+                <h3>77 <span>Anggota</span></h3>
+                <p>PMR - SMKN 2 KOTA BEKASI</p>
               </div>
             </div>
           </div>
@@ -255,19 +245,19 @@ $all_achievement = Achievement::all();
 
             <li class="nav-item">
               <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
-                <h4>Modisit</h4>
+                <h4>Pertolongan Pertama</h4>
               </a>
             </li><!-- End tab nav item -->
 
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
-                <h4>Praesenti</h4>
+                <h4>Tandu</h4>
               </a><!-- End tab nav item -->
 
             </li>
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
-                <h4>Explica</h4>
+                <h4>Perawatan Keluarga</h4>
               </a>
             </li><!-- End tab nav item -->
 
@@ -359,11 +349,11 @@ $all_achievement = Achievement::all();
             <div class="col-12 col-md-4">
               @foreach ($all_achievement as $achievement)
           <?php
-          $gambar_lomba = Storage::disk('public')->url($achievement->gambar_lomba);
-          $nama_lomba = $achievement->nama_lomba;
-          $deskripsi_lomba = $achievement->deskripsi_lomba;
-          $tingkat_lomba = $achievement->tingkat_lomba;
-          $achievementId = $achievement->id;
+  $gambar_lomba = Storage::disk('public')->url($achievement->gambar_lomba);
+  $nama_lomba = $achievement->nama_lomba;
+  $deskripsi_lomba = $achievement->deskripsi_lomba;
+  $tingkat_lomba = $achievement->tingkat_lomba;
+  $achievementId = $achievement->id;
           ?>
 
           <a href="/achievement/{{ $achievementId }}">
