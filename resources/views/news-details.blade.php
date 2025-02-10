@@ -1,3 +1,10 @@
+<?php
+// Assuming you have a Product model
+use App\Models\News;
+
+$random_news = News::inRandomOrder()->limit(3)->get();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -151,19 +158,20 @@
             </div>
             <!-- /Categories Widget -->
 
-            <!-- Tags Widget -->
-            <div class="tags-widget widget-item">
-
-              <h3 class="widget-title">Tags</h3>
-              <ul>
-                <li><a href="#">Tips Kesehatan</a></li>
-                <li><a href="#">Edukasi Kesehatan</a></li>
-                <li><a href="#">Trending Kesehatan</a></li>
-                <li><a href="#">Panduan Hidup Sehat</a></li>
-                <li><a href="#">Rekomendasi Diet</a></li>
-              </ul>
-
-            </div><!--/Tags Widget -->
+            <!-- Random Topics -->
+            <div class="recent-posts-widget widget-item">
+              <h3 class="widget-title">Random Topics</h3>
+            
+              @foreach ($random_news as $news)
+                <div class="post-item">
+                <img src="{{ Storage::disk('public')->url($news->gambar_berita) }}" alt="" class="flex-shrink-0">
+                <div>
+                  <h4><a href="{{ route('news.details', $news->id) }}">{{ $news->nama_berita }}</a></h4>
+                  <time datetime="2020-01-01">{{ implode(', ', $news->tags_berita) }}</time>
+                </div>
+                </div><!-- End recent post item-->
+              @endforeach
+            </div>
 
           </div>
 

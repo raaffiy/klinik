@@ -42,6 +42,7 @@ $all_achievement = Achievement::all();
       <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
         <img src="assets/img/SMKN 2.png" alt="SMK NEGERI 2 KOTA BEKASI" class="img-fluid">
         &nbsp;&nbsp;<img src="assets/img/PMI.png" alt="PMR" class="img-fluid">
+        &nbsp;&nbsp;<img src="assets/img/logo.png" alt="logo">
       </a>
   
       <nav id="navmenu" class="navmenu">
@@ -99,10 +100,10 @@ $all_achievement = Achievement::all();
 
           <div class="col-lg-6">
             <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-              <img src="assets/img/illustration-1.webp" alt="Hero Image" class="img-fluid">
+              <img src="assets/img/asset1.png" alt="Hero Image" class="img-fluid">
 
               <div class="customers-badge">
-                <p class="mb-0 mt-2">we strong because we're family</p>
+                <p class="mb-0 mt-20">we strong because we're family</p>
               </div>
             </div>
           </div>
@@ -112,44 +113,44 @@ $all_achievement = Achievement::all();
           <div class="col-lg-3 col-md-6">
             <div class="stat-item">
               <div class="stat-icon">
-                <i class="bi bi-trophy"></i>
+                <i><img src="assets/img/badge.png" alt="awards" width="40"></i>
               </div>
               <div class="stat-content">
-                <h4>3x Won Awards</h4>
-                <p class="mb-0">Vestibulum ante ipsum</p>
+                <h4>17+ Won Awards</h4>
+                <p class="mb-0">Semangat Prestasi Juara</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="stat-item">
               <div class="stat-icon">
-                <i class="bi bi-briefcase"></i>
+                <i><img src="assets/img/stretcher.png" alt="tandu darurat" width="40"></i>
               </div>
               <div class="stat-content">
-                <h4>6.5k Faucibus</h4>
-                <p class="mb-0">Nullam quis ante</p>
+                <h4>Tandu Darurat</h4>
+                <p class="mb-0">Cepat Kuat Aman</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="stat-item">
               <div class="stat-icon">
-                <i class="bi bi-graph-up"></i>
+                <i><img src="assets/img/heart.png" alt="Pertolongan Pertama" width="40"></i>
               </div>
               <div class="stat-content">
-                <h4>80k Mauris</h4>
-                <p class="mb-0">Etiam sit amet orci</p>
+                <h4 style="font-size: 17px;">Pertolongan Pertama</h4>
+                <p class="mb-0">Cepat Tepat Sigap</p>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="stat-item">
               <div class="stat-icon">
-                <i class="bi bi-award"></i>
+                <i><img src="assets/img/parents.png" alt="Perawatan Keluarga" width="40"></i>
               </div>
               <div class="stat-content">
-                <h4>6x Phasellus</h4>
-                <p class="mb-0">Vestibulum ante ipsum</p>
+                <h4 style="font-size: 17px">Perawatan Keluarga</h4>
+                <p class="mb-0">Peduli Bantu Lindungi</p>
               </div>
             </div>
           </div>
@@ -168,8 +169,10 @@ $all_achievement = Achievement::all();
 
           <div class="col-xl-5" data-aos="fade-up" data-aos-delay="200">
             <a href="/about" class="about-meta">MORE ABOUT US</a>
-            <h2 class="about-title">Voluptas enim suscipit temporibus</h2>
-            <p class="about-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <h2 class="about-title">PMR - SMK NEGERI 2 KOTA BEKASI</h2>
+            <p class="about-description">Palang Merah Remaja (PMR) adalah organisasi kepemudaan di bawah Palang Merah Indonesia (PMI) yang berfokus pada
+            kemanusiaan, kesehatan, pertolongan pertama, kesiapsiagaan bencana, donor darah, evakuasi darurat, kepedulian sosial,
+            dan edukasi kesehatan. 🚑❤️</p>
 
             <div class="row feature-list-wrapper">
               <div class="col-md-6">
@@ -192,17 +195,17 @@ $all_achievement = Achievement::all();
                   <div class="profile d-flex align-items-center gap-3">
                     <img src="assets/img/avatar-1.webp" alt="CEO Profile" class="profile-image">
                     <div>
-                      <h4 class="profile-name">Mario Smith</h4>
-                      <p class="profile-position">CEO &amp; Founder</p>
+                      <h4 class="profile-name fw-bold" style="font-size: 14px;">Agung Cahyono S.E</h4>
+                      <p class="profile-position">Pelatih - PMR</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-7">
-                  <div class="contact-info d-flex align-items-center gap-2">
-                    <i class="bi bi-telephone-fill"></i>
+                  <div class="contact-info d-flex align-items-center gap-3">
+                    <i class="bi bi-instagram"></i>
                     <div>
-                      <p class="contact-label">Call us anytime</p>
-                      <p class="contact-number">+123 456-789</p>
+                      <p class="contact-label">Instagram</p>
+                      <p class="contact-number"><a href="https://www.instagram.com/pmr2bekasi/">pmr2bekasi</a></p>
                     </div>
                   </div>
                 </div>
@@ -234,7 +237,7 @@ $all_achievement = Achievement::all();
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Devisi</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Siap menjadi pahlawan kemanusiaan? Temukan informasi, kegiatan, dan pelatihan seru di tiga divisi utama kami!" 🙌🏻</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -251,7 +254,7 @@ $all_achievement = Achievement::all();
 
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
-                <h4>Tandu</h4>
+                <h4>Tandu Darurat</h4>
               </a><!-- End tab nav item -->
 
             </li>
@@ -270,19 +273,19 @@ $all_achievement = Achievement::all();
           <div class="tab-pane fade active show" id="features-tab-1">
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                <h3>Voluptatem dignissimos provident</h3>
+                <h3>Pertolongan Pertama (PP)</h3>
                 <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
+                  Pemberian pertolongan segera kepada seseorang yang mengalami sakit atau cedera sebelum mendapatkan penanganan medis
+                  lebih lanjut disebut Pertolongan Pertama. Divisi ini bertujuan untuk:
                 </p>
                 <ul>
-                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Mencegah kondisi korban semakin memburuk dengan memberikan penanganan awal yang tepat.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Mempertahankan keselamatan dan kestabilan korban sebelum bantuan medis profesional tiba.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Meningkatkan peluang kesembuhan dengan tindakan cepat dan sigap.</span></li>
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-illustration-1.webp" alt="" class="img-fluid">
+                <img src="assets/img/pp.png" style="width: 500px" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End tab content item -->
@@ -290,20 +293,18 @@ $all_achievement = Achievement::all();
           <div class="tab-pane fade" id="features-tab-2">
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                <h3>Neque exercitationem debitis</h3>
+                <h3>Tandu Darurat</h3>
                 <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
+                  Tandu Darurat adalah teknik evakuasi yang digunakan untuk memindahkan korban dengan aman dan cepat ke tempat yang lebih
+                  aman atau fasilitas medis. Divisi ini bertujuan untuk:
                 </p>
                 <ul>
-                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Memastikan korban dievakuasi dengan cepat dan aman tanpa memperparah cedera yang dialami.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Melatih kesiapsiagaan tim dalam menghadapi keadaan darurat seperti bencana atau kecelakaan.</span></li>
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-illustration-2.webp" alt="" class="img-fluid">
+                <img src="assets/img/tandu.png" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End tab content item -->
@@ -311,19 +312,19 @@ $all_achievement = Achievement::all();
           <div class="tab-pane fade" id="features-tab-3">
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                <h3>Voluptatibus commodi accusamu</h3>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</span></li>
-                </ul>
+                <h3>Pertolongan Keluarga (PK)</h3>
                 <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
+                  Pertolongan Keluarga adalah upaya memberikan bantuan pertama kepada anggota keluarga yang mengalami sakit atau cedera
+                  sebelum mendapatkan penanganan medis lebih lanjut. Divisi ini bertujuan untuk:
                 </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Menjaga kesehatan dan keselamatan keluarga dengan memberikan pertolongan awal yang tepat.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Meningkatkan kesiapsiagaan dalam menghadapi keadaan darurat di rumah seperti luka, pingsan, atau kecelakaan ringan.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Membangun kesadaran akan pentingnya pertolongan pertama agar setiap anggota keluarga dapat saling membantu dalam situasi darurat.</span></li>
+                </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-illustration-3.webp" alt="" class="img-fluid">
+                <img src="assets/img/pk.png" style="width: 500px" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End tab content item -->
@@ -339,7 +340,7 @@ $all_achievement = Achievement::all();
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Achievement</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Berbagai prestasi telah diraih oleh PMR dalam bidang Pertolongan Pertama, Tandu, Pertolongan Keluarga</p>
       </div><!-- End Section Title -->
     
       <div class="container">
@@ -457,7 +458,8 @@ $all_achievement = Achievement::all();
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Event</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Beragam event yang diselenggarakan oleh PMR dan PMI untuk mendukung aksi kemanusiaan, kesehatan, dan kesiapsiagaan
+        darurat.</p>
       </div><!-- End Section Title -->
     
       <div class="container">
@@ -586,65 +588,29 @@ $all_achievement = Achievement::all();
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="/" class="logo d-flex align-items-center">
-            <span class="sitename">iLanding</span>
+          <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+            <img src="assets/img/logo.png" alt="logo">
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p>Jl. Lap. Bola Rw. Butun, Ciketing Udik</p>
+            <p>Kec. Bantar Gebang, Kota Bks, Jawa Barat 17153</p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/pmr2bekasi/"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
-          <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
-          </ul>
+        <div class="col-lg-8 col-md-3 footer-newsletter">
+          <h4>Find Us on Map</h4>
+          <style type="text/css" media="screen">
+            iframe {
+              width: 100%;
+              height: 200px;
+            }
+          </style>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15861.183381893235!2d106.9920454!3d-6.3557369!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7a0a35b288779341!2sSMK%20Negeri%202%20Kota%20Bekasi!5e0!3m2!1sid!2sid!4v1634652926335!5m2!1sid!2sid"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
       </div>
