@@ -3,13 +3,11 @@
 use App\Models\Products;
 
 // kategori
-$kategori_1 = Products::where('kategori_obat', 'Infeksi')->get();
-$kategori_2 = Products::where('kategori_obat', 'Saluran Pernapasan')->get();
-$kategori_3 = Products::where('kategori_obat', 'Pencernaan')->get();
-$kategori_4 = Products::where('kategori_obat', 'Metabolik')->get();
-$kategori_5 = Products::where('kategori_obat', 'Kulit')->get();
-$kategori_6 = Products::where('kategori_obat', 'Mental atau Psikologis')->get();
-$kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
+$kategori_1 = Products::where('kategori_obat', 'Anemia')->get();
+$kategori_2 = Products::where('kategori_obat', 'Demam')->get();
+$kategori_3 = Products::where('kategori_obat', 'Sakit kepala')->get();
+$kategori_4 = Products::where('kategori_obat', 'Asma')->get();
+$kategori_5 = Products::where('kategori_obat', 'Penyakit lambung')->get();
 ?>
 
 <!DOCTYPE html>
@@ -88,17 +86,18 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
 
       <div class="container">
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        <div class="row">
+          <div class="col-lg-8">
+
+          <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100" id="categorySelect">
             <li data-filter="*" class="filter-active" onclick="updateDescription(this)">All</li>
-            <li data-filter=".filter-infeksi" value="infeksi" onclick="updateDescription(this)">Infeksi</li>
-            <li data-filter=".filter-saluran-pernapasan" value="saluranPernapasan" onclick="updateDescription(this)">Saluran Pernapasan</li>
-            <li data-filter=".filter-pencernaan" value="pencernaan" onclick="updateDescription(this)">Pencernaan</li>
-            <li data-filter=".filter-metabolik" value="metabolik" onclick="updateDescription(this)">Metabolik</li>
-            <li data-filter=".filter-kulit" value="kulit" onclick="updateDescription(this)">Kulit</li>
-            <li data-filter=".filter-mental" value="mental" onclick="updateDescription(this)">Mental atau Psikologis</li>
-            <li data-filter=".filter-kanker" value="kanker" onclick="updateDescription(this)">Kanker</li>
+            <li data-filter=".filter-Anemia" value="Anemia" onclick="updateDescription(this)">Anemia</li>
+            <li data-filter=".filter-Demam" value="Demam" onclick="updateDescription(this)">Demam</li>
+            <li data-filter=".filter-Sakit-kepala" value="sakitKepala" onclick="updateDescription(this)">Sakit kepala</li>
+            <li data-filter=".filter-Asma" value="Asma" onclick="updateDescription(this)">Asma</li>
+            <li data-filter=".filter-Penyakit-lambung" value="penyakitLambung" onclick="updateDescription(this)">Penyakit lambung</li>
             <br><br>
             <div class="card" style="color: #6995ab; background-color: #f0f0f0; border-color: #f0f0f0; border-radius: 10px; padding: 5px; margin: 5px; text-align: center; font-size: 18px; font-weight: bold;">
                 <div class="card-body" id="description">
@@ -110,123 +109,107 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
             @foreach ($kategori_1 as $products)
-            <?php
+                <?php
   $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
   $nama_obat = $products->nama_obat;
   $productsId = $products->id;
-            ?>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-infeksi">
-              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
+                ?>
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-Anemia">
+                <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
                 <h4>{{ $nama_obat }}</h4>
-                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="##" class="preview-link" onclick="addToCheckout('{{ $nama_obat }}', '{{ $gambar_obat }}')"><i class="bi bi-bag-plus"></i></a>
                 <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-            @endforeach
+                </div>
+                </div><!-- End Portfolio Item -->
+      @endforeach
 
             @foreach ($kategori_2 as $products) 
-            <?php
+              <?php
   $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
   $nama_obat = $products->nama_obat;
   $productsId = $products->id;
-            ?>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-saluran-pernapasan">
-              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
+              ?>
+              <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-Demam">
+                <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
                 <h4>{{ $nama_obat }}</h4>
-                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="##" class="preview-link" onclick="addToCheckout('{{ $nama_obat }}', '{{ $gambar_obat }}')"><i class="bi bi-bag-plus"></i></a>
                 <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-            @endforeach
+                </div>
+              </div><!-- End Portfolio Item -->
+      @endforeach
 
             @foreach ($kategori_3 as $products) 
-            <?php
+                <?php
   $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
   $nama_obat = $products->nama_obat;
   $productsId = $products->id;
-            ?>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-pencernaan">
-              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
+                ?>
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-Sakit-kepala">
+                <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
                 <h4>{{ $nama_obat }}</h4>
-                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="##" class="preview-link" onclick="addToCheckout('{{ $nama_obat }}', '{{ $gambar_obat }}')"><i class="bi bi-bag-plus"></i></a>
                 <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-            @endforeach
+                </div>
+                </div><!-- End Portfolio Item -->
+        @endforeach
 
             @foreach ($kategori_4 as $products)  
-            <?php
+                <?php
   $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
   $nama_obat = $products->nama_obat;
   $productsId = $products->id;
-            ?>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-metabolik">
-              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
+                ?>
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-Asma">
+                <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
                 <h4>{{ $nama_obat }}</h4>
-                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="##" class="preview-link" onclick="addToCheckout('{{ $nama_obat }}', '{{ $gambar_obat }}')"><i class="bi bi-bag-plus"></i></a>
                 <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-            @endforeach
+                </div>
+                </div><!-- End Portfolio Item -->
+        @endforeach
 
             @foreach ($kategori_5 as $products)  
-            <?php
+                <?php
   $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
   $nama_obat = $products->nama_obat;
   $productsId = $products->id;
-            ?>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kulit">
-              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
+                ?>
+                <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-Penyakit-lambung">
+                <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
                 <h4>{{ $nama_obat }}</h4>
-                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="##" class="preview-link" onclick="addToCheckout('{{ $nama_obat }}', '{{ $gambar_obat }}')"><i class="bi bi-bag-plus"></i></a>
                 <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-            @endforeach
-
-            @foreach ($kategori_6 as $products)  
-            <?php
-  $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
-  $nama_obat = $products->nama_obat;
-  $productsId = $products->id;
-            ?>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mental">
-              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>{{ $nama_obat }}</h4>
-                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-            @endforeach
-
-            @foreach ($kategori_7 as $products)  
-            <?php
-  $gambar_obat = Storage::disk('public')->url($products->gambar_obat);
-  $nama_obat = $products->nama_obat;
-  $productsId = $products->id;
-            ?>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-kanker">
-              <img src="{{ $gambar_obat }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>{{ $nama_obat }}</h4>
-                <a href="{{ $gambar_obat }}" title="{{ $nama_obat }}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="/medicine/{{ $productsId }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-            @endforeach
-
+                </div>
+                </div><!-- End Portfolio Item -->
+        @endforeach
+            
           </div><!-- End Portfolio Container -->
-
+        <br><br>
         </div>
-      </div>
 
-    </section><!-- /Portfolio Section -->
+          </div>
+
+          <!-- Card Section -->
+          <div class="col-lg-4">
+            <div class="p-5 d-flex flex-column bg-body-tertiary shadow rounded-4">
+              <div class="mt-auto">
+                <h2><strong>Checkout Products</strong></h2>
+                <div id="checkoutProducts"></div>
+                <hr class="opacity-10">
+                <h4 class="my-4">Total Products <strong id="totalProducts">0</strong></h4>
+                <button class="btn btn-primary text-white w-100" id="checkout">Checkout</button>
+              </div>
+            </div>
+          </div>
+
+          </div>
+          </div>
+          </section>
 
   </main>
 
@@ -241,23 +224,59 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
             <div class="footer-contact pt-3">
               <p>Jl. Lap. Bola Rw. Butun, Ciketing Udik</p>
               <p>Kec. Bantar Gebang, Kota Bks, Jawa Barat 17153</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+              <p><strong>Email:</strong> <span>info@example.com</span></p>
             </div>
             <div class="social-links d-flex mt-4">
-              <a href="https://www.instagram.com/pmr2bekasi/"><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
     
-          <div class="col-lg-8 col-md-3 footer-newsletter">
-            <h4>Find Us on Map</h4>
-            <style type="text/css" media="screen">
-              iframe {
-                width: 100%;
-                height: 200px;
-              }
-            </style>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15861.183381893235!2d106.9920454!3d-6.3557369!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7a0a35b288779341!2sSMK%20Negeri%202%20Kota%20Bekasi!5e0!3m2!1sid!2sid!4v1634652926335!5m2!1sid!2sid"
-              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Product Management</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Hic solutasetp</h4>
+            <ul>
+              <li><a href="#">Molestiae accusamus iure</a></li>
+              <li><a href="#">Excepturi dignissimos</a></li>
+              <li><a href="#">Suscipit distinctio</a></li>
+              <li><a href="#">Dilecta</a></li>
+              <li><a href="#">Sit quas consectetur</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Nobis illum</h4>
+            <ul>
+              <li><a href="#">Ipsam</a></li>
+              <li><a href="#">Laudantium dolorum</a></li>
+              <li><a href="#">Dinera</a></li>
+              <li><a href="#">Trodelas</a></li>
+              <li><a href="#">Flexo</a></li>
+            </ul>
           </div>
     
         </div>
@@ -289,13 +308,11 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
   <script>
       function updateDescription(element) {
           const descriptions = {
-              infeksi: "Penyakit yang disebabkan oleh mikroorganisme seperti bakteri, virus, jamur, atau parasit. (Flu, TBC, DBD, Pneumonia, HIV/AIDS)",
-              saluranPernapasan: "Penyakit yang memengaruhi sistem pernapasan. (Asma, Bronkitis, Sinusitis, Emfisema)",
-              pencernaan: "Penyakit yang memengaruhi sistem pencernaan, seperti masalah lambung. (Radang Lambung, Diare, Sembelit , Maag Kronis)",
-              metabolik: "Penyakit yang terkait dengan metabolisme tubuh. (Kolesterol Tinggi, Obesitas, Asam Urat)",
-              kulit: "Penyakit yang memengaruhi kulit atau jaringan lunak. (Psoriasis, Jerawat, Infeksi Jamur)",
-              mental: "Gangguan yang memengaruhi kesehatan mental dan emosional. (Depresi, Gangguan Cemas, Skizofrenia, Bipolar)",
-              kanker: "Penyakit akibat pertumbuhan sel abnormal yang tidak terkendali. (Kanker Payudara, Kanker Paru-paru, Kanker Usus Besar, Leukemia)"
+              Anemia: "Kondisi kekurangan sel darah merah atau hemoglobin dalam darah, yang menyebabkan tubuh kekurangan oksigen. (Contoh: Anemia defisiensi besi, anemia aplastik, anemia sel sabit)",
+              Demam: "Peningkatan suhu tubuh di atas normal sebagai respons terhadap infeksi atau kondisi medis lainnya. (Contoh: Demam berdarah, demam malaria)",
+              sakitKepala: "Rasa nyeri atau tekanan di kepala yang bisa disebabkan oleh berbagai faktor, termasuk stres, ketegangan otot, atau penyakit tertentu. (Contoh: Migrain, sakit kepala)",
+              Asma: "Penyakit pernapasan kronis yang menyebabkan penyempitan dan peradangan saluran udara, sering kali dipicu oleh alergi atau iritan. (Gejala: Sesak napas, batuk)",
+              penyakitLambung: "Gangguan pada lambung yang dapat menyebabkan nyeri, mual, atau gangguan pencernaan. (Contoh: Gastritis, tukak lambung, GERD/refluks asam)",
           };
 
           const value = element.getAttribute('value');
@@ -341,4 +358,275 @@ $kategori_7 = Products::where('kategori_obat', 'Kanker')->get();
       }
     });
   });
+</script>
+
+<script>
+  let totalProducts = 0;
+  let cart = {}; // Menyimpan produk dalam format { namaObat: { qty, image } }
+
+  function addToCheckout(name, image) {
+    if (!cart[name]) {
+      cart[name] = { qty: 1, image: image };
+    } else {
+      cart[name].qty++;
+    }
+    renderCart();
+    updateTotal();
+  }
+
+  function renderCart() {
+    const checkoutProducts = document.getElementById('checkoutProducts');
+    checkoutProducts.innerHTML = ''; // Kosongkan sebelum render ulang
+
+    Object.keys(cart).forEach(name => {
+      const product = cart[name];
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('card', 'mb-3');
+      productDiv.style.maxWidth = '600px';
+      productDiv.innerHTML = `
+      <div class="row g-0">
+        <div class="col-md-5">
+          <img src="${product.image}" class="img-fluid rounded-start" alt="..." style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="col-md-7">
+          <div class="card-body">
+            <h5 class="card-title">${name}</h5>
+            <div class="d-flex align-items-center justify-content-between flex-wrap">
+              <div class="d-flex align-items-center">
+                <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity('${name}', -1)">-</button>
+                <span class="mx-2" id="qty-${name}">${product.qty}</span>
+                <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity('${name}', 1)">+</button>
+              </div>
+              <button class="btn btn-danger btn-sm ms-2 mt-2 mt-md-0" onclick="deleteItem('${name}')" style="min-width: 60px;">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      `;
+      checkoutProducts.appendChild(productDiv);
+    });
+  }
+
+  function updateQuantity(name, change) {
+    if (cart[name]) {
+      cart[name].qty += change;
+      if (cart[name].qty <= 0) {
+        delete cart[name]; // Hapus produk jika qty <= 0
+      }
+      renderCart();
+      updateTotal();
+    }
+  }
+
+  function deleteItem(name) {
+    if (cart[name]) {
+      delete cart[name]; // Hapus produk dari cart
+      renderCart();
+      updateTotal();
+    }
+  }
+
+  function updateTotal() {
+    totalProducts = Object.values(cart).reduce((sum, product) => sum + product.qty, 0);
+    document.getElementById('totalProducts').innerText = totalProducts;
+  }
+
+  const Checkout = document.getElementById('checkout');
+    Checkout.addEventListener('click', function () {
+      if (Object.keys(cart).length === 0) {
+        Swal.fire({
+          title: "Oops!",
+          text: "Belum ada produk yang ditambahkan ke dalam cart.",
+          icon: "warning"
+        });
+        return;
+      }
+
+      const today = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const dateOptions = [];
+
+      for (let i = 0; i < 3; i++) {
+        const futureDate = new Date();
+        futureDate.setDate(today.getDate() + i);
+        dateOptions.push(`<option value="${futureDate.toISOString().split('T')[0]}">${futureDate.toLocaleDateString('id-ID', options)}</option>`);
+      }
+
+      Swal.fire({
+        title: "Complete Your Data",
+        html: `
+      <input id="swal-name" class="swal2-input" placeholder="Full Name" style="width: 70%">
+      
+      <select id="swal-major" class="swal2-select" style="width: 70%">
+        <option value="" disabled selected>Pilih Role</option>
+        
+        <option value="Guru / Staff">Guru / Staff</option>
+
+        // Kelas 10
+        <option value="X TKJ 1">X TKJ 1</option>
+        <option value="X TKJ 2">X TKJ 2</option>
+        <option value="X TKJ 3">X TKJ 3</option>
+        <option value="X TKJ K.I">X TKJ K.I</option>
+
+        <option value="X RPL 1">X RPL 1</option>
+        <option value="X RPL 2">X RPL 2</option>
+        <option value="X RPL 3">X RPL 3</option>
+        <option value="X RPL K.I">X RPL K.I</option>
+
+        <option value="X AK 1">X AK 1</option>
+        <option value="X AK 2">X AK 2</option>
+        <option value="X AK 3">X AK 3</option>
+
+        <option value="X TEI 1">X TEI 1</option>
+        <option value="X TEI 2">X TEI 2</option>
+        <option value="X TEI 3">X TEI 3</option>
+        <option value="X TEI K.I">X TEI K.I</option>
+
+        <option value="X TO 1">X TO 1</option>
+        <option value="X TO 2">X TO 2</option>
+        <option value="X TO 3">X TO 3</option>
+        <option value="X TO K.I">X TO K.I</option>
+
+        <option value="X TET 1">X TET 1</option>
+        <option value="X TET 2">X TET 2</option>
+        <option value="X TET 3">X TET 3</option>
+
+        // Kelas 11
+        <option value="XI TKJ 1">XI TKJ 1</option>
+        <option value="XI TKJ 2">XI TKJ 2</option>
+        <option value="XI TKJ 3">XI TKJ 3</option>
+        <option value="XI TKJ K.I">XI TKJ K.I</option>
+
+        <option value="XI RPL 1">XI RPL 1</option>
+        <option value="XI RPL 2">XI RPL 2</option>
+        <option value="XI RPL 3">XI RPL 3</option>
+        <option value="XI RPL K.I">XI RPL K.I</option>
+
+        <option value="XI AK 1">XI AK 1</option>
+        <option value="XI AK 2">XI AK 2</option>
+        <option value="XI AK 3">XI AK 3</option>
+
+        <option value="XI TEI 1">XI TEI 1</option>
+        <option value="XI TEI 2">XI TEI 2</option>
+        <option value="XI TEI 3">XI TEI 3</option>
+        <option value="XI TEI K.I">XI TEI K.I</option>
+
+        <option value="XI TO 1">XI TO 1</option>
+        <option value="XI TO 2">XI TO 2</option>
+        <option value="XI TO 3">XI TO 3</option>
+        <option value="XI TO K.I">XI TO K.I</option>
+
+        <option value="XI TET 1">XI TET 1</option>
+        <option value="XI TET 2">XI TET 2</option>
+        <option value="XI TET 3">XI TET 3</option>
+
+        // Kelas 12
+        <option value="XII TKJ 1">XII TKJ 1</option>
+        <option value="XII TKJ 2">XII TKJ 2</option>
+        <option value="XII TKJ 3">XII TKJ 3</option>
+        <option value="XII TKJ K.I">XII TKJ K.I</option>
+
+        <option value="XII RPL 1">XII RPL 1</option>
+        <option value="XII RPL 2">XII RPL 2</option>
+        <option value="XII RPL 3">XII RPL 3</option>
+        <option value="XII RPL K.I">XII RPL K.I</option>
+
+        <option value="XII AK 1">XII AK 1</option>
+        <option value="XII AK 2">XII AK 2</option>
+        <option value="XII AK 3">XII AK 3</option>
+
+        <option value="XII TEI 1">XII TEI 1</option>
+        <option value="XII TEI 2">XII TEI 2</option>
+        <option value="XII TEI 3">XII TEI 3</option>
+        <option value="XII TEI K.I">XII TEI K.I</option>
+
+        <option value="XII TO 1">XII TO 1</option>
+        <option value="XII TO 2">XII TO 2</option>
+        <option value="XII TO 3">XII TO 3</option>
+        <option value="XII TO K.I">XII TO K.I</option>
+
+        <option value="XII TET 1">XII TET 1</option>
+        <option value="XII TET 2">XII TET 2</option>
+        <option value="XII TET 3">XII TET 3</option>
+
+      </select>
+      
+      <select id="swal-date" class="swal2-select" style="width: 70%">
+        <option value="" disabled selected>Pilih Tanggal Pengambilan</option>
+        ${dateOptions.join('')}
+      </select>
+      
+      <select id="swal-location" class="swal2-select" style="width: 70%">
+        <option value="" disabled selected>Pilih Lokasi Pengambilan</option>
+        <option value="Ruang UKS">Ruang UKS</option>
+      </select>
+      
+      <select id="swal-time" class="swal2-select" style="width: 70%">
+        <option value="" disabled selected>Pilih Jam Pengambilan</option>
+        <option value="10:00 - 10.20 (Istirahat 1)">10:00 - 10.20 (Istirahat 1)</option>
+        <option value="11:50 - 12.30 (Istirahat 2)">11:50 - 12.30 (Istirahat 2)</option>
+        <option value="15:30 - 16:00 (Pulang Sekolah)">15:30 - 16:00 (Pulang Sekolah)</option>
+        <option value="URGENT (NOW)">URGENT (NOW)</option>
+      </select>
+      
+      <textarea id="swal-note" class="swal2-textarea" placeholder="Tambahkan catatan (Opsional)" style="width: 70%"></textarea>
+    `,
+        showCancelButton: true,
+        confirmButtonText: "Submit",
+        preConfirm: () => {
+          const name = document.getElementById('swal-name').value;
+          const major = document.getElementById('swal-major').value;
+          const date = document.getElementById('swal-date').value;
+          const location = document.getElementById('swal-location').value;
+          const time = document.getElementById('swal-time').value;
+          const note = document.getElementById('swal-note').value || "Tidak ada catatan";
+
+          if (!name || !major || !date || !location || !time) {
+            Swal.showValidationMessage("Harap isi semua data yang wajib!");
+          }
+
+          return { name, major, date, location, time, note };
+        }
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const formattedDate = new Date(result.value.date).toLocaleDateString('id-ID', options);
+
+          Swal.fire({
+            title: "Data Berhasil Dikirim!",
+            html: `
+          <b>Nama:</b> ${result.value.name}<br>
+          <b>Jurusan:</b> ${result.value.major}<br>
+          <b>Tanggal Pengambilan:</b> ${formattedDate}<br>
+          <b>Lokasi:</b> ${result.value.location}<br>
+          <b>Jam:</b> ${result.value.time}<br>
+          <b>Catatan:</b> ${result.value.note}
+        `,
+            icon: "success"
+          }).then(() => {
+            // Mengonversi data ke format pesan WhatsApp
+            let cartItems = Object.keys(cart)
+              .map((name, index) => `${index + 1}. ${name} (Qty: ${cart[name].qty})`)
+              .join("\n");
+
+            let message = `Halo, saya ingin melakukan pemesanan obat dengan detail sebagai berikut:\n\n` +
+              `Nama: ${result.value.name}\n` +
+              `Jurusan: ${result.value.major}\n` +
+              `Tanggal Pengambilan: ${formattedDate}\n` +
+              `Lokasi: ${result.value.location}\n` +
+              `Jam: ${result.value.time}\n` +
+              `Catatan: ${result.value.note}\n\n` +
+              `Produk:\n${cartItems}\n\nTerima kasih!`;
+
+            // Nomor WhatsApp tujuan
+            let phoneNumber = "+6282112271603";
+
+            // Membuka WhatsApp dengan pesan yang sudah diformat
+            let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, "_blank");
+          });
+        }
+      });
+    });
 </script>

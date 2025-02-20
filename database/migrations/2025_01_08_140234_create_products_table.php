@@ -25,16 +25,11 @@ return new class extends Migration
 
             // Column kategori_obat
             $table->enum('kategori_obat', [
-                'Infeksi',
-                'Saluran Pernapasan',
-                'Kardiovaskular',
-                'Pencernaan',
-                'Metabolik',
-                'Sistem Saraf',
-                'Autoimun',
-                'Kulit',
-                'Mental atau Psikologis',
-                'Kanker',
+                'Anemia',
+                'Demam',
+                'Sakit kepala',
+                'Asma',
+                'Penyakit lambung',
             ])->nullable();
 
             // Column keterangan_obat

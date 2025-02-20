@@ -48,26 +48,22 @@ class ProductsResource extends Resource
                         // Column kategori_obat
                         Select::make('kategori_obat')
                             ->options([
-                                'Infeksi' => 'Infeksi',
-                                'Saluran Pernapasan' => 'Saluran Pernapasan',
-                                'Pencernaan' => 'Pencernaan',
-                                'Metabolik' => 'Metabolik',
-                                'Kulit' => 'Kulit',
-                                'Mental atau Psikologis' => 'Mental atau Psikologis',
-                                'Kanker' => 'Kanker',
+                                'Anemia' => 'Anemia',
+                                'Demam' => 'Demam',
+                                'Sakit kepala' => 'Sakit kepala',
+                                'Asma' => 'Asma',
+                                'Penyakit lambung' => 'Penyakit lambung',
                             ])
                             ->required()->columnSpan(1)
                             ->reactive()  // Enable reactivity for this field
                             ->afterStateUpdated(function ($state, callable $set) {
                                 // Update the keterangan_obat based on kategori_obat selection
                                 $descriptions = [
-                                    'Infeksi' => 'Penyakit yang disebabkan oleh mikroorganisme seperti bakteri, virus, jamur, atau parasit. (Flu, TBC, DBD, Pneumonia, HIV/AIDS)',
-                                    'Saluran Pernapasan' => 'Penyakit yang memengaruhi sistem pernapasan. (Asma, Bronkitis, Sinusitis, Emfisema)',
-                                    'Pencernaan' => 'Penyakit yang memengaruhi sistem pencernaan, seperti masalah lambung. (Radang Lambung, Diare, Sembelit , Maag Kronis)',
-                                    'Metabolik' => 'Penyakit yang terkait dengan metabolisme tubuh. (Kolesterol Tinggi, Obesitas, Asam Urat)',
-                                    'Kulit' => 'Penyakit yang memengaruhi kulit atau jaringan lunak. (Psoriasis, Jerawat, Infeksi Jamur)',
-                                    'Mental atau Psikologis' => 'Gangguan yang memengaruhi kesehatan mental dan emosional. (Depresi, Gangguan Cemas, Skizofrenia, Bipolar)',
-                                    'Kanker' => 'Penyakit akibat pertumbuhan sel abnormal yang tidak terkendali. (Kanker Payudara, Kanker Paru-paru, Kanker Usus Besar, Leukemia)',
+                                    'Anemia' => 'Penyakit yang disebabkan oleh mikroorganisme seperti bakteri, virus, jamur, atau parasit. (Flu, TBC, DBD, Pneumonia, HIV/AIDS)',
+                                    'Demam' => 'Penyakit yang memengaruhi sistem pernapasan. (Asma, Bronkitis, Sinusitis, Emfisema)',
+                                    'Sakit kepala' => 'Penyakit yang memengaruhi sistem pencernaan, seperti masalah lambung. (Radang Lambung, Diare, Sembelit , Maag Kronis)',
+                                    'Asma' => 'Penyakit yang terkait dengan metabolisme tubuh. (Kolesterol Tinggi, Obesitas, Asam Urat)',
+                                    'Penyakit lambung' => 'Penyakit yang memengaruhi kulit atau jaringan lunak. (Psoriasis, Jerawat, Anemia Jamur)',
                                 ];
                             
                                 if ($state && isset($descriptions[$state])) {
