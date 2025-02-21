@@ -44,8 +44,29 @@ Route::get('/medicine', function () {
 Route::get('/chat', function () {
     return view('chat');
 });
+
 Route::post('/chat/send', function (Request $request) {
     $message = $request->input('message');
+    
+    // Filter topik kesehatan
+    $keywords = ['kesehatan', 'obat', 'penyakit', 'dokter', 'medis', 'rumah sakit', 'vaksin', 'gejala', 'terapi', 'gizi', 'diet', 'kebugaran'];
+    $isHealthRelated = false;
+    
+    foreach ($keywords as $keyword) {
+        if (stripos($message, $keyword) !== false) {
+            $isHealthRelated = true;
+            break;
+        }
+    }
+    
+    if (!$isHealthRelated) {
+        return response()->json([
+            'choices' => [
+                ['message' => ['content' => 'Maaf, saya hanya dapat menjawab pertanyaan seputar kesehatan.']]
+            ]
+        ]);
+    }
+    
     $response = Http::withHeaders([
         'Authorization' => 'Bearer ' . env('GROQ_API_KEY'),
     ])->post('https://api.groq.com/openai/v1/chat/completions', [
@@ -57,7 +78,7 @@ Route::post('/chat/send', function (Request $request) {
         ],
         'model' => 'llama-3.3-70b-versatile',
     ]);
-
+    
     return response()->json($response->json());
 });
 
