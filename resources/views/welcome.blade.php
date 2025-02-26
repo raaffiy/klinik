@@ -216,7 +216,7 @@ $all_achievement = Achievement::all();
             <div class="image-wrapper">
               <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
                 <img src="assets/img/gambar 1.jpeg" alt="Business Meeting" class="img-fluid main-image rounded-4">
-                <img src="assets/img/gambar 2.jpeg" alt="Team Discussion" class="img-fluid small-image rounded-4">
+                <img src="assets/img/divisi.png" alt="Team Discussion" class="img-fluid small-image rounded-4">
               </div>
               <div class="experience-badge floating">
                 <h3>77 <span>BPH - PMR</span></h3>

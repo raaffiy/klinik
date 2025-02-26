@@ -142,61 +142,82 @@
         
         
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="assets/img/contoh2.jpeg" class="img-fluid" alt="">
+                            <img src="assets/img/dokumentasi/1.png" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Product 1</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/contoh2.jpeg" title="Product 1" data-gallery="portfolio-gallery-product"
+                                <h4>Dokumentasi</h4>
+                                <a href="assets/img/dokumentasi/1.png" title="Product 1" data-gallery="portfolio-gallery-product"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
         
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="assets/img/contoh1.jpeg" class="img-fluid" alt="">
+                            <img src="assets/img/dokumentasi/2.png" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Branding 1</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/contoh1.jpeg" title="Branding 1" data-gallery="portfolio-gallery-branding"
+                                <h4>Dokumentasi</h4>
+                                <a href="assets/img/dokumentasi/2.png" title="Branding 1" data-gallery="portfolio-gallery-branding"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
         
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="assets/img/contoh2.jpeg" class="img-fluid" alt="">
+                            <img src="assets/img/dokumentasi/3.png" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/contoh2.jpeg" title="App 2" data-gallery="portfolio-gallery-app"
+                                <h4>Dokumentasi</h4>
+                                <a href="assets/img/dokumentasi/3.png" title="App 2" data-gallery="portfolio-gallery-app"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
         
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="assets/img/lomba.jpg" class="img-fluid" alt="">
+                            <img src="assets/img/dokumentasi/4.png" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Product 2</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/lomba.jpg" title="Product 2" data-gallery="portfolio-gallery-product"
+                                <h4>Dokumentasi</h4>
+                                <a href="assets/img/dokumentasi/4.png" title="Product 2" data-gallery="portfolio-gallery-product"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
         
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="assets/img/lomba2.jpg" class="img-fluid" alt="">
+                            <img src="assets/img/dokumentasi/5.png" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Branding 2</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/lomba2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding"
+                                <h4>Dokumentasi</h4>
+                                <a href="assets/img/dokumentasi/5.png" title="Branding 2" data-gallery="portfolio-gallery-branding"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
         
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="assets/img/lomba.jpg" class="img-fluid" alt="">
+                            <img src="assets/img/dokumentasi/6.png" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/lomba.jpg" title="App 3" data-gallery="portfolio-gallery-app"
+                                <h4>Dokumentasi</h4>
+                                <a href="assets/img/dokumentasi/6.png" title="App 3" data-gallery="portfolio-gallery-app"
+                                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+        
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                            <img src="assets/img/dokumentasi/7.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Dokumentasi</h4>
+                                <a href="assets/img/dokumentasi/7.png" title="App 3" data-gallery="portfolio-gallery-app"
+                                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+        
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                            <img src="assets/img/dokumentasi/8.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Dokumentasi</h4>
+                                <a href="assets/img/dokumentasi/8.png" title="App 3" data-gallery="portfolio-gallery-app"
+                                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+        
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                            <img src="assets/img/dokumentasi/9.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Dokumentasi</h4>
+                                <a href="assets/img/dokumentasi/9.png" title="App 3" data-gallery="portfolio-gallery-app"
                                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                             </div>
                         </div><!-- End Portfolio Item -->
