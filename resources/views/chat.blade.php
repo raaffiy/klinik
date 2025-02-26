@@ -42,7 +42,7 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/#about">About</a></li>
-        <li><a href="/#devisi">Devisi</a></li>
+        <li><a href="/#divisi">Divisi</a></li>
         <li><a href="/#achievement">Achievement</a></li>
         <li><a href="/#event">Event</a></li>
         <li><a href="/#team">Teams</a></li>

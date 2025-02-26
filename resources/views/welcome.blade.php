@@ -48,7 +48,7 @@ $all_achievement = Achievement::all();
         <ul>
           <li><a href="/" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#devisi">Devisi</a></li>
+          <li><a href="#divisi">Divisi</a></li>
           <li><a href="#achievement">Achievement</a></li>
           <li><a href="#event">Event</a></li>
           <li><a href="#team">Teams</a></li>
@@ -231,11 +231,11 @@ $all_achievement = Achievement::all();
     </section><!-- /About Section -->
 
     <!-- Features Section -->
-    <section id="devisi" class="features section">
+    <section id="divisi" class="features section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Devisi</h2>
+        <h2>Divisi</h2>
         <p>Siap menjadi pahlawan kemanusiaan? Temukan informasi, kegiatan, dan pelatihan seru di tiga divisi utama kami!" 🙌🏻</p>
       </div><!-- End Section Title -->
 
@@ -274,13 +274,13 @@ $all_achievement = Achievement::all();
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
                 <h3>Pertolongan Pertama (PP)</h3>
                 <p class="fst-italic">
-                  Pemberian pertolongan segera kepada seseorang yang mengalami sakit atau cedera sebelum mendapatkan penanganan medis
-                  lebih lanjut disebut Pertolongan Pertama. Divisi ini bertujuan untuk:
+                  Pertolongan pertama adalah tindakan segera yang diberikan kepada penderita sakit atau korban kecelakaan yang membutuhkan
+                  penanganan medis dasar sebelum mendapatkan perawatan lebih lanjut. Divisi ini bertujuan untuk:
                 </p>
                 <ul>
-                  <li><i class="bi bi-check2-all"></i> <span>Mencegah kondisi korban semakin memburuk dengan memberikan penanganan awal yang tepat.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Mempertahankan keselamatan dan kestabilan korban sebelum bantuan medis profesional tiba.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Meningkatkan peluang kesembuhan dengan tindakan cepat dan sigap.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Menyelamatkan nyawa penderita.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Mencegah risiko kecacatan.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Memberikan rasa aman dan nyaman kepada penderita.</span></li>
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -294,12 +294,12 @@ $all_achievement = Achievement::all();
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
                 <h3>Tandu Darurat</h3>
                 <p class="fst-italic">
-                  Tandu Darurat adalah teknik evakuasi yang digunakan untuk memindahkan korban dengan aman dan cepat ke tempat yang lebih
-                  aman atau fasilitas medis. Divisi ini bertujuan untuk:
+                  Tandu adalah alat yang digunakan untuk mengevakuasi korban dari lokasi kejadian ke tempat yang lebih aman atau fasilitas
+                  kesehatan, seperti rumah sakit dan puskesmas. Divisi ini bertujuan untuk:
                 </p>
                 <ul>
-                  <li><i class="bi bi-check2-all"></i> <span>Memastikan korban dievakuasi dengan cepat dan aman tanpa memperparah cedera yang dialami.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Melatih kesiapsiagaan tim dalam menghadapi keadaan darurat seperti bencana atau kecelakaan.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Memudahkan penolong dalam mengevakuasi korban.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Memberikan kenyamanan dan keamanan bagi korban selama proses evakuasi.</span></li>
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
