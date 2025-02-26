@@ -192,7 +192,7 @@ $all_achievement = Achievement::all();
               <div class="row gy-4">
                 <div class="col-lg-5">
                   <div class="profile d-flex align-items-center gap-3">
-                    <img src="assets/img/avatar-1.webp" alt="CEO Profile" class="profile-image">
+                    <img src="assets/img/pelatih.jpeg" alt="CEO Profile" class="profile-image">
                     <div>
                       <h4 class="profile-name fw-bold" style="font-size: 14px;">Agung Cahyono S.E</h4>
                       <p class="profile-position">Pelatih - PMR</p>
