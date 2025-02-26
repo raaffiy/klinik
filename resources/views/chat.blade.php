@@ -45,7 +45,7 @@
         <li><a href="/#divisi">Divisi</a></li>
         <li><a href="/#achievement">Achievement</a></li>
         <li><a href="/#event">Event</a></li>
-        <li><a href="/#team">Teams</a></li>
+        <li><a href="/#bph">BPH - PMR</a></li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
@@ -210,7 +210,7 @@
     Medicine
   </swal-button>
   <swal-button type="deny" color="#228B22" id="chat-button">
-    AI (Chat Bot)
+    Chat (AI)
   </swal-button>
   <swal-param name="allowEscapeKey" value="false" />
   <swal-param name="customClass" value='{ "popup": "my-popup" }' />

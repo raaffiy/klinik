@@ -51,7 +51,7 @@ $all_achievement = Achievement::all();
           <li><a href="#divisi">Divisi</a></li>
           <li><a href="#achievement">Achievement</a></li>
           <li><a href="#event">Event</a></li>
-          <li><a href="#team">Teams</a></li>
+          <li><a href="#bph">BPH - PMR</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -215,11 +215,11 @@ $all_achievement = Achievement::all();
           <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
             <div class="image-wrapper">
               <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
-                <img src="assets/img/about-5.webp" alt="Business Meeting" class="img-fluid main-image rounded-4">
-                <img src="assets/img/about-2.webp" alt="Team Discussion" class="img-fluid small-image rounded-4">
+                <img src="assets/img/gambar 1.jpeg" alt="Business Meeting" class="img-fluid main-image rounded-4">
+                <img src="assets/img/gambar 2.jpeg" alt="Team Discussion" class="img-fluid small-image rounded-4">
               </div>
               <div class="experience-badge floating">
-                <h3>77 <span>Anggota</span></h3>
+                <h3>77 <span>BPH - PMR</span></h3>
                 <p>PMR - SMKN 2 KOTA BEKASI</p>
               </div>
             </div>
@@ -495,11 +495,12 @@ $all_achievement = Achievement::all();
     </section><!-- /Features Section -->
 
     <!-- team Section -->
-    <section id="team" class="team section">
+    <section id="bph" class="team section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Teams</h2>
+        <h2>BPH - PMR</h2>
+        <p>Berikut ini adalah daftar badan pengurus hakim angkatan 15</p>
       </div><!-- End Section Title -->
       
       <div class="container">
@@ -637,65 +638,42 @@ $all_achievement = Achievement::all();
 
     <div class="container footer-top">
       <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
+        <div class="col-lg-6 col-md-6 footer-about">
           <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
             <img src="assets/img/logo.png" alt="logo">
           </a>
           <div class="footer-contact pt-3">
             <p>Jl. Lap. Bola Rw. Butun, Ciketing Udik</p>
             <p>Kec. Bantar Gebang, Kota Bks, Jawa Barat 17153</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <p class="mt-3"><strong>Phone:</strong> <span>+62 813 8496 0319</span></p>
+            <p><strong>Instagram:</strong> <span>@pmr2bekasi</span></p>
           </div>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Profil & Struktur</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#divisi">Divisi</a></li>
+            <li><a href="#bph">BPH - PMR</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
+          <h4>Kegiatan & Prestasi</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#achievement">Achievement</a></li>
+            <li><a href="#event">Event</a></li>
+            <li><a href="/medicine">Medicine</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
+          <h4>Informasi & Berita</h4>
           <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/chat">Chat (AI)</a></li>
           </ul>
         </div>
 
@@ -734,7 +712,7 @@ $all_achievement = Achievement::all();
     Medicine
   </swal-button>
   <swal-button type="deny" color="#228B22" id="chat-button">
-    AI (Chat Bot)
+    Chat (AI)
   </swal-button>
   <swal-param name="allowEscapeKey" value="false" />
   <swal-param name="customClass" value='{ "popup": "my-popup" }' />

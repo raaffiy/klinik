@@ -4,10 +4,9 @@
 
 MAINTANCE (WAJIB):
 1. video yt
-2. divisi pertolongan pertama & tandu darurat 
-3. gambar / dokumentasi pmr
-4. achievements
-5. event
+2. gambar / dokumentasi pmr
+3. achievements
+4. event
 
 FITURE (JIKA MASIH MEMPUNYAI WAKTU):
 1. memperbaiki ai 
