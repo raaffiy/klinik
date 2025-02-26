@@ -4,9 +4,8 @@
 
 MAINTANCE (WAJIB):
 1. video yt
-2. gambar / dokumentasi pmr
-3. achievements
-4. event
+2. achievements
+3. event
 
 FITURE (JIKA MASIH MEMPUNYAI WAKTU):
 1. memperbaiki ai 
