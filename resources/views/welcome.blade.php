@@ -89,7 +89,7 @@ $all_achievement = Achievement::all();
 
               <div class="hero-buttons">
                 <button href="#" class="btn btn-primary me-0 me-sm-2 mx-1" id="btn2">Get Started</button>
-                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="btn btn-link mt-2 mt-sm-0 glightbox">
+                <a href="https://youtu.be/rXUVvF69dz0" class="btn btn-link mt-2 mt-sm-0 glightbox">
                   <i class="bi bi-play-circle me-1"></i>
                   Play Video
                 </a>
@@ -348,10 +348,9 @@ $all_achievement = Achievement::all();
       <div class="container">
         <div class="features-slider position-relative">
           <div class="row px-4 flex-nowrap g-4 overflow-x-auto scroll-behavior-smooth" id="achievement-cards"
-            style="scrollbar-width: none; -ms-overflow-style: none;">
-            <div class="col-12 col-md-4">
-              @foreach ($all_achievement as $achievement)
-          <?php
+            style="scrollbar-width: none; -ms-overflow-style: none; display: flex; flex-wrap: nowrap;">
+            @foreach ($all_achievement as $achievement)
+              <?php
   $gambar_lomba = Storage::disk('public')->url($achievement->gambar_lomba);
   $nama_lomba = $achievement->nama_lomba;
   $deskripsi_lomba = $achievement->deskripsi_lomba;
@@ -359,21 +358,21 @@ $all_achievement = Achievement::all();
   $achievementId = $achievement->id;
           ?>
 
-          <a href="/achievement/{{ $achievementId }}">
-          <div class="card h-100">
-          <img src="{{ $gambar_lomba }}" class="card-img-top" alt="...">
-          <div class="card-body">
-          <h5 class="card-title">{{ $nama_lomba }}</h5>
-          <p class="card-text">{!! $deskripsi_lomba !!}</p>
-          </div>
-          <div class="card-footer">
-          <small class="text-muted">{{ $tingkat_lomba }}</small>
-          </div>
-          </div>
-          </a>
-
+              <div class="col-12 col-md-4 d-inline-block" style="flex: 0 0 auto;">
+                <a href="/achievement/{{ $achievementId }}">
+                <div class="card h-100">
+                  <img src="{{ $gambar_lomba }}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                  <h5 class="card-title">{{ $nama_lomba }}</h5>
+                  <p class="card-text">{!! $deskripsi_lomba !!}</p>
+                  </div>
+                  <div class="card-footer">
+                  <small class="text-muted">{{ $tingkat_lomba }}</small>
+                  </div>
+                </div>
+                </a>
+              </div>
       @endforeach
-            </div>
           </div>
           <button class="carousel-control-prev" style="background-color: rgb(113, 159, 166)" type="button">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

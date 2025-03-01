@@ -578,7 +578,8 @@ $kategori_5 = Products::where('kategori_obat', 'Penyakit lambung')->get();
           <b>Tanggal Pengambilan:</b> ${formattedDate}<br>
           <b>Lokasi:</b> ${result.value.location}<br>
           <b>Jam:</b> ${result.value.time}<br>
-          <b>Catatan:</b> ${result.value.note}
+          <b>Catatan:</b> ${result.value.note}<br><br>
+          <b>Tekan "OK" untuk dialihkan ke halaman WhatsApp</b><br><br>
         `,
             icon: "success"
           }).then(() => {

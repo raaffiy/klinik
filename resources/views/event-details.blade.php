@@ -133,11 +133,14 @@
                     </div>
 
                     <div class="col-lg-12">
-                        <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                            <ul>
-                                <li><strong>Susunan Acara</strong>: {!! $event->susunan_acara !!}</li>
-                            </ul>
-                        </div>
+                        <section id="blog-details" class="blog-details section">
+                            <div class="container">
+                                <article class="article">
+                                    <h2 style="color: black; font-weight: bold;">Susunan Acara</h2>
+                                    {!! $event->susunan_acara !!}
+                                </article>
+                            </div>
+                        </section>
                     </div>
 
                 </div>
@@ -153,7 +156,7 @@
             <div class="row gy-4">
                 <div class="col-lg-6 col-md-6 footer-about">
                     <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
-                        <img src="assets/img/logo.png" alt="logo">
+                        <img src="{{ asset('assets/img/logo.png') }}" alt="logo">
                     </a>
                     <div class="footer-contact pt-3">
                         <p>Jl. Lap. Bola Rw. Butun, Ciketing Udik</p>

@@ -126,24 +126,39 @@
             </div>
           </div>
 
-          <div class="col-lg-6">
-              <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                  <ul>
-                      <li><strong>Indikasi Obat</strong>: {!! $products->indikasi_obat !!}</li>
-                      <li><strong>Komposisi Obat</strong>: {!! $products->komposisi_obat !!}</li>
-                      <li><strong>Dosis Obat</strong>: {!! $products->dosis_obat !!}</li>
-                  </ul>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <!-- Blog Details Section - Indikasi, Komposisi, Dosis -->
+                <section id="blog-details" class="blog-details section">
+                  <div class="container">
+                    <article class="article">
+                      <ul>
+                        <li><strong>Indikasi Obat</strong>: {!! $products->indikasi_obat !!}</li>
+                        <li><strong>Komposisi Obat</strong>: {!! $products->komposisi_obat !!}</li>
+                        <li><strong>Dosis Obat</strong>: {!! $products->dosis_obat !!}</li>
+                      </ul>
+                    </article>
+                  </div>
+                </section>
               </div>
-          </div>
-
-          <div class="col-lg-6">
-              <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                  <ul>
-                      <li><strong>Penggunaan Obat</strong>: {!! $products->penggunaan_obat !!}</li>
-                      <li><strong>Efek Samping</strong>: {!! $products->efek_samping !!}</li>
-                      <li><strong>Kontraindikasi</strong>: {!! $products->kontraindikasi !!}</li>
-                  </ul>
+            
+              <div class="col-lg-6">
+                <!-- Blog Details Section - Penggunaan, Efek Samping, Kontraindikasi -->
+                <section id="blog-details" class="blog-details section">
+                  <div class="container">
+                    <article class="article">
+                      <ul>
+                        <li><strong>Penggunaan Obat</strong>: {!! $products->penggunaan_obat !!}</li>
+                        <li><strong>Efek Samping</strong>: {!! $products->efek_samping !!}</li>
+                        <li><strong>Kontraindikasi</strong>: {!! $products->kontraindikasi !!}</li>
+                      </ul>
+                    </article>
+                  </div>
+                </section>
               </div>
+              
+            </div>
           </div>
 
         </div>

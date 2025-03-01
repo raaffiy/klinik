@@ -165,7 +165,7 @@
             <div class="row gy-4">
                 <div class="col-lg-6 col-md-6 footer-about">
                     <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
-                        <img src="assets/img/logo.png" alt="logo">
+                        <img src="{{ asset('assets/img/logo.png') }}" alt="logo">
                     </a>
                     <div class="footer-contact pt-3">
                         <p>Jl. Lap. Bola Rw. Butun, Ciketing Udik</p>

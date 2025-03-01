@@ -119,56 +119,91 @@ class ProductsResource extends Resource
                         // Column komposisi_obat
                         RichEditor::make('komposisi_obat')
                             ->required()
-                            ->toolbarButtons([
+                            ->toolbarButtons(['blockquote',
                                 'bold',
+                                'bulletList',
+                                'codeBlock',
+                                'h2',
+                                'h3',
                                 'italic',
-                                'strike',
                                 'link',
-                                'blockquote',
+                                'orderedList',
+                                'redo',
+                                'strike',
+                                'underline',
+                                'undo',
                             ])->columnSpanFull(),
 
                         // Column dosis_obat
                         RichEditor::make('dosis_obat')
                             ->required()
-                            ->toolbarButtons([
+                            ->toolbarButtons(['blockquote',
                                 'bold',
+                                'bulletList',
+                                'codeBlock',
+                                'h2',
+                                'h3',
                                 'italic',
-                                'strike',
                                 'link',
-                                'blockquote',
+                                'orderedList',
+                                'redo',
+                                'strike',
+                                'underline',
+                                'undo',
                             ])->columnSpanFull(),
 
                         // Column penggunaan_obat
                         RichEditor::make('penggunaan_obat')
                             ->required()
-                            ->toolbarButtons([
+                            ->toolbarButtons(['blockquote',
                                 'bold',
+                                'bulletList',
+                                'codeBlock',
+                                'h2',
+                                'h3',
                                 'italic',
-                                'strike',
                                 'link',
-                                'blockquote',
+                                'orderedList',
+                                'redo',
+                                'strike',
+                                'underline',
+                                'undo',
                             ])->columnSpanFull(),
 
                         // Column efek_samping
                         RichEditor::make('efek_samping')
                             ->required()
-                            ->toolbarButtons([
+                            ->toolbarButtons(['blockquote',
                                 'bold',
+                                'bulletList',
+                                'codeBlock',
+                                'h2',
+                                'h3',
                                 'italic',
-                                'strike',
                                 'link',
-                                'blockquote',
+                                'orderedList',
+                                'redo',
+                                'strike',
+                                'underline',
+                                'undo',
                             ])->columnSpanFull(),
 
                         // Column kontraindikasi
                         RichEditor::make('kontraindikasi')
                             ->required()
-                            ->toolbarButtons([
+                            ->toolbarButtons(['blockquote',
                                 'bold',
+                                'bulletList',
+                                'codeBlock',
+                                'h2',
+                                'h3',
                                 'italic',
-                                'strike',
                                 'link',
-                                'blockquote',
+                                'orderedList',
+                                'redo',
+                                'strike',
+                                'underline',
+                                'undo',
                             ])->columnSpanFull(),
                         
                     ])
