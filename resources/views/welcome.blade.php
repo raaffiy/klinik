@@ -647,13 +647,13 @@ $all_achievement = Achievement::all();
             <p class="mt-3"><strong>Anggota PJBL:</strong></p>
             <ul>
               <li>
-                <p><strong>Maulana Ra'afi</strong> <span>RPL K.I (Angk 19)</span></p>
+                <p><strong>Maulana Ra'afi</strong> <span>RPL K.I (Akt 19)</span></p>
               </li>
               <li>
-                <p><strong>Irfan Ramadhan Taufik</strong> <span>RPL K.I (Angk 19)</span></p>
+                <p><strong>Irfan Ramadhan Taufik</strong> <span>RPL K.I (Akt 19)</span></p>
               </li>
               <li>
-                <p><strong>Dimas Alfiansyah Putra</strong> <span>RPL K.I (Angk 19)</span></p>
+                <p><strong>Dimas Alfiansyah Putra</strong> <span>RPL K.I (Akt 19)</span></p>
               </li>
             </ul>
           </div>
