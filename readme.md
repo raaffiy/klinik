@@ -3,9 +3,7 @@
 =====================================
 
 MAINTANCE (WAJIB):
-1. video yt
-2. achievements
-3. event
+1. News
 
 FITURE (JIKA MASIH MEMPUNYAI WAKTU):
 1. memperbaiki ai 
