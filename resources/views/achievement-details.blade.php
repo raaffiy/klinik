@@ -170,7 +170,7 @@
                     <div class="footer-contact pt-3">
                         <p>Jl. Lap. Bola Rw. Butun, Ciketing Udik</p>
                         <p>Kec. Bantar Gebang, Kota Bks, Jawa Barat 17153</p>
-                        <p class="mt-3"><strong>Phone:</strong> <span>+62 813 8496 0319</span></p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>+62 857-7630-7472</span></p>
                         <p><strong>Instagram:</strong> <span>@pmr2bekasi</span></p>
                     </div>
                 </div>

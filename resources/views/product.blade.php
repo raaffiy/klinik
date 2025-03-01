@@ -224,7 +224,7 @@ $kategori_5 = Products::where('kategori_obat', 'Penyakit lambung')->get();
           <div class="footer-contact pt-3">
             <p>Jl. Lap. Bola Rw. Butun, Ciketing Udik</p>
             <p>Kec. Bantar Gebang, Kota Bks, Jawa Barat 17153</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+62 813 8496 0319</span></p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+62 857-7630-7472</span></p>
             <p><strong>Instagram:</strong> <span>@pmr2bekasi</span></p>
           </div>
         </div>
@@ -598,7 +598,7 @@ $kategori_5 = Products::where('kategori_obat', 'Penyakit lambung')->get();
               `Produk:\n${cartItems}\n\nTerima kasih!`;
 
             // Nomor WhatsApp tujuan
-            let phoneNumber = "+6281384960319";
+            let phoneNumber = "+6285776307472";
 
             // Membuka WhatsApp dengan pesan yang sudah diformat
             let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
