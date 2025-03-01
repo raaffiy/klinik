@@ -648,7 +648,11 @@ $all_achievement = Achievement::all();
             <ul>
               <li>
                 <p><strong>Maulana Ra'afi</strong> <span>RPL K.I (Angk 19)</span></p>
+              </li>
+              <li>
                 <p><strong>Irfan Ramadhan Taufik</strong> <span>RPL K.I (Angk 19)</span></p>
+              </li>
+              <li>
                 <p><strong>Dimas Alfiansyah Putra</strong> <span>RPL K.I (Angk 19)</span></p>
               </li>
             </ul>

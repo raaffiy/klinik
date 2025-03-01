@@ -189,12 +189,22 @@ $random_news = News::inRandomOrder()->limit(3)->get();
             <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
               <img src="assets/img/logo.png" alt="logo">
             </a>
-            <div class="footer-contact pt-3">
-              <p>Jl. Lap. Bola Rw. Butun, Ciketing Udik</p>
-              <p>Kec. Bantar Gebang, Kota Bks, Jawa Barat 17153</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+62 857-7630-7472</span></p>
-            <p><strong>Instagram:</strong> <span>@pmr2bekasi</span></p>
-            </div>
+          <div class="footer-contact pt-3">
+            <p>Jl. Lap. Bola Rw. Butun, Ciketing Udik</p>
+            <p>Kec. Bantar Gebang, Kota Bks, Jawa Barat 17153</p>
+            <p class="mt-3"><strong>Anggota PJBL:</strong></p>
+            <ul>
+              <li>
+                <p><strong>Maulana Ra'afi</strong> <span>RPL K.I (Angk 19)</span></p>
+              </li>
+              <li>
+                <p><strong>Irfan Ramadhan Taufik</strong> <span>RPL K.I (Angk 19)</span></p>
+              </li>
+              <li>
+                <p><strong>Dimas Alfiansyah Putra</strong> <span>RPL K.I (Angk 19)</span></p>
+              </li>
+            </ul>
+          </div>
           </div>
     
           <div class="col-lg-2 col-md-3 footer-links">
