@@ -15,7 +15,6 @@ class News extends Model
         'gambar_berita_2',
         'kategori_berita',
         'tags_berita',
-        'penulis_berita',
         'isi_berita',
         'isi_berita_2',
     ];

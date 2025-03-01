@@ -104,10 +104,6 @@ $random_news = News::inRandomOrder()->limit(3)->get();
                 </div><!-- End post content -->
 
                 <div class="meta-bottom">
-                  <i class="bi bi-person"></i>
-                  <ul class="cats">
-                    <li style="color:grey;">{{ $news->penulis_berita }}</li>
-                  </ul>
 
                   <i class="bi bi-folder"></i>
                   <ul class="cats">

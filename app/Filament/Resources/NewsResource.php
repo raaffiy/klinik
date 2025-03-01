@@ -62,9 +62,6 @@ class NewsResource extends Resource
                                 'Rekomendasi Diet' => 'Rekomendasi Diet'
                             ])->multiple()->required()->columnSpan(1),
 
-                        // Column penulis_berita
-                        TextInput::make('penulis_berita')->required()->columnSpanFull(),
-
                         // Column isi_berita
                         RichEditor::make('isi_berita')
                             ->required()
@@ -115,7 +112,6 @@ class NewsResource extends Resource
                 TextColumn::make('nama_berita')->sortable()->searchable(),
                 ImageColumn::make('gambar_berita'),
                 TextColumn::make('kategori_berita')->sortable()->searchable(),
-                TextColumn::make('penulis_berita')->sortable()->searchable(),
             ])
             ->filters([
                 // 

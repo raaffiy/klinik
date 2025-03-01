@@ -37,9 +37,6 @@ return new class extends Migration
             // Column tags_berita
             $table->text('tags_berita')->nullable();
 
-            // Column penulis_berita
-            $table->string('penulis_berita')->nullable();
-
             // Column isi_berita
             $table->longText('isi_berita')->nullable();
             
